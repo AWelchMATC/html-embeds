@@ -1,32 +1,28 @@
-name: Deploy HTML to GitHub Pages
+name: Deploy HTML Files to SharePoint
 
 on:
   push:
     branches:
       - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    paths:
+      - 'html/*.html'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload HTML files
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: html-embeds/html
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-        with:
-          verbose: true
+    - name: Upload HTML files to SharePoint
+      env:
+        SHAREPOINT_URL: ${{ secrets.SHAREPOINT_URL }}
+        SHAREPOINT_USERNAME: ${{ secrets.SHAREPOINT_USERNAME }}
+        SHAREPOINT_PASSWORD: ${{ secrets.SHAREPOINT_PASSWORD }}
+      run: |
+        for file in $(find html -name "*.html"); do
+          curl --ntlm --user "$SHAREPOINT_USERNAME:$SHAREPOINT_PASSWORD" \
+            --upload-file "$file" \
+            "$SHAREPOINT_URL/sites/YOUR_SITE_NAME/Shared%20Documents/html/$(basename "$file")"
+        done
