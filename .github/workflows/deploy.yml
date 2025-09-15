@@ -1,28 +1,20 @@
-name: Deploy HTML Files to SharePoint
+import os
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'html/*.html'
+# Customize these values
+github_username = "awelchmatc"
+repo_name = "html-embeds"
+base_url = f"https://{github_username}.github.io/{repo_name}/"
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# Folder containing HTML files
+html_folder = "html"
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+# List all HTML files and generate URLs
+public_urls = {}
+for file in os.listdir(html_folder):
+    if file.endswith(".html"):
+        encoded_name = file.replace(" ", "%20")
+        public_urls[file] = base_url + encoded_name
 
-    - name: Upload HTML files to SharePoint
-      env:
-        SHAREPOINT_URL: ${{ secrets.SHAREPOINT_URL }}
-        SHAREPOINT_USERNAME: ${{ secrets.SHAREPOINT_USERNAME }}
-        SHAREPOINT_PASSWORD: ${{ secrets.SHAREPOINT_PASSWORD }}
-      run: |
-        for file in $(find html -name "*.html"); do
-          curl --ntlm --user "$SHAREPOINT_USERNAME:$SHAREPOINT_PASSWORD" \
-            --upload-file "$file" \
-            "$SHAREPOINT_URL/sites/YOUR_SITE_NAME/Shared%20Documents/html/$(basename "$file")"
-        done
+# Output the URLs
+for name, url in public_urls.items():
+    print(f"{name}: {url}")
