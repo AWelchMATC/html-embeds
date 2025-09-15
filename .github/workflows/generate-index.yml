@@ -1,0 +1,47 @@
+name: Generate HTML Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'html/*.html'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Generate index
+      run: |
+        python <<EOF
+        import os, json
+        github_username = "awelchmatc"
+        repo_name = "html-embeds"
+        base_url = f"https://{github_username}.github.io/{repo_name}/"
+        html_folder = "html"
+        public_urls = {}
+        if os.path.exists(html_folder):
+            for file in os.listdir(html_folder):
+                if file.endswith(".html"):
+                    encoded_name = file.replace(" ", "%20")
+                    public_urls[file] = base_url + encoded_name
+        with open("html_index.json", "w") as f:
+            json.dump(public_urls, f, indent=2)
+        EOF
+
+    - name: Commit index file
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add html_index.json
+        git commit -m "Update HTML index"
+        git push
