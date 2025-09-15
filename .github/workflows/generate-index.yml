@@ -45,3 +45,4 @@ jobs:
         git add html_index.json
         git commit -m "Update HTML index"
         git push
+        
