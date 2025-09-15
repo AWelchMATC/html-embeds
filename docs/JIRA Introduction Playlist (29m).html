@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>Introductions-Overviews Playlist (1h 3m) — Stabilized, Dark (No Maximize)</title>
+<style>
+    /* ===================== THEME (Dark by default) ===================== */
+    :root {
+      --bg: #0b0f19;         /* page background */
+      --surface: #111827;    /* cards/panels */
+      --surface-2: #0f172a;  /* player background */
+      --text: #e5e7eb;       /* primary text */
+      --muted: #94a3b8;      /* secondary text */
+      --border: #1f2937;     /* borders */
+      --accent: #60a5fa;     /* blue-400 */
+      --accent-20: rgba(96,165,250,.25);
+      --badge-bg: rgba(0,0,0,.72);
+      --shadow: 0 8px 30px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; color-scheme: dark;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text); background: var(--bg);
+      overflow: hidden; /* prevent page scroll; sidebar will scroll */
+    }
+
+    /* ===================== PAGE LAYOUT ===================== */
+    .page { height: 100%; display: flex; flex-direction: column; }
+    header { padding: 12px 16px; border-bottom: 1px solid var(--border); flex: 0 0 auto; }
+    header h1 { margin: 0 0 4px; font-size: 18px; font-weight: 700; }
+    header .muted { color: var(--muted); font-size: 13px; }
+
+    /* The grid's height is locked in JS when embedded to avoid LMS resize loops. */
+    .layout {
+      flex: 1 1 auto; min-height: 0;
+      display: grid; gap: 16px; align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) 380px; /* player | sidebar */
+      padding: 16px;
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+
+    /* Player column (non-scrolling) */
+    .player-col { min-height: 0; display: flex; flex-direction: column; }
+
+    .now { display: flex; align-items: baseline; gap: 8px; margin: 0 0 10px; }
+    .now .label { font-weight: 700; font-size: 13px; color: var(--muted); }
+    .now .title { font-weight: 700; }
+    .now .duration { color: var(--muted); font-size: 12px; }
+
+    .player-wrap { flex: 1 1 auto; min-height: 0; display: flex; }
+    .player {
+      background: var(--surface-2);
+      width: 100%; aspect-ratio: 16/9; /* stable height from width */
+      border-radius: 10px; overflow: hidden; box-shadow: var(--shadow);
+      align-self: stretch;
+    }
+    .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .toolbar { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .toolbar button, .toolbar a.button {
+      appearance: none; border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); padding: 8px 12px; border-radius: 8px; font-weight: 700; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .toolbar button:hover, .toolbar a.button:hover { border-color: #334155; }
+
+    /* Sidebar column WITH independent scroll */
+    .sidebar { min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+    .sidebar .heading { font-weight: 700; font-size: 14px; color: var(--muted); }
+    .sidebar .scroll { flex: 1 1 auto; min-height: 0; overflow: auto; padding-right: 6px; }
+
+    /* Playlist list & items */
+    #list { counter-reset: video; display: grid; gap: 12px; }
+
+    #list > .item {
+      position: relative; counter-increment: video;
+      display: grid; grid-template-columns: 140px 1fr; gap: 12px; align-items: center;
+      border: 1px solid var(--border); border-radius: 10px; padding: 8px; background: var(--surface);
+      cursor: pointer; box-shadow: 0 1px 0 rgba(0,0,0,.2);
+    }
+
+    /* Number badge on the thumbnail (CSS counter-based) */
+    #list > .item .thumb { position: relative; }
+    #list > .item .thumb::before {
+      content: counter(video);
+      position: absolute; top: .5rem; left: .5rem;
+      z-index: 2; background: var(--badge-bg); color: #fff;
+      font: 800 12px/1 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 4px 6px; border-radius: 999px; min-width: 22px; text-align: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,.35); pointer-events: none;
+    }
+
+    /* Thumbnail and info */
+    .thumb img { display: block; width: 100%; height: 78px; object-fit: cover; border-radius: 8px; background: #0b1220; }
+    .thumb .duration { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.72); color:#fff; font: 800 11px/1 system-ui; padding: 3px 6px; border-radius: 5px; }
+
+    .info .title { font-weight: 700; font-size: 14px; line-height: 1.25; }
+    .info .muted { color: var(--muted); font-size: 12px; }
+
+    /* Active item highlight */
+    #list > .item.active { outline: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--accent-20); }
+
+    /* Accessible-only text */
+    .sr-only { position: absolute !important; width: 1px; height: 1px; padding:0; margin:-1px; overflow:hidden; clip: rect(0,0,1px,1px); border:0; }
+  
+body {
+    padding-bottom: 50px !important;
+    overflow-anchor: none;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: auto;
+}
+.divider-bottom {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<h1 id="brand">JIRA Introduction Playlist (29m)</h1>
+<div class="muted"></div>
+</header>
+<main class="layout" id="layout">
+<!-- Left: player and now playing (non-scrolling column) -->
+<section aria-label="Now Playing" class="player-col">
+<div aria-atomic="true" aria-live="polite" class="now">
+<div class="label">Now Playing</div>
+<div class="title" id="nowTitle">—</div>
+<div class="duration" id="nowDuration"></div>
+</div>
+<div class="player-wrap">
+<div aria-label="Video player" class="player" role="region">
+<iframe allow="autoplay; fullscreen" id="videoFrame" title="YuJa video player"></iframe>
+</div>
+</div>
+<div aria-label="Player Controls" class="toolbar" role="group">
+<button id="prevBtn" type="button">⟨ Prev</button>
+<button id="nextBtn" type="button">Next ⟩</button>
+<button aria-label="Enter Fullscreen" aria-pressed="false" id="fsBtn" type="button">⛶ Fullscreen</button>
+<a class="button" id="popBtn" rel="noopener" target="_blank">↗ Pop out</a>
+</div>
+</section>
+<!-- Right: Numbered playlist with independent scroll -->
+<aside aria-label="Playlist" class="sidebar">
+<div class="heading">Playlist</div>
+<div class="scroll" id="sidebarScroll">
+<div id="list" role="list"></div>
+</div>
+</aside>
+</main>
+</div>
+
+<!-- Embedded playlist data (&amp; encoded) -->
+<script id="playlist-json" type="application/json">
+[
+  {
+    "id": "12188177",
+    "node": "53246674",
+    "access": "58751385",
+    "title": "PS-JIRA-Intro-v00-AtlassianJIRAEmailFilter (4m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/y0AJV1zlJDE",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=12188177&amp;node=53246674&amp;a=58751385"
+  },
+  {
+    "id": "9423158",
+    "node": "41184742",
+    "access": "142178028",
+    "title": "PS-JIRA-Intro-v01-SprintBoard (2m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/aVp9MPZM2bz",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423158&amp;node=41184742&amp;a=142178028"
+  },
+  {
+    "id": "9423162",
+    "node": "41184787",
+    "access": "118155578",
+    "title": "PS-JIRA-Intro-v02-BackLog&CreatingTasks (2m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/P9xZ8qNBnXz",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423162&amp;node=41184787&amp;a=118155578"
+  },
+  {
+    "id": "9423168",
+    "node": "41184831",
+    "access": "104926160",
+    "title": "PS-JIRA-Intro-v03-EpicTasks (3m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/pXZwkB68W32",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423168&amp;node=41184831&amp;a=104926160"
+  },
+  {
+    "id": "9423173",
+    "node": "41184868",
+    "access": "11308070",
+    "title": "PS-JIRA-Intro-v04-TimelinesRoadmaps&Plans (6m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/LPz1yw8DX63",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423173&amp;node=41184868&amp;a=11308070"
+  },
+  {
+    "id": "9423179",
+    "node": "41184920",
+    "access": "55951769",
+    "title": "PS-JIRA-Intro-v05-TaskIssueNaming (5m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/VAxjpwxjRM4",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423179&amp;node=41184920&amp;a=55951769"
+  },
+  {
+    "id": "9423181",
+    "node": "41184929",
+    "access": "105829921",
+    "title": "PS-JIRA-Intro-v06-Deleting&UpdatingStatus (4m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/RJjzl1kwa2E",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423181&amp;node=41184929&amp;a=105829921"
+  },
+  {
+    "id": "9423185",
+    "node": "41184961",
+    "access": "24316992",
+    "title": "PS-JIRA-Intro-v07-TimeTracking (3m)",
+    "thumbnailUrl": "https://madisoncollege.yuja.com/P/DataPage/BroadcastsThumb/LPz18M7z7EO",
+    "videoUrl": "https://madisoncollege.yuja.com/V/Video?v=9423185&amp;node=41184961&amp;a=24316992"
+  }
+]
+</script>
+<script>
+    (function(){
+      const layout = document.getElementById('layout');
+      const listEl = document.getElementById('list');
+      const iframe = document.getElementById('videoFrame');
+      const nowTitle = document.getElementById('nowTitle');
+      const nowDuration = document.getElementById('nowDuration');
+      const fsBtn = document.getElementById('fsBtn');
+      const popBtn = document.getElementById('popBtn');
+
+      const CHILD_ORIGIN = 'https://madisoncollege.yuja.com';
+
+      let items = [];
+      let current = 0;
+      let durationFromPlayer = null;
+      let currentTimeFromPlayer = 0;
+      let pollInterval = null;
+
+      // Pop-out link mirrors current page URL
+      try { popBtn.href = location.href; } catch(e) {}
+
+      // ----- Stabilize inside Brightspace: lock layout height (anti-jitter) -----
+      const isEmbedded = (function(){ try { return window.self !== window.top; } catch(e){ return true; } })();
+      const headerEl = document.querySelector('header');
+      let lockedH = null;
+      function measureLayoutHeight(){
+        const headerH = headerEl ? headerEl.getBoundingClientRect().height : 0;
+        return Math.max(360, Math.floor(window.innerHeight - headerH - 1));
+      }
+      function lockHeight(initial=false){
+        const h = measureLayoutHeight();
+        if (initial || lockedH === null || Math.abs(h - lockedH) > 120) {
+          lockedH = h;
+          layout.style.height = lockedH + 'px';
+        }
+      }
+      if (isEmbedded) {
+        lockHeight(true);
+        // Only adjust on significant changes (>=120px) or orientation change.
+        let rezTimer = null;
+        window.addEventListener('resize', ()=>{ clearTimeout(rezTimer); rezTimer = setTimeout(()=> lockHeight(false), 200); });
+        window.addEventListener('orientationchange', ()=> setTimeout(()=> lockHeight(true), 350));
+      }
+
+      function hms(sec){ if(sec==null) return ''; const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=Math.floor(sec%60); return h?`${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`:`${m}:${String(s).padStart(2,'0')}`; }
+      function normalizeUrl(u){ return String(u||'').replace(/&amp;/g,'&'); }
+
+      function buildList(){
+        listEl.innerHTML='';
+        items.forEach((it, idx)=>{
+          const row = document.createElement('div'); row.className='item'; row.dataset.idx = String(idx);
+          row.setAttribute('role','button'); row.setAttribute('tabindex','0');
+          row.setAttribute('aria-label', `Video ${idx+1}: ${it.title || 'Untitled'}`);
+          row.innerHTML = `
+            <div class=\"thumb\">
+              <img loading=\"lazy\" src=\"${normalizeUrl(it.thumbnailUrl)}\" alt=\"${(it.title||'Untitled').replace(/\"/g,'&quot;')} thumbnail\">
+              <div class=\"duration\" data-idx=\"${idx}\"></div>
+            </div>
+            <div class=\"info\">
+              <div class=\"title\">${(it.title || 'Untitled').replace(/</g,'&lt;')}</div>
+              <div class=\"muted\">&nbsp;</div>
+            </div>`;
+          row.addEventListener('click', ()=>play(idx));
+          row.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); play(idx); }});
+          listEl.appendChild(row);
+        });
+        highlight();
+        scrollActiveIntoView();
+      }
+
+      function titleWithIndex(it, idx){ const total = items.length; return `Video ${idx+1}/${total}: ${it.title || 'Untitled'}`; }
+      function appendAutoplay(url){
+        const clean = normalizeUrl(url);
+        try{ const u=new URL(clean); u.searchParams.set('autoPlay','1'); return u.toString(); }
+        catch(e){ return clean + (clean.includes('?')?'&':'?') + 'autoPlay=1'; }
+      }
+      function postTo(frame, payload){ if(frame && frame.contentWindow) frame.contentWindow.postMessage(payload, CHILD_ORIGIN); }
+      const reqDur = (f)=>postTo(f,{name:'getDuration'});
+      const reqCur = (f)=>postTo(f,{name:'getCurrentPlayTime'});
+      const cmdPlay= (f)=>postTo(f,{name:'Play'});
+
+      function startPolling(){ stopPolling(); pollInterval=setInterval(()=>{
+        reqCur(iframe); reqDur(iframe);
+        if(durationFromPlayer && currentTimeFromPlayer!=null && durationFromPlayer>0 && (durationFromPlayer-currentTimeFromPlayer)<=0.5){ stopPolling(); next(); }
+      }, 750); }
+      function stopPolling(){ if(pollInterval){ clearInterval(pollInterval); pollInterval=null; } }
+
+      function updateNowMeta(){ const it=items[current]; nowTitle.textContent=titleWithIndex(it,current); nowDuration.textContent = durationFromPlayer? hms(durationFromPlayer): ''; }
+
+      function play(idx){
+        if(!items.length) return;
+        current=((idx%items.length)+items.length)%items.length;
+        durationFromPlayer=null; currentTimeFromPlayer=0;
+        const it=items[current];
+        updateNowMeta();
+        iframe.src=appendAutoplay(it.videoUrl);
+        iframe.onload=()=>{ setTimeout(()=>{ cmdPlay(iframe); reqDur(iframe); reqCur(iframe); startPolling(); }, 300); };
+        highlight(); scrollActiveIntoView(); localStorage.setItem('yujaPlaylistIndex', String(current));
+      }
+      function next(){ play((current+1)%items.length); }
+      function prev(){ play((current-1+items.length)%items.length); }
+
+      function highlight(){ document.querySelectorAll('.item').forEach(el=>el.classList.remove('active')); const active=document.querySelector(`.item[data-idx=\"${current}\"]`); if(active) active.classList.add('active'); }
+      function scrollActiveIntoView(){ const active=document.querySelector(`.item[data-idx=\"${current}\"]`); if(active) active.scrollIntoView({block:'nearest'}); }
+
+      // Receive messages from YuJa player(s)
+      window.addEventListener('message', (event)=>{
+        if(event.origin !== CHILD_ORIGIN) return; const data=event.data||{}; if(typeof data!== 'object') return;
+        if('duration' in data || data.name==='duration' || data.name==='getDuration'){ const v=Number(data.value ?? data.duration); if(!Number.isNaN(v)&&v>0){ if(event.source===iframe.contentWindow){ durationFromPlayer=v; updateNowMeta(); } } }
+        if('currentTime' in data || data.name==='getCurrentPlayTime'){ const c=Number(data.value ?? data.currentTime); if(!Number.isNaN(c)){ if(event.source===iframe.contentWindow){ currentTimeFromPlayer=c; } } }
+        const name=(data.name||'').toLowerCase(); if(event.source===iframe.contentWindow && (name.includes('ended')||name.includes('complete')||data.ended===true)){ stopPolling(); next(); }
+      });
+
+      // Prefetch durations for thumbnails via one hidden iframe (sequential)
+      async function prefetchDurations(){
+        const hidden=document.createElement('iframe'); hidden.style.cssText='width:0;height:0;border:0;position:absolute;left:-9999px;top:-9999px;'; document.body.appendChild(hidden);
+        for(let i=0;i<items.length;i++){
+          const it=items[i]; await new Promise((resolve)=>{
+            let poll=null, timeout=null;
+            hidden.src=appendAutoplay(it.videoUrl);
+            hidden.onload=()=>{ setTimeout(()=>{ poll=setInterval(()=>reqDur(hidden), 400); timeout=setTimeout(()=>{ cleanup(); resolve(); }, 6000); },250); };
+            function cleanup(){ if(poll){clearInterval(poll);poll=null;} if(timeout){clearTimeout(timeout);timeout=null;} }
+            function onMsg(ev){ if(ev.origin!==CHILD_ORIGIN) return; const d=ev.data||{}; if(typeof d!=='object') return; if('duration' in d || d.name==='duration' || d.name==='getDuration'){ const v=Number(d.value ?? d.duration); if(!Number.isNaN(v)&&v>0){ cleanup(); const label=document.querySelector(`.thumb .duration[data-idx=\"${i}\"]`); if(label) label.textContent=hms(v); window.removeEventListener('message', onMsg); resolve(); } } }
+            window.addEventListener('message', onMsg);
+          });
+        }
+        hidden.remove();
+      }
+
+      // Controls
+      document.getElementById('prevBtn').addEventListener('click', ()=>prev());
+      document.getElementById('nextBtn').addEventListener('click', ()=>next());
+
+      // Fullscreen API (may be blocked by LMS iframe policy)
+      async function toggleFullscreen(){
+        try {
+          if (!document.fullscreenElement) {
+            await document.documentElement.requestFullscreen({ navigationUI: 'hide' });
+            fsBtn.setAttribute('aria-pressed','true');
+            fsBtn.textContent = '⛶ Exit Fullscreen';
+          } else {
+            await document.exitFullscreen();
+            fsBtn.setAttribute('aria-pressed','false');
+            fsBtn.textContent = '⛶ Fullscreen';
+          }
+        } catch (e) {
+          alert('Fullscreen is blocked by the browser or LMS. Use the Pop out button to open this page in a new tab, then try Fullscreen.');
+        }
+      }
+      fsBtn.addEventListener('click', toggleFullscreen);
+      document.addEventListener('fullscreenchange', ()=>{
+        if (!document.fullscreenElement) {
+          fsBtn.setAttribute('aria-pressed','false');
+          fsBtn.textContent = '⛶ Fullscreen';
+        }
+      });
+
+      // Initialize from embedded JSON
+      try { items = JSON.parse(document.getElementById('playlist-json').textContent.trim()); }
+      catch(e) { console.error('Failed to parse embedded playlist JSON', e); items = []; }
+
+      const saved = Number(localStorage.getItem('yujaPlaylistIndex'));
+      current = Number.isInteger(saved) && saved>=0 && saved < items.length ? saved : 0;
+      buildList();
+      if(items.length) { play(current); prefetchDurations(); }
+      else { nowTitle.textContent = '—'; }
+    })();
+  </script>
+<div class="divider-bottom"></div></body>
+</html>
