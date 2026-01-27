@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    height: 70px;
+  }
+
+  .banner {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+  }
+
+  .current {
+    background: #6a00a8; /* purple */
+    color: #00d66b;      /* green */
+  }
+
+  .past {
+    background: #7a1c1c; /* dark red */
+    color: white;
+  }
+
+  .upcoming {
+    background: #d9d9d9; /* light gray */
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+<div id="status" class="banner">Loading…</div>
+
+<script>
+// Get start/end dates from iframe attributes
+const params = new URLSearchParams(window.location.search);
+const start = params.get("start");
+const end   = params.get("end");
+
+const el = document.getElementById("status");
+
+// Parse YYYY-MM-DD as local dates
+function parseLocal(d) {
+  const [y, m, day] = d.split("-").map(Number);
+  return new Date(y, m - 1, day);
+}
+
+// Apply logic
+const startDate = parseLocal(start);
+const endDate   = parseLocal(end);
+endDate.setHours(23,59,59,999);
+const now = new Date();
+
+let text = "";
+let className = "";
+
+if (now < startDate) {
+  text = "---- UP COMING MODULE ----";
+  className = "upcoming";
+} else if (now > endDate) {
+  text = "---- PAST MODULE ----";
+  className = "past";
+} else {
+  text = "---- CURRENT MODULE ----";
+  className = "current";
+}
+
+el.textContent = text;
+el.classList.add(className);
+</script>
+</body>
+</html>
