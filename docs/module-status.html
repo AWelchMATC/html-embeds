@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Module Status Banner</title>
+<style>
+  :root {
+    --height: 64px;
+    --radius: 4px;
+    --pad: 12px;
+    --purple: #6a00a8;
+    --green:  #00d66b;
+    --darkred:#7a1c1c;
+    --lightgray:#d9d9d9;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: var(--height);
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+  }
+  .banner {
+    width: 100%;
+    text-align: center;
+    padding: var(--pad);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius);
+    box-sizing: border-box;
+  }
+  .current  { background: var(--purple);   color: var(--green); }
+  .past     { background: var(--darkred);  color: #ffffff; }
+  .upcoming { background: var(--lightgray);color: #ffffff; }
+  .error    { background: #333333;         color: #ffffff; }
+</style>
+</head>
+<body>
+  <div id="status" class="banner" role="status" aria-live="polite">Loading…</div>
+
+<script>
+(function () {
+  const el = document.getElementById('status');
+
+  // Get dates from query string (?start=YYYY-MM-DD&end=YYYY-MM-DD)
+  const usp = new URLSearchParams(window.location.search);
+  let start = usp.get('start');
+  let end   = usp.get('end');
+
+  // Fallback: also support hash "#YYYY-MM-DD,YYYY-MM-DD"
+  if (!start || !end) {
+    const hash = (window.location.hash || '').replace(/^#/, '');
+    const parts = hash.split(',');
+    if (parts.length === 2) {
+      start = parts[0];
+      end   = parts[1];
+    }
+  }
+
+  function isIsoDate(s) {
+    return typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s);
+  }
+
+  function parseLocal(iso) {
+    const [y, m, d] = iso.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  }
+
+  try {
+    if (!isIsoDate(start) || !isIsoDate(end)) {
+      el.className = 'banner error';
+      el.textContent = '---- DATE PARAMS MISSING ----';
+      return;
+    }
+
+    const startDate = parseLocal(start);
+    const endDate   = parseLocal(end);
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+      el.className = 'banner error';
+      el.textContent = '---- DATE FORMAT ERROR ----';
+      return;
+    }
+
+    // End date inclusive through 23:59:59.999 local
+    endDate.setHours(23, 59, 59, 999);
+
+    const now = new Date();
+
+    let label = '';
+    let cls = '';
+    if (now < startDate) {
+      label = '---- UP COMING MODULE... ----';
+      cls = 'upcoming';
+    } else if (now > endDate) {
+      label = '---- PAST MODULE ----';
+      cls = 'past';
+    } else {
+      label = '---- CURRENT MODULE ----';
+      cls = 'current';
+    }
+
+    el.className = 'banner ' + cls;
+    el.textContent = label;
+  } catch (e) {
+    el.className = 'banner error';
+    el.textContent = '---- SCRIPT ERROR ----';
+  }
+})();
+</script>
+</body>
+</html>
