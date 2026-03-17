@@ -36,6 +36,24 @@
       "summary": "A mesh that is high in polygonal density (Lots of faces/verts/edges), and contains all the surface detail you want visually. This can be either a \"Subdivided\" or \"Smooth Mesh Preview\" of the \"Base Mesh\" in Maya/Blender/etc from the \"SubD\" workflow, or a sculpted mesh from ZBrush/Blender, or a high quality output from CAD software (Plasticity/Fusion 360), or even just boolean mesh that has lots of topology to ensure it looks nice/smooth/round where expected."
     },
     {
+    "title": "Topology",
+    "slug": "Topology",
+    "category": "Modeling",
+    "tags": [
+      "3D Art Track",
+      "Quad",
+      "Tri",
+      "Wireframe",
+      "Edge Flow",
+      "SubD",
+      "Subdivision",
+      "Low Poly",
+      "High Poly. Edge Loop",
+      "Pole",
+      "nGon"],
+      "summary": "Topology in 3D modeling is the study and application of how surfaces are constructed from vertices, edges, and faces. It's the blueprint of your model, defining its structure and ensuring that it can be manipulated without causing unwanted distortion or deformation. \n- For Game Art \"Good Topology\" means a wireframe that supports silhouette, shading, UVs, Materials and nothing more, so edge loops should terminate intro triangles if they aren't required.\n- For SubD, \"Good Topology\" means evenly spaced edge loops for curved surfaces, and mitigating \"poles\" (vertices that connect with either more or less than 4 edges connecting). Idea Geometry would be as simple of a mesh as possible that subdivides to the correct shape, likely resulting in few if any tris & nGons. Creasing and/or triple edging is used to control edges/curvature.\n- For Digital Sculpting, \"Good Topology\" would be ALL quads (to ensure you can preserve your base mesh reconstruction) and *EVENLY SPACED* \"Edge Loops\", so that you have consistent sculpting resolution (the polygon sculpting equivalent to texture painting's \"Texel Scale\". Maybe dub this, \"Polygrid Sculpt Scale\"? ;)"
+    },
+    {
       "title": "Normal Map",
       "slug": "normal-map",
       "category": "Materials",
