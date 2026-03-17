@@ -8,6 +8,20 @@
       "summary": "Base color map without lighting, shadow, or highlights."
     },
     {
+    "title": "Baking",
+    "slug": "Baking",
+    "category": "Texturing",
+    "tags": [
+      "3D Art Track",
+      "Animation Track",
+      "baking",
+      "uvs",
+      "normal maps",
+      "mesh maps",
+      "keys"    ],
+      "summary": "Baking is the act of transferring data from one asset/form to another. In 3D Art, it often refers to baking the surface normals of a high poly mesh into a texture (normal map) that a low poly can use, but you can also bake: BaseColor, Curvature, AO, Thickness, ID maps, etc.). For animation, it often refers to baking animation data for every key, so you can have a \"Rig\" controller key framed (or driven by noise) that then gets \"baked\" onto the joints/bones of the skeleton for use in bake or to transfer between apps."
+  },
+    {
     "title": "High Poly",
     "slug": "HighPoly",
     "category": "Modeling",
