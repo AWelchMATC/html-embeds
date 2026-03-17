@@ -252,18 +252,21 @@
     pageExists(t.slug).then(exists => updatePreviewOpenButton(exists, t));
   }
 
-  function updatePreviewOpenButton(exists, t){
-    if (!activeOpenBtn) return;
-    if (exists){
-      activeOpenBtn.disabled = false;
-      activeOpenBtn.textContent = 'Open term page →';
-      activeOpenBtn.onclick = ()=> { window.location.href = `terms/${t.slug}.html`; };
-    } else {
-      activeOpenBtn.disabled = true;
-      activeOpenBtn.textContent = 'Term page coming soon';
-      activeOpenBtn.onclick = null;
-    }
+function updatePreviewOpenButton(exists, t){
+  if (!activeOpenBtn) return;
+
+  if (exists){
+    activeOpenBtn.disabled = false;
+    activeOpenBtn.classList.remove('disabled-coming');   // remove grey style
+    activeOpenBtn.textContent = 'Open term page →';
+    activeOpenBtn.onclick = ()=> { window.location.href = `terms/${t.slug}.html`; };
+  } else {
+    activeOpenBtn.disabled = true;
+    activeOpenBtn.classList.add('disabled-coming');      // apply grey style
+    activeOpenBtn.textContent = 'Term page coming soon';
+    activeOpenBtn.onclick = null;
   }
+}
 
   function expandBySlug(slug){
     // Ensure a fresh render with filters cleared already happened
