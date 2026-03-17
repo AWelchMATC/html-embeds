@@ -1,1 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Arts & Animation Glossary</title>
+  <meta name="description" content="Searchable glossary for 3D Arts & Animation terms." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="#7bffb7"/></svg>
+        <div>
+          <h1>3D Arts & Animation Glossary</h1>
+          <small>Madison College · Student Resource</small>
+        </div>
+      </div>
+      <div class="controls" role="search">
+        <input id="q" type="search" placeholder="Search terms, tags, definitions…" aria-label="Search glossary" />
+        <select id="category" aria-label="Filter by category">
+          <option value="">All categories</option>
+        </select>
+        <div id="results-count" aria-live="polite">Loading…</div>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="year"></span> Madison College · 3D Arts & Animation · Glossary</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
