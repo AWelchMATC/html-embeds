@@ -7,6 +7,7 @@
   --accent: #4cc2ff;
   --accent-2: #7bffb7;
   --border: #293241;
+  --chip-bg: #19212b;
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -21,18 +22,42 @@ header.site-header { position: sticky; top: 0; z-index: 10; background: linear-g
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand h1 { font-size: 1.25rem; margin: 0; }
 .brand small { color: var(--muted); }
-.controls { display: grid; grid-template-columns: 1fr 200px 160px; gap: 12px; margin-top: 12px; }
+.brand .brand-icon { width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--border); background:#0b0e12; object-fit: contain; }
+.controls { display: grid; grid-template-columns: 1fr 200px; gap: 12px; margin-top: 12px; }
 input[type="search"], select { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
-#results-count { color: var(--muted); font-size: 0.9rem; align-self: center; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.card h3 { margin: 0; font-size: 1.05rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+#results-count { color: var(--muted); font-size: 0.9rem; margin-top: 8px; }
+
+/* Quick chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: var(--chip-bg); border: 1px solid var(--border); color: var(--text); cursor: pointer; user-select: none; font-size: 0.9rem; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); }
+.chip.active { outline: 2px solid var(--accent); background: #0f1720; }
+
+/* AZ list */
+#az { margin-top: 18px; }
+.az-section { margin-bottom: 12px; }
+.az-header { font-size: 0.9rem; color: var(--muted); margin: 18px 0 6px; letter-spacing: 1px; text-transform: uppercase; }
+.term-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.term-item { border-bottom: 1px solid var(--border); background: #0d1015; }
+.term-item:last-child { border-bottom: 0; }
+.term-link { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; color: var(--text); text-decoration: none; }
+.term-link:hover { background: #121720; }
+.term-right { color: var(--muted); font-size: 0.85rem; }
+
+/* Preview card inside list */
+.preview { background: var(--card); padding: 14px; border-top: 1px solid var(--border); display: grid; gap: 10px; }
+.preview .title { font-weight: 700; }
+.preview .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-size: 0.75rem; color: var(--bg); background: var(--accent-2); border-radius: 999px; padding: 3px 8px; }
 .category-pill { font-size: 0.72rem; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; }
+.preview .actions { display: flex; gap: 8px; }
+.btn { background: var(--accent); color: #062638; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.hidden { display: none; }
+
 .footer { color: var(--muted); text-align: center; padding: 30px 0; }
 
-/* Term page */
+/* Term page (unchanged) */
 .term-wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
 .term-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .term-header a.back { color: var(--muted); }
