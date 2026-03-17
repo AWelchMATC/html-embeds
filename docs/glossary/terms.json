@@ -20,7 +20,7 @@
       "Base Mesh",
       "Base Cage"],
       "summary": "A mesh that is high in polygonal density (Lots of faces/verts/edges), and contains all the surface detail you want visually. This can be either a \"Subdivided\" or \"Smooth Mesh Preview\" of the \"Base Mesh\" in Maya/Blender/etc from the \"SubD\" workflow, or a sculpted mesh from ZBrush/Blender, or a high quality output from CAD software (Plasticity/Fusion 360), or even just boolean mesh that has lots of topology to ensure it looks nice/smooth/round where expected."
-    }
+    },
     {
       "title": "Normal Map",
       "slug": "normal-map",
