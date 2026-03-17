@@ -7,6 +7,23 @@
       "tags": ["PBR", "Texture", "3D Art Track"],
       "summary": "Base color map without lighting, shadow, or highlights."
     },
+      {
+    "title": "SubD",
+    "slug": "SubD",
+    "category": "Modeling",
+    "tags": [
+      "3D Art Track",
+      "Quad",
+      "Tri",
+      "Wireframe",
+      "Edge Flow",
+      "SubD",
+      "Subdivision",
+      "Topology",
+      "High Poly. Edge Loop"
+    ],
+    "summary": "SubD is short for \"Subdivision\", a modeling technique in 3D modeling that transforms a low-poly model into a high-poly model by dividing its surface into smaller, smoother polygons. \n\nThis modeling technique is for making high-resolution models, by manipulating a lower-resolution \"cage\" model and using software to subdivide for a smoother surface. While common in video game art for \"Hard Surface\" assets, SubD is paramount in Film/\"off-line\" rendering, as it provides \"infinite detail\", as no matter how close you zoom in to a curve for any particular film shot, you can always just divide the cage another time to make it smoother for that shot. While overkill for many game assets, it saves a ton of potential lost work in the event one needs to \"get closer\" to an asset than originally planned.\n\nSubdividing increases the number of vertices on the model, making curves more rounded. Usually each subdivision level increases the vertex count 4x the original count.\n\nFor game artists, \"high-poly hard-surface\" usually means creating mechanical/constructed models, which are used to bake into Normal Maps and other types of textures, which are in turn used on lower-resolution game-friendly models.\n\nSubdivision surfaces can also be used for organic shapes.\n\nNot to be confused with SmoothingGroups. Sometimes the term \"box modeling\" is used, though this applies only to the cage modeling process, not to the subdivision."
+  },
     {
     "title": "Baking",
     "slug": "Baking",
@@ -21,6 +38,22 @@
       "keys"],
       "summary": "Baking is the act of transferring data from one asset/form to another. In 3D Art, it often refers to baking the surface normals of a high poly mesh into a texture (normal map) that a low poly can use, but you can also bake: BaseColor, Curvature, AO, Thickness, ID maps, etc.). For animation, it often refers to baking animation data for every key, so you can have a \"Rig\" controller key framed (or driven by noise) that then gets \"baked\" onto the joints/bones of the skeleton for use in bake or to transfer between apps."
     },
+     {
+      "title": "Wireframe",
+      "slug": "Wireframe",
+      "category": "Modeling",
+      "tags": [
+        "3D Art Track",
+        "Quad",
+        "Tri",
+        "Wireframe",
+        "Edge Flow",
+        "SubD",
+        "Subdivision",
+        "Topology",
+        "High Poly. Edge Loop"],
+        "summary": "The wire-frame method of modelling consists of only lines and curves that connect the points or vertices and thereby define the edges of an object."
+      },
       {
     "title": "nGon",
     "slug": "nGon",
