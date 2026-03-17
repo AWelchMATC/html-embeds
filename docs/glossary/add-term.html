@@ -1,0 +1,376 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Term · 3D Arts & Animation Terminology Glossary (Instructor)</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{--bg:#0f1216;--panel:#151a21;--text:#e7edf3;--muted:#9fb0c3;--accent:#4cc2ff;--good:#7bffb7;--warn:#ffcf5b;--bad:#ff7b7b;--border:#263040}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif;background:var(--bg);color:var(--text)}
+    a{color:var(--accent)}
+    .wrap{max-width:960px;margin:0 auto;padding:24px}
+    header{display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:18px}
+    header img{width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:#0b0e12;object-fit:contain}
+    h1{font-size:1.25rem;margin:0}
+
+    .grid{display:grid;gap:16px;grid-template-columns:1fr}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px}
+    .row{display:grid;grid-template-columns:180px 1fr;gap:12px;align-items:start;margin:10px 0}
+    .row label{color:var(--muted);padding-top:8px}
+    input[type=text],textarea,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:#0d1218;color:var(--text)}
+    textarea{min-height:90px;resize:vertical}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:#1b2430;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--text);cursor:default}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    button{background:var(--accent);color:#062638;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+    button.secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+    button.good{background:var(--good);color:#0b3726}
+    button.warn{background:var(--warn);color:#3a2b00}
+    button.bad{background:#ff6b6b;color:#3b0000}
+
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#19212b;border:1px solid var(--border);color:var(--text);cursor:pointer;user-select:none}
+    .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
+    .chip.active{outline:2px solid var(--accent);background:#0f1720}
+
+    .small{color:var(--muted);font-size:.9rem}
+    pre{white-space:pre-wrap;background:#0b0e12;border:1px solid var(--border);border-radius:10px;padding:10px;color:#bfe0ff}
+
+    .danger{border-color:#8b2a2a;background:#1b0f0f}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="https://awelchmatc.github.io/html-embeds/MADLogo.png" alt="icon">
+      <div>
+        <h1>Instructor Tool · Add Term to <strong>Terminology Glossary</strong></h1>
+        <div class="small">Private link for instructors. Students can view terms.json but cannot change it from this page.</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <h2 style="margin-top:0">1) Term details</h2>
+        <div class="row">
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="e.g., Subsurface Scattering" />
+        </div>
+        <div class="row">
+          <label for="slug">Slug</label>
+          <input id="slug" type="text" placeholder="auto-generated from Title" />
+        </div>
+        <div class="row">
+          <label for="category">Category</label>
+          <input id="category" type="text" placeholder="e.g., Materials, Modeling, Animation, Lighting, Texturing" />
+        </div>
+        <div class="row">
+          <label>Track tags</label>
+          <div>
+            <div class="chips">
+              <span class="chip" data-tag="3D Art Track"><span class="dot"></span>3D Art Track</span>
+              <span class="chip" data-tag="Animation Track"><span class="dot"></span>Animation Track</span>
+              <span class="chip" data-tag="Common Core"><span class="dot"></span>Common Core</span>
+            </div>
+            <div class="small" style="margin-top:6px">Click a track to toggle. You can add extra tags below.</div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="tags">Extra tags</label>
+          <input id="tags" type="text" placeholder="Comma-separated (e.g., SSS, Skin)" />
+        </div>
+        <div class="row">
+          <label for="summary">1‑sentence summary</label>
+          <textarea id="summary" placeholder="Short student‑friendly description"></textarea>
+        </div>
+        <div class="btns">
+          <button id="btn-preview" class="secondary">Preview JSON</button>
+        </div>
+        <pre id="out" class="hidden"></pre>
+      </section>
+
+      <section class="panel">
+        <h2 style="margin-top:0">2) Update methods</h2>
+        <p class="small">Choose one of the following. Method A (download + copy) is safest; Method B (direct commit) is optional and requires a GitHub token used <em>only</em> in your browser session.</p>
+
+        <h3>Method A — Offline / no credentials</h3>
+        <div class="btns">
+          <button id="btn-copy" class="good">Copy JSON object to clipboard</button>
+          <button id="btn-dl-terms" class="secondary">Download UPDATED terms.json</button>
+          <button id="btn-dl-page" class="secondary">Download new term page (HTML)</button>
+        </div>
+        <div class="small">Then upload these via GitHub web UI to <code>glossary/</code> (and <code>glossary/terms/</code>).</div>
+
+        <hr style="border-color:var(--border);margin:16px 0">
+
+        <h3>Method B — Commit directly to GitHub (optional)</h3>
+        <div class="panel" style="margin-top:8px">
+          <div class="small">This uses the GitHub Contents API from your browser to commit to the repo. <strong>Do not</strong> save your token; paste it when needed. Prefer a fine‑grained token with access limited to this one repo and only <em>contents: write</em>.</div>
+          <div class="row">
+            <label>Repo</label>
+            <input id="repo" type="text" value="awelchmatc/html-embeds" />
+          </div>
+          <div class="row">
+            <label>Branch</label>
+            <input id="branch" type="text" value="main" />
+          </div>
+          <div class="row">
+            <label>Token</label>
+            <input id="token" type="text" placeholder="ghp_... (fine‑grained PAT)" />
+          </div>
+          <div class="row">
+            <label>Site base path</label>
+            <input id="basePath" type="text" value="docs/glossary" />
+          </div>
+          <div class="btns">
+            <button id="btn-commit" class="warn">Commit new term (update terms.json + create term page)</button>
+          </div>
+          <div id="commitStatus" class="small"></div>
+        </div>
+      </section>
+
+      <section class="panel danger">
+        <h3 style="margin-top:0">Heads‑up about security</h3>
+        <ul>
+          <li>Anyone with this page link can <em>prepare</em> JSON, but only someone with repo write access + a token can push via Method B.</li>
+          <li>Never embed your token in the page or repo. Paste it only when needed and clear it afterward.</li>
+          <li>Method A (download/copy + upload via GitHub) is safest and leaves an audit trail in commits.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script>
+  // Utilities
+  const $ = (sel)=>document.querySelector(sel);
+  const out = $('#out');
+  const titleEl = $('#title');
+  const slugEl = $('#slug');
+  const catEl = $('#category');
+  const tagsEl = $('#tags');
+  const sumEl = $('#summary');
+
+  function slugify(s){
+    return (s||'')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-')
+      .replace(/(^-|-$)+/g,'');
+  }
+
+  titleEl.addEventListener('input',()=>{
+    if(!slugEl.value) slugEl.value = slugify(titleEl.value);
+  });
+
+  // Track chips
+  const chipEls = Array.from(document.querySelectorAll('.chip'));
+  chipEls.forEach(ch=>{
+    ch.addEventListener('click', ()=>{
+      ch.classList.toggle('active');
+    });
+  });
+
+  function gather(){
+    const tTitle = titleEl.value.trim();
+    const tSlug = (slugEl.value.trim()||slugify(tTitle));
+    const tCat = catEl.value.trim();
+    const chosen = chipEls.filter(c=>c.classList.contains('active')).map(c=>c.dataset.tag);
+    const extra = tagsEl.value.split(',').map(s=>s.trim()).filter(Boolean);
+    const tTags = [...chosen, ...extra];
+    const tSum = sumEl.value.trim();
+
+    if(!tTitle) throw new Error('Title is required');
+    if(!tSlug) throw new Error('Slug is required');
+    if(!tCat) throw new Error('Category is required');
+    if(!tSum) throw new Error('Summary is required');
+
+    return { title: tTitle, slug: tSlug, category: tCat, tags: tTags, summary: tSum };
+  }
+
+  function showPreview(){
+    try{
+      const obj = gather();
+      out.classList.remove('hidden');
+      out.textContent = JSON.stringify(obj, null, 2);
+    }catch(e){
+      alert(e.message);
+    }
+  }
+
+  $('#btn-preview').addEventListener('click', showPreview);
+
+  $('#btn-copy').addEventListener('click', async ()=>{
+    try{
+      const obj = gather();
+      await navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
+      alert('Copied JSON object to clipboard. Open terms.json and paste into the terms array.');
+    }catch(e){ alert(e.message); }
+  });
+
+  async function loadTermsJson(baseHref){
+    const url = new URL('terms.json', baseHref).href;
+    const r = await fetch(url, {cache:'no-store'});
+    if(!r.ok) throw new Error('Failed to load existing terms.json at '+url);
+    const j = await r.json();
+    if(!j.terms || !Array.isArray(j.terms)) throw new Error('terms.json missing top-level "terms" array');
+    return {url, json:j};
+  }
+
+  function download(filename, text){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type:'application/json'}));
+    a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  $('#btn-dl-terms').addEventListener('click', async ()=>{
+    try{
+      const obj = gather();
+      const baseHref = location.href; // assumes this tool is in same /glossary/ folder tree
+      const {json} = await loadTermsJson(baseHref);
+      // Check for dup slug
+      if(json.terms.some(t=>t.slug===obj.slug)){
+        if(!confirm('A term with this slug already exists. Replace it?')) return;
+        json.terms = json.terms.filter(t=>t.slug!==obj.slug);
+      }
+      json.terms.push(obj);
+      json.terms.sort((a,b)=>a.title.localeCompare(b.title));
+      download('terms.json', JSON.stringify(json, null, 2));
+      alert('Downloaded UPDATED terms.json. Upload this file to your repository (same folder as index.html).');
+    }catch(e){ alert(e.message); }
+  });
+
+  // Term page template generator
+  function termPageHtml(term){
+    const esc = (s)=>String(s||'').replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+    return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${esc(term.title)} · 3D Arts & Animation Terminology Glossary</title>
+  <meta name="description" content="${esc(term.title)} – 3D Arts & Animation glossary term." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <div class="term-wrap">
+    <div class="term-header">
+      <a class="back" href="../index.html">← Back to glossary</a>
+      <span class="category-pill">${esc(term.category)}</span>
+    </div>
+
+    <h1 class="term-title">${esc(term.title)}</h1>
+    <div class="term-meta">Tags: ${esc(term.tags.join(', '))}</div>
+
+    <img class="banner" src="../assets/images/placeholder-banner.jpg" alt="Placeholder banner for ${esc(term.title)}" />
+
+    <div class="term-content">
+      <p>${esc(term.title)} — replace this paragraph with your definition. Keep it short and student-friendly. You can add more sections below.</p>
+
+      <h2>Overview</h2>
+      <p>Provide a concise explanation, when to use it, and common pitfalls.</p>
+
+      <h2>Examples</h2>
+      <p>You can embed images, GIFs, or videos.</p>
+
+      <div class="callout"><strong>Tip:</strong> Keep examples short. Link out to longer tutorials.</div>
+
+      <h3>Embed a YouTube video</h3>
+      <div style="aspect-ratio:16/9; border: 1px solid var(--border); border-radius: 10px; overflow:hidden;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h2>Related Terms</h2>
+      <ul>
+        <li><a href="../index.html">Back to index</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>`;
+  }
+
+  $('#btn-dl-page').addEventListener('click', ()=>{
+    try{
+      const obj = gather();
+      const html = termPageHtml(obj);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([html], {type:'text/html'}));
+      a.download = obj.slug + '.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      alert('Downloaded term page HTML. Upload it to glossary/terms/'+obj.slug+'.html');
+    }catch(e){ alert(e.message); }
+  });
+
+  // ==== Method B: Direct commit to GitHub (optional) ====
+  async function githubGetFile({owner, repo, path, branch, token}){
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(branch)}`;
+    const r = await fetch(url, {headers:{'Accept':'application/vnd.github+json','Authorization': token?`Bearer ${token}`:undefined}});
+    if(!r.ok) throw new Error('GitHub GET failed: '+r.status+' '+(await r.text()));
+    return await r.json(); // { content, sha, ... }
+  }
+  async function githubPutFile({owner, repo, path, branch, token, content, sha, message}){
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+    const body = { message, content: btoa(unescape(encodeURIComponent(content))), branch, sha };
+    const r = await fetch(url, {method:'PUT', headers:{'Accept':'application/vnd.github+json','Authorization': `Bearer ${token}`}, body: JSON.stringify(body)});
+    if(!r.ok) throw new Error('GitHub PUT failed: '+r.status+' '+(await r.text()));
+    return await r.json();
+  }
+
+  $('#btn-commit').addEventListener('click', async ()=>{
+    const status = $('#commitStatus');
+    status.textContent = '';
+    try{
+      const term = gather();
+      const [owner, repo] = ($('#repo').value.trim()||'').split('/');
+      const branch = $('#branch').value.trim();
+      const token = $('#token').value.trim();
+      const basePath = $('#basePath').value.replace(/\/$/,'');
+      if(!owner||!repo) throw new Error('Repo must be like owner/name');
+      if(!branch) throw new Error('Branch is required');
+      if(!token) throw new Error('Token is required');
+
+      // 1) Load existing terms.json
+      status.textContent = 'Loading current terms.json…';
+      const termsPath = basePath + '/terms.json';
+      const fileMeta = await githubGetFile({owner, repo, path: termsPath, branch, token});
+      const current = JSON.parse(decodeURIComponent(escape(atob(fileMeta.content))));
+      if(!current.terms || !Array.isArray(current.terms)) throw new Error('terms.json missing top-level "terms" array');
+
+      // 2) Merge/replace
+      const without = current.terms.filter(t=>t.slug!==term.slug);
+      without.push(term);
+      without.sort((a,b)=>a.title.localeCompare(b.title));
+      const updated = {terms: without};
+
+      // 3) Commit updated terms.json
+      status.textContent = 'Committing updated terms.json…';
+      await githubPutFile({owner, repo, path: termsPath, branch, token, content: JSON.stringify(updated, null, 2), sha: fileMeta.sha, message: `Add/Update term: ${term.title} (${term.slug})`});
+
+      // 4) Create term HTML if missing
+      const termPath = basePath + '/terms/' + term.slug + '.html';
+      let exists = false; let termSha = undefined;
+      try {
+        const tmeta = await githubGetFile({owner, repo, path: termPath, branch, token});
+        exists = true; termSha = tmeta.sha;
+      } catch(e){ exists = false; }
+
+      status.textContent = exists ? 'Updating existing term page…' : 'Creating term page…';
+      await githubPutFile({owner, repo, path: termPath, branch, token, content: termPageHtml(term), sha: termSha, message: `${exists?'Update':'Add'} term page: ${term.slug}.html`});
+
+      status.textContent = '✅ Done. Refresh your site in ~1–2 minutes.';
+      alert('Committed to GitHub. Pages will update shortly.');
+    }catch(e){
+      console.error(e);
+      status.textContent = '❌ '+e.message;
+      alert(e.message);
+    }
+  });
+
+  </script>
+</body>
+</html>
