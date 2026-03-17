@@ -68,7 +68,15 @@ input[type="search"], select { width: 100%; padding: 10px 12px; border-radius: 1
 .term-content img { max-width: 100%; border-radius: 10px; border: 1px solid var(--border); }
 .callout { background: rgba(124, 255, 183, 0.08); border: 1px solid rgba(124,255,183,0.25); padding: 12px 14px; border-radius: 10px; }
 pre, code { background: #0b0e12; border: 1px solid var(--border); border-radius: 8px; padding: 2px 6px; }
-
+/* Disabled/coming-soon appearance for the action button in the preview */
+.btn:disabled,
+.btn.disabled-coming {
+  background: #2a2f38;            /* grey */
+  color: var(--muted);             /* softer text */
+  border: 1px solid var(--border); /* keep your theme border */
+  cursor: not-allowed;
+  box-shadow: none;                /* ensure it doesn't look elevated */
+}
 @media (max-width: 720px) {
   .controls { grid-template-columns: 1fr; }
 }
