@@ -45,7 +45,7 @@
 <body>
   <div class="wrap">
     <header>
-      <img src="https://awelchmatc.github.io/html-embeds/MADLogo.png" alt="icon">
+      <img src="https://awelchmatc.github.io/html-embeds/MADLogo.png" alt="icon" />
       <div>
         <h1>Instructor Tool · Add Term to <strong>Terminology Glossary</strong></h1>
         <div class="small">Use the buttons below to paste straight into GitHub with correct commas & indentation.</div>
@@ -70,3 +70,270 @@
         <label>Track tags</label>
         <div>
           <div class="chips">
+            <span class="chip" data-tag="3D Art Track"><span class="dot"></span>3D Art Track</span>
+            <span class="chip" data-tag="Animation Track"><span class="dot"></span>Animation Track</span>
+            <span class="chip" data-tag="Common Core"><span class="dot"></span>Common Core</span>
+          </div>
+          <div class="small" style="margin-top:6px">Click a track to toggle. You can add extra tags below.</div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="tags">Extra tags</label>
+        <input id="tags" type="text" placeholder="Comma-separated (e.g., SSS, Skin)" />
+      </div>
+      <div class="row">
+        <label for="summary">1‑sentence summary</label>
+        <textarea id="summary" placeholder="Short student‑friendly description"></textarea>
+      </div>
+      <div class="btns">
+        <button id="btn-preview" class="secondary">Preview JSON</button>
+      </div>
+      <pre id="out" class="hidden"></pre>
+    </section>
+
+    <section class="panel">
+      <h2 style="margin:0 0 10px 0">2) Update methods</h2>
+      <p class="small">Method A gives you paste‑ready snippets for GitHub with the <strong>trailing comma</strong> and <strong>two‑space indentation</strong>.</p>
+
+      <h3>Method A — No credentials</h3>
+      <div class="btns">
+        <button id="btn-copy-array-item" class="good">Copy as array item (with trailing comma)</button>
+        <button id="btn-copy-object" class="secondary">Copy object (no trailing comma)</button>
+        <button id="btn-dl-terms" class="secondary">Download UPDATED terms.json</button>
+        <button id="btn-dl-page" class="secondary">Download new term page (HTML)</button>
+      </div>
+      <div class="small">Tip: Place your cursor in <code>terms.json</code> <em>inside</em> the <code>"terms": [ … ]</code> array, hit <strong>Enter</strong>, then paste.</div>
+
+      <hr style="border-color:var(--border);margin:16px 0">
+
+      <h3>Method B — Commit directly to GitHub (optional)</h3>
+      <div class="small">Paste a fine‑grained token with <strong>Contents: write</strong> on <code>awelchmatc/html-embeds</code>. This runs only in your browser; nothing is stored.</div>
+      <div class="row"><label>Repo</label><input id="repo" type="text" value="awelchmatc/html-embeds" /></div>
+      <div class="row"><label>Branch</label><input id="branch" type="text" value="main" /></div>
+      <div class="row"><label>Token</label><input id="token" type="text" placeholder="ghp_… (fine‑grained PAT)" /></div>
+      <div class="row"><label>Site base path</label><input id="basePath" type="text" value="docs/glossary" /></div>
+      <div class="btns"><button id="btn-commit" class="warn">Commit new term (update terms.json + create term page)</button></div>
+      <div id="commitStatus" class="small"></div>
+    </section>
+  </div>
+
+  <script>
+  const $ = (sel)=>document.querySelector(sel);
+  const out = $('#out');
+  const titleEl = $('#title');
+  const slugEl = $('#slug');
+  const catEl = $('#category');
+  const tagsEl = $('#tags');
+  const sumEl = $('#summary');
+
+  function slugify(s){
+    return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)+/g,'');
+  }
+  titleEl.addEventListener('input',()=>{ if(!slugEl.value) slugEl.value = slugify(titleEl.value); });
+
+  // Track chips
+  const chipEls = Array.from(document.querySelectorAll('.chip'));
+  chipEls.forEach(ch=> ch.addEventListener('click', ()=> ch.classList.toggle('active')));
+
+  function gather(){
+    const tTitle = titleEl.value.trim();
+    const tSlug  = (slugEl.value.trim() || slugify(tTitle));
+    const tCat   = catEl.value.trim();
+    const chosen = chipEls.filter(c=>c.classList.contains('active')).map(c=>c.dataset.tag);
+    const extra  = tagsEl.value.split(',').map(s=>s.trim()).filter(Boolean);
+    const tTags  = [...chosen, ...extra];
+    const tSum   = sumEl.value.trim();
+    if(!tTitle) throw new Error('Title is required');
+    if(!tSlug)  throw new Error('Slug is required');
+    if(!tCat)   throw new Error('Category is required');
+    if(!tSum)   throw new Error('Summary is required');
+    return { title: tTitle, slug: tSlug, category: tCat, tags: tTags, summary: tSum };
+  }
+
+  function toPretty(obj){
+    // Two-space indent, keys in desired order to match your file
+    const ordered = { title: obj.title, slug: obj.slug, category: obj.category, tags: obj.tags, summary: obj.summary };
+    return JSON.stringify(ordered, null, 2);
+  }
+
+  function asArrayItem(obj){
+    // Produce an item ready to paste into the "terms": [ ... ] array
+    // with leading two spaces and a trailing comma after the closing brace.
+    const pretty = toPretty(obj).split('\n');
+    const indented = pretty.map(line => '  ' + line);   // two spaces on every line
+    indented[indented.length-1] = indented[indented.length-1] + ','; // trailing comma
+    return indented.join('\n');
+  }
+
+  function showPreview(){
+    try{ const obj = gather(); out.classList.remove('hidden'); out.textContent = toPretty(obj); }
+    catch(e){ alert(e.message); }
+  }
+  $('#btn-preview').addEventListener('click', showPreview);
+
+  async function copyText(text){ await navigator.clipboard.writeText(text); }
+
+  $('#btn-copy-array-item').addEventListener('click', async ()=>{
+    try{
+      const obj = gather();
+      await copyText(asArrayItem(obj));
+      alert('Copied array item with trailing comma. Place cursor in the terms array, hit Enter, then paste.');
+    }catch(e){ alert(e.message); }
+  });
+
+  $('#btn-copy-object').addEventListener('click', async ()=>{
+    try{
+      const obj = gather();
+      await copyText(toPretty(obj));
+      alert('Copied object (no trailing comma).');
+    }catch(e){ alert(e.message); }
+  });
+
+  // === Download UPDATED terms.json (merges with live file at same path) ===
+  async function loadTermsJson(baseHref){
+    const url = new URL('terms.json', baseHref).href;
+    const r = await fetch(url, {cache:'no-store'});
+    if(!r.ok) throw new Error('Failed to load terms.json at '+url);
+    const j = await r.json();
+    if(!j.terms || !Array.isArray(j.terms)) throw new Error('terms.json missing top-level "terms" array');
+    return {url, json:j};
+  }
+  function download(filename, text){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type:'application/json'}));
+    a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+  }
+  $('#btn-dl-terms').addEventListener('click', async ()=>{
+    try{
+      const obj = gather();
+      const baseHref = location.href; // assumes tool is under the same /glossary/ path
+      const {json} = await loadTermsJson(baseHref);
+      if(json.terms.some(t=>t.slug===obj.slug)){
+        if(!confirm('This slug exists. Replace it?')) return;
+        json.terms = json.terms.filter(t=>t.slug!==obj.slug);
+      }
+      json.terms.push(obj);
+      json.terms.sort((a,b)=>a.title.localeCompare(b.title));
+      download('terms.json', JSON.stringify(json, null, 2));
+      alert('Downloaded UPDATED terms.json. Upload to the same folder as index.html.');
+    }catch(e){ alert(e.message); }
+  });
+
+  // === Generate a new term page HTML file ===
+  function termPageHtml(term){
+    const esc = (s)=>String(s||'').replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+    return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${esc(term.title)} · 3D Arts & Animation Terminology Glossary</title>
+  <meta name="description" content="${esc(term.title)} – 3D Arts & Animation glossary term." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <div class="term-wrap">
+    <div class="term-header">
+      <a class="back" href="../index.html">← Back to glossary</a>
+      <span class="category-pill">${esc(term.category)}</span>
+    </div>
+    <h1 class="term-title">${esc(term.title)}</h1>
+    <div class="term-meta">Tags: ${esc((term.tags||[]).join(', '))}</div>
+    <img class="banner" src="../assets/images/placeholder-banner.jpg" alt="Placeholder banner for ${esc(term.title)}" />
+    <div class="term-content">
+      <p>${esc(term.title)} — replace this paragraph with your definition. Keep it short and student-friendly. You can add more sections below.</p>
+    </div>
+  </div>
+</body>
+</html>`;
+  }
+  $('#btn-dl-page').addEventListener('click', ()=>{
+    try{
+      const obj = gather();
+      const html = termPageHtml(obj);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([html], {type:'text/html'}));
+      a.download = obj.slug + '.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      alert('Downloaded term page HTML. Upload it to glossary/terms/'+obj.slug+'.html');
+    }catch(e){ alert(e.message); }
+  });
+
+  // === Optional: Direct commit to GitHub ===
+  async function githubGetFile({owner, repo, path, branch, token}){
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}?ref=${encodeURIComponent(branch)}`;
+    const headers = {'Accept':'application/vnd.github+json'};
+    if(token) headers['Authorization'] = `Bearer ${token}`;
+    const r = await fetch(url, {headers});
+    if(!r.ok) throw new Error('GitHub GET failed: '+r.status+' '+(await r.text()));
+    return await r.json(); // { content, sha, ... }
+  }
+  async function githubPutFile({owner, repo, path, branch, token, content, sha, message}){
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+    const body = { message, content: btoa(unescape(encodeURIComponent(content))), branch, sha };
+    const r = await fetch(url, {
+      method:'PUT',
+      headers:{'Accept':'application/vnd.github+json','Authorization': `Bearer ${token}`},
+      body: JSON.stringify(body)
+    });
+    if(!r.ok) throw new Error('GitHub PUT failed: '+r.status+' '+(await r.text()));
+    return await r.json();
+  }
+
+  $('#btn-commit').addEventListener('click', async ()=>{
+    const status = $('#commitStatus'); status.textContent = '';
+    try{
+      const term = gather();
+      const [owner, repo] = ($('#repo').value.trim()||'').split('/');
+      const branch = $('#branch').value.trim();
+      const token  = $('#token').value.trim();
+      const basePath = $('#basePath').value.replace(/\/$/,'');
+      if(!owner||!repo) throw new Error('Repo must be like owner/name');
+      if(!branch) throw new Error('Branch is required');
+      if(!token)  throw new Error('Token is required');
+
+      // 1) Load terms.json
+      status.textContent = 'Loading current terms.json…';
+      const termsPath = basePath + '/terms.json';
+      const fileMeta = await githubGetFile({owner, repo, path: termsPath, branch, token});
+      const current  = JSON.parse(decodeURIComponent(escape(atob(fileMeta.content))));
+      if(!current.terms || !Array.isArray(current.terms)) throw new Error('terms.json missing top-level "terms" array');
+
+      // 2) Merge/replace
+      const without = current.terms.filter(t=>t.slug!==term.slug);
+      without.push(term);
+      without.sort((a,b)=>a.title.localeCompare(b.title));
+      const updated = {terms: without};
+
+      // 3) Commit updated terms.json
+      status.textContent = 'Committing updated terms.json…';
+      await githubPutFile({
+        owner, repo, path: termsPath, branch, token,
+        content: JSON.stringify(updated, null, 2),
+        sha: fileMeta.sha,
+        message: `Add/Update term: ${term.title} (${term.slug})`
+      });
+
+      // 4) Create/update term page
+      const termPath = basePath + '/terms/' + term.slug + '.html';
+      let exists=false, termSha;
+      try{ const tmeta = await githubGetFile({owner, repo, path: termPath, branch, token}); exists=true; termSha=tmeta.sha; }catch(e){ exists=false; }
+      status.textContent = exists ? 'Updating existing term page…' : 'Creating term page…';
+      await githubPutFile({
+        owner, repo, path: termPath, branch, token,
+        content: termPageHtml(term), sha: termSha,
+        message: `${exists?'Update':'Add'} term page: ${term.slug}.html`
+      });
+
+      status.textContent = '✅ Done. Refresh your site in ~1–2 minutes.';
+      alert('Committed to GitHub. Pages will update shortly.');
+    }catch(e){
+      console.error(e);
+      status.textContent = '❌ '+e.message;
+      alert(e.message);
+    }
+  });
+  </script>
+</body>
+</html>
+``
