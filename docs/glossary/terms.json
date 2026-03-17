@@ -24,6 +24,19 @@
     ],
     "summary": "SubD is short for \"Subdivision\", a modeling technique in 3D modeling that transforms a low-poly model into a high-poly model by dividing its surface into smaller, smoother polygons. \n\nThis modeling technique is for making high-resolution models, by manipulating a lower-resolution \"cage\" model and using software to subdivide for a smoother surface. While common in video game art for \"Hard Surface\" assets, SubD is paramount in Film/\"off-line\" rendering, as it provides \"infinite detail\", as no matter how close you zoom in to a curve for any particular film shot, you can always just divide the cage another time to make it smoother for that shot. While overkill for many game assets, it saves a ton of potential lost work in the event one needs to \"get closer\" to an asset than originally planned.\n\nSubdividing increases the number of vertices on the model, making curves more rounded. Usually each subdivision level increases the vertex count 4x the original count.\n\nFor game artists, \"high-poly hard-surface\" usually means creating mechanical/constructed models, which are used to bake into Normal Maps and other types of textures, which are in turn used on lower-resolution game-friendly models.\n\nSubdivision surfaces can also be used for organic shapes.\n\nNot to be confused with SmoothingGroups. Sometimes the term \"box modeling\" is used, though this applies only to the cage modeling process, not to the subdivision."
   },
+      {
+    "title": "UV",
+    "slug": "UV",
+    "category": "Modeling, Texturing, Materials, Shading",
+    "tags": [
+      "3D Art Track",
+      "Tiling Texture",
+      "Trim Sheet",
+      "Unique UV",
+      "UDIM"
+    ],
+    "summary": "UVs are coordinates that tell a game engine how to place a 2D image (a texture) onto a 3D model.\n\nU and V are directions on a flat texture (left–right and up–down).\nX, Y, Z are already used for 3D directions, so the letters U and V are used for 2D texture directions.\n\nWhat Are “UVs” in Game Development?\nThink of a 3D model like a candy bar wrapped in printed foil.\nThe wrapper is the texture (the image), and the candy bar is the 3D model.\nBut how do you wrap a flat image around a 3D shape?\nThat’s where UVs come in.\n\nTypes of UVs:\n- Tiling textures, trim sheets, and unique UVs are three different ways of adding detail to 3D game assets, each with its own purpose. Tiling textures use a small image that repeats across a surface, which is great for large areas like walls, floors, or rocks because it saves memory and still looks detailed—though you have to avoid obvious repeating patterns. \n- Trim sheets are special texture maps filled with reusable “strips” of detail—like metal edges, panel lines, or decorative borders—that artists align their model’s UVs to, making it fast and efficient to texture many assets in a consistent style. Trim sheets are usually defined by their ability to tile, but only in one direction (U or V)\n- Unique UVs, on the other hand, give each asset its own custom, non‑repeating texture layout, which allows for very specific details, decals, dirt, or story elements—but it takes more time to make and uses more texture memory. Together, these techniques let game artists balance quality, efficiency, and performance depending on the asset’s role."
+  },
     {
     "title": "Baking",
     "slug": "Baking",
