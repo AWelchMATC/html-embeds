@@ -188,13 +188,6 @@
       "summary": "Physically Based Rendering approach using energy-conserving materials."
     },
     {
-      "title": "Topology",
-      "slug": "topology",
-      "category": "Modeling",
-      "tags": ["Quads", "Edge Flow", "3D Art Track"],
-      "summary": "Arrangement and flow of polygons that affect deformation and shading."
-    },
-    {
       "title": "IK vs. FK",
       "slug": "ik-vs-fk",
       "category": "Animation",
