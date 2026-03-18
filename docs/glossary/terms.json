@@ -8,6 +8,43 @@
       "summary": "Base color map without lighting, shadow, or highlights."
     },
       {
+    "title": "Repoussoir",
+    "slug": "Repoussoir",
+    "category": "2D Fundamentals",
+    "tags": [
+      "Common Core",
+      "Design",
+      "Theory",
+      "Composition"
+    ],
+    "summary": "The French word “repoussoir” refers to an object placed in the foreground of a composition that enhances the illusion of distance with other objects. Example here would be the flowering plant in the lower left and the family group watching from the foreground. This is a compositional tool."  
+    ],
+    {
+    "title": "Principles of Design",
+    "slug": "PrinciplesOfDesign",
+    "category": "2D Fundamentals",
+    "tags": [
+      "Common Core",
+      "Design",
+      "Theory",
+      "Composition"
+    ],
+    "summary": "The principles of design in art are foundational concepts that guide the creation and evaluation of artworks, ensuring visual harmony, balance, and cohesion. These principles include balance, contrast, emphasis, movement, pattern, rhythm, and unity/variety. Each principle plays a pivotal role in organizing or arranging the visual elements in a design, ultimately shaping the viewer's experience. For a deeper understanding and exploration of how these principles relate to visual aesthetics in art and design, refer to the chapter on Visual Aesthetics from the Encyclopedia of Human-Computer Interaction. This comprehensive resource provides insights into the interconnectedness of design principles in various mediums."
+  },
+  {
+    "title": "Depth of field",
+    "slug": "DepthOfField",
+    "category": "Cinematography",
+    "tags": [
+      "Common Core",
+      "Design",
+      "Theory",
+      "Composition",
+      "Photography"
+    ],
+    "summary": "Depth of field is the range of distance within an image that appears acceptably sharp. A shallow depth of field isolates a subject with strong foreground and background blur, while a deep depth of field keeps everything from near to far in focus."
+  },
+      {
     "title": "SubD",
     "slug": "SubD",
     "category": "Modeling",
