@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Photo Scan</title>
+<meta name="color-scheme" content="dark" />
+<style>
+:root {
+ color-scheme: dark;
+ --bg: #0b0d10;
+ --panel: #121519;
+ --card: #171b21;
+ --text: #e9eef5;
+ --muted: #a8b0bb;
+ --accent: #5ab0f6;
+ --border: #242b34;
+}
+* { box-sizing: border-box; }
+body {
+ margin: 0; background: var(--bg); color: var(--text);
+ font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+}
+header {
+ position: sticky; top: 0; z-index: 10;
+ background: linear-gradient(180deg, rgba(18,21,25,.95), rgba(18,21,25,.85));
+ backdrop-filter: blur(6px);
+ border-bottom: 1px solid var(--border);
+ padding: 14px 20px;
+}
+h1 { margin: 0 0 8px 0; font-size: 18px; font-weight: 600; }
+.brand { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.search { width: 100%; max-width: 720px; }
+.search input {
+ width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+ background: var(--panel); color: var(--text);
+}
+.grid { display: grid; gap: 14px; padding: 18px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.card {
+ background: var(--card); border: 1px solid var(--border);
+ border-radius: 10px; overflow: hidden;
+ display: flex; flex-direction: column; min-height: 220px;
+ transition: border-color .15s ease;
+}
+.card:hover { border-color: var(--accent); }
+.card > a { display:block; text-decoration:none; }
+.thumb { aspect-ratio: 16/9; background: #0a0b0d center/cover no-repeat; border-bottom: 1px solid var(--border); }
+.meta { padding: 10px 12px; display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.title { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.open {
+ color: var(--accent); font-size: 12px; text-decoration: none; border: 1px solid var(--border);
+ padding: 6px 8px; border-radius: 6px; background: #0f1318;
+}
+.open:hover { background: #141a21; }
+footer { padding: 30px 20px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<header>
+ <div class="brand">Madison College 3D Arts & Anim Bookmarks</div>
+ <h1>Photo Scan</h1>
+ <div class="search"><input id="q" type="search" placeholder="Filter by title or URL…" /></div>
+</header>
+<main><section class="grid">
+<article class="card" data-title="https://www.artstation.com/artwork/NGWmg5" data-url="https://www.artstation.com/artwork/NGWmg5">
+ <a href="https://www.artstation.com/artwork/NGWmg5" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/056/023/535/large/mason-menzies-malletwoodenantique001-main3.jpg?1668279534')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/NGWmg5">https://www.artstation.com/artwork/NGWmg5</div>
+  <a class="open" href="https://www.artstation.com/artwork/NGWmg5" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/XBLRlw" data-url="https://www.artstation.com/artwork/XBLRlw">
+ <a href="https://www.artstation.com/artwork/XBLRlw" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/023/072/597/large/sophie-williams-img-20191215-111621.jpg?1577983684')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/XBLRlw">https://www.artstation.com/artwork/XBLRlw</div>
+  <a class="open" href="https://www.artstation.com/artwork/XBLRlw" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/xYYJX2" data-url="https://www.artstation.com/artwork/xYYJX2">
+ <a href="https://www.artstation.com/artwork/xYYJX2" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/043/868/271/large/esger-van-der-post-oiler-can-render-00.jpg?1638465015')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/xYYJX2">https://www.artstation.com/artwork/xYYJX2</div>
+  <a class="open" href="https://www.artstation.com/artwork/xYYJX2" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/n0xLq4" data-url="https://www.artstation.com/artwork/n0xLq4">
+ <a href="https://www.artstation.com/artwork/n0xLq4" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/070/062/075/large/alex-tang-scale.jpg?1701688039')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/n0xLq4">https://www.artstation.com/artwork/n0xLq4</div>
+  <a class="open" href="https://www.artstation.com/artwork/n0xLq4" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/LeGLbA" data-url="https://www.artstation.com/artwork/LeGLbA">
+ <a href="https://www.artstation.com/artwork/LeGLbA" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/053/109/433/large/alex-tang-alexander-tang-pt-ref.jpg?1661437313')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/LeGLbA">https://www.artstation.com/artwork/LeGLbA</div>
+  <a class="open" href="https://www.artstation.com/artwork/LeGLbA" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/Za6Q4G" data-url="https://www.artstation.com/artwork/Za6Q4G">
+ <a href="https://www.artstation.com/artwork/Za6Q4G" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://media.sketchfab.com/models/402123d6abaf4ca7961bc9a34734ed22/thumbnails/9822da6dd6ba488090d6205dd216dee0/b49d821f3be94506af4b5533ff791f37.jpeg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/Za6Q4G">https://www.artstation.com/artwork/Za6Q4G</div>
+  <a class="open" href="https://www.artstation.com/artwork/Za6Q4G" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/Je0Orz" data-url="https://www.artstation.com/artwork/Je0Orz">
+ <a href="https://www.artstation.com/artwork/Je0Orz" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/053/220/237/large/phil-lee-untitled-006.jpg?1661714562')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/Je0Orz">https://www.artstation.com/artwork/Je0Orz</div>
+  <a class="open" href="https://www.artstation.com/artwork/Je0Orz" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/KalRdy" data-url="https://www.artstation.com/artwork/KalRdy">
+ <a href="https://www.artstation.com/artwork/KalRdy" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/025/079/272/large/scan-geeks-037-jacktool-presentation-wide.jpg?1584541391')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/KalRdy">https://www.artstation.com/artwork/KalRdy</div>
+  <a class="open" href="https://www.artstation.com/artwork/KalRdy" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/Jl2B3R" data-url="https://www.artstation.com/artwork/Jl2B3R">
+ <a href="https://www.artstation.com/artwork/Jl2B3R" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/024/194/376/large/scan-geeks-028-pastry-11-presentation-wide.jpg?1581605459')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/Jl2B3R">https://www.artstation.com/artwork/Jl2B3R</div>
+  <a class="open" href="https://www.artstation.com/artwork/Jl2B3R" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/A9mbYV" data-url="https://www.artstation.com/artwork/A9mbYV">
+ <a href="https://www.artstation.com/artwork/A9mbYV" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/024/289/587/large/scan-geeks-022-lettuce-presentation-square.jpg?1581946840')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/A9mbYV">https://www.artstation.com/artwork/A9mbYV</div>
+  <a class="open" href="https://www.artstation.com/artwork/A9mbYV" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/N5O2WD" data-url="https://www.artstation.com/artwork/N5O2WD">
+ <a href="https://www.artstation.com/artwork/N5O2WD" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/024/142/000/large/scan-geeks-025-cabbage-presentation-wide.jpg?1581446614')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/N5O2WD">https://www.artstation.com/artwork/N5O2WD</div>
+  <a class="open" href="https://www.artstation.com/artwork/N5O2WD" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Photogrammetry - Sewing machine "Singer" ~1907" data-url="https://www.artstation.com/artwork/DxVwbR">
+ <a href="https://www.artstation.com/artwork/DxVwbR" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/model3ds/images/020/186/337/large/vladislav-konovalov-42393137a14f4d409bbaeca53a5eef99.jpg?1566759697')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Photogrammetry - Sewing machine "Singer" ~1907">ArtStation - Photogrammetry - Sewing machine "Singer" ~1907</div>
+  <a class="open" href="https://www.artstation.com/artwork/DxVwbR" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/P62GAZ" data-url="https://www.artstation.com/artwork/P62GAZ">
+ <a href="https://www.artstation.com/artwork/P62GAZ" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/082/090/793/large/soyoon-bae-frame-30.jpg?1732040470')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/P62GAZ">https://www.artstation.com/artwork/P62GAZ</div>
+  <a class="open" href="https://www.artstation.com/artwork/P62GAZ" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Old Rusty Stanley Plane" data-url="https://www.artstation.com/artwork/dKOxVW">
+ <a href="https://www.artstation.com/artwork/dKOxVW" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/059/817/234/large/ben-loader-ben-loader-ls-turntable-v005-0019.jpg?1677190158')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Old Rusty Stanley Plane">ArtStation - Old Rusty Stanley Plane</div>
+  <a class="open" href="https://www.artstation.com/artwork/dKOxVW" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/e0D5l3" data-url="https://www.artstation.com/artwork/e0D5l3">
+ <a href="https://www.artstation.com/artwork/e0D5l3" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/016/772/215/large/polygonal-miniatures-popup-04.jpg?1553427893')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/e0D5l3">https://www.artstation.com/artwork/e0D5l3</div>
+  <a class="open" href="https://www.artstation.com/artwork/e0D5l3" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/mqqvGZ" data-url="https://www.artstation.com/artwork/mqqvGZ">
+ <a href="https://www.artstation.com/artwork/mqqvGZ" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/013/519/507/large/christian-kuchmeister-dampfhammer.jpg?1575224845')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/mqqvGZ">https://www.artstation.com/artwork/mqqvGZ</div>
+  <a class="open" href="https://www.artstation.com/artwork/mqqvGZ" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/3omrB2" data-url="https://www.artstation.com/artwork/3omrB2">
+ <a href="https://www.artstation.com/artwork/3omrB2" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/017/393/211/large/anthony-lowe-screenshot007.jpg?1555793281')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/3omrB2">https://www.artstation.com/artwork/3omrB2</div>
+  <a class="open" href="https://www.artstation.com/artwork/3omrB2" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Fishing bear fountain" data-url="https://www.artstation.com/artwork/PmROJ1">
+ <a href="https://www.artstation.com/artwork/PmROJ1" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/082/658/555/large/tatiana-baeva-tatiana-baeva-01.jpg?1733568060')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Fishing bear fountain">ArtStation - Fishing bear fountain</div>
+  <a class="open" href="https://www.artstation.com/artwork/PmROJ1" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/1NXWV8" data-url="https://www.artstation.com/artwork/1NXWV8">
+ <a href="https://www.artstation.com/artwork/1NXWV8" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/083/880/361/large/ludovico-antonicelli-ludovico-antonicelli-flack85-gray.jpg?1737002802')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/1NXWV8">https://www.artstation.com/artwork/1NXWV8</div>
+  <a class="open" href="https://www.artstation.com/artwork/1NXWV8" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Mortar Turntable Scan" data-url="https://www.artstation.com/artwork/WmR4Jy">
+ <a href="https://www.artstation.com/artwork/WmR4Jy" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/057/633/730/large/ludovico-antonicelli-thumb.jpg?1672212530')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Mortar Turntable Scan">ArtStation - Mortar Turntable Scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/WmR4Jy" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/g0xd1P" data-url="https://www.artstation.com/artwork/g0xd1P">
+ <a href="https://www.artstation.com/artwork/g0xd1P" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/065/731/336/large/patrick-bormann-bubblegum-00000.jpg?1691074620')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/g0xd1P">https://www.artstation.com/artwork/g0xd1P</div>
+  <a class="open" href="https://www.artstation.com/artwork/g0xd1P" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/PemVg8" data-url="https://www.artstation.com/artwork/PemVg8">
+ <a href="https://www.artstation.com/artwork/PemVg8" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/043/307/713/large/patrick-bormann-waspnest.jpg?1636912989')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/PemVg8">https://www.artstation.com/artwork/PemVg8</div>
+  <a class="open" href="https://www.artstation.com/artwork/PemVg8" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Wooden Cabinet - Games Artist" data-url="https://gamesartist.co.uk/wooden-cabinet/">
+ <a href="https://gamesartist.co.uk/wooden-cabinet/" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://gamesartist.lon1.digitaloceanspaces.com/uploads/2024/09/cui-xiaoyu-highresscreenshot00013-scaled.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Wooden Cabinet - Games Artist">Wooden Cabinet - Games Artist</div>
+  <a class="open" href="https://gamesartist.co.uk/wooden-cabinet/" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/K3PkKr" data-url="https://www.artstation.com/artwork/K3PkKr">
+ <a href="https://www.artstation.com/artwork/K3PkKr" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/083/667/430/large/jeetendra-sharma-6.jpg?1736496121')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/K3PkKr">https://www.artstation.com/artwork/K3PkKr</div>
+  <a class="open" href="https://www.artstation.com/artwork/K3PkKr" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/WXrWr2" data-url="https://www.artstation.com/artwork/WXrWr2">
+ <a href="https://www.artstation.com/artwork/WXrWr2" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/085/259/940/large/lakecho-studio-dafoku-preview-b-10k.jpg?1740386578')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/WXrWr2">https://www.artstation.com/artwork/WXrWr2</div>
+  <a class="open" href="https://www.artstation.com/artwork/WXrWr2" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Laz.EE / Physical Kitbash Maquette" data-url="https://www.artstation.com/artwork/2B15kB">
+ <a href="https://www.artstation.com/artwork/2B15kB" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/085/568/307/large/arnaud-caubel-lazee-arnocob-kitbash-01as.jpg?1741111328')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Laz.EE / Physical Kitbash Maquette">ArtStation - Laz.EE / Physical Kitbash Maquette</div>
+  <a class="open" href="https://www.artstation.com/artwork/2B15kB" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/Ez4mN0" data-url="https://www.artstation.com/artwork/Ez4mN0">
+ <a href="https://www.artstation.com/artwork/Ez4mN0" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/086/121/387/large/quentin-godillon-03.jpg?1742421314')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/Ez4mN0">https://www.artstation.com/artwork/Ez4mN0</div>
+  <a class="open" href="https://www.artstation.com/artwork/Ez4mN0" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/vb3v8x" data-url="https://www.artstation.com/artwork/vb3v8x">
+ <a href="https://www.artstation.com/artwork/vb3v8x" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/088/198/507/large/dominik-mason-1.jpg?1747685657')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/vb3v8x">https://www.artstation.com/artwork/vb3v8x</div>
+  <a class="open" href="https://www.artstation.com/artwork/vb3v8x" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/LRboyw" data-url="https://www.artstation.com/artwork/LRboyw">
+ <a href="https://www.artstation.com/artwork/LRboyw" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/067/606/619/large/dominik-mason-17.jpg?1695765082')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/LRboyw">https://www.artstation.com/artwork/LRboyw</div>
+  <a class="open" href="https://www.artstation.com/artwork/LRboyw" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/a0Z1zJ" data-url="https://www.artstation.com/artwork/a0Z1zJ">
+ <a href="https://www.artstation.com/artwork/a0Z1zJ" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/088/909/973/large/qian-li-baimo.jpg?1749532089')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/a0Z1zJ">https://www.artstation.com/artwork/a0Z1zJ</div>
+  <a class="open" href="https://www.artstation.com/artwork/a0Z1zJ" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/L4eXxw" data-url="https://www.artstation.com/artwork/L4eXxw">
+ <a href="https://www.artstation.com/artwork/L4eXxw" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/079/859/066/large/christoph-schindelar-clay-comparison-detail.jpg?1726007817')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/L4eXxw">https://www.artstation.com/artwork/L4eXxw</div>
+  <a class="open" href="https://www.artstation.com/artwork/L4eXxw" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/V23eJ4" data-url="https://www.artstation.com/artwork/V23eJ4">
+ <a href="https://www.artstation.com/artwork/V23eJ4" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/085/817/738/large/jonathan-turner-dasboot-leftsidemain.jpg?1741714967')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/V23eJ4">https://www.artstation.com/artwork/V23eJ4</div>
+  <a class="open" href="https://www.artstation.com/artwork/V23eJ4" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/XgLa33" data-url="https://www.artstation.com/artwork/XgLa33">
+ <a href="https://www.artstation.com/artwork/XgLa33" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/089/090/805/large/giovanni-araiza-giovanni-araiza-realitycapture-legominifig-screengrab.jpg?1750027910')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/XgLa33">https://www.artstation.com/artwork/XgLa33</div>
+  <a class="open" href="https://www.artstation.com/artwork/XgLa33" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Photogrammetry of the main doors of the Cathedral of Oviedo" data-url="https://www.artstation.com/artwork/nJxNBO">
+ <a href="https://www.artstation.com/artwork/nJxNBO" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/090/362/694/large/jose-oviedo1.jpg?1753716526')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Photogrammetry of the main doors of the Cathedral of Oviedo">ArtStation - Photogrammetry of the main doors of the Cathedral of Oviedo</div>
+  <a class="open" href="https://www.artstation.com/artwork/nJxNBO" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Mayan Idol" data-url="https://www.artstation.com/artwork/kDroPK">
+ <a href="https://www.artstation.com/artwork/kDroPK" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/marmosets/images/036/194/326/large/diego-vasquez-mview-image20210329-25747-2m6ysy.jpg?1616991987')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Mayan Idol">ArtStation - Mayan Idol</div>
+  <a class="open" href="https://www.artstation.com/artwork/kDroPK" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Leão - Suporte de Arca Tumular" data-url="https://www.artstation.com/artwork/rNJXE">
+ <a href="https://www.artstation.com/artwork/rNJXE" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/model3ds/images/008/303/021/large/carlos-carpetudo-720x405.jpg?1511878031')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Leão - Suporte de Arca Tumular">ArtStation - Leão - Suporte de Arca Tumular</div>
+  <a class="open" href="https://www.artstation.com/artwork/rNJXE" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Túmulo da infanta desconhecida" data-url="https://www.artstation.com/artwork/03orq5">
+ <a href="https://www.artstation.com/artwork/03orq5" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/046/551/294/large/carlos-carpetudo-carlos-carpetudo-tumuloinfanta-render01web.jpg?1645395968')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Túmulo da infanta desconhecida">ArtStation - Túmulo da infanta desconhecida</div>
+  <a class="open" href="https://www.artstation.com/artwork/03orq5" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/KeeovR" data-url="https://www.artstation.com/artwork/KeeovR">
+ <a href="https://www.artstation.com/artwork/KeeovR" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://media.sketchfab.com/models/32a32aae21ce429e9e2b6b2ee1b744e9/thumbnails/f42108dfa11d4ed590286a0f82a2c23c/5f81b4265ce0475cbd1dd3e63278e80a.jpeg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/KeeovR">https://www.artstation.com/artwork/KeeovR</div>
+  <a class="open" href="https://www.artstation.com/artwork/KeeovR" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Mixed firewood branches free scan" data-url="https://www.artstation.com/artwork/XgkB3y">
+ <a href="https://www.artstation.com/artwork/XgkB3y" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/model3ds/images/073/476/905/large/pavel-matousek-bbfccde08fcd458d8d5ab743a97734d1.jpg?1709743963')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Mixed firewood branches free scan">ArtStation - Mixed firewood branches free scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/XgkB3y" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Skeleton excavation dataset" data-url="https://www.artstation.com/artwork/QnE2d4">
+ <a href="https://www.artstation.com/artwork/QnE2d4" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/model3ds/images/046/663/142/large/pavel-matousek-b21b7906989b491eb427d718060de963.jpg?1645645267')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Skeleton excavation dataset">ArtStation - Skeleton excavation dataset</div>
+  <a class="open" href="https://www.artstation.com/artwork/QnE2d4" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Brick facade of a residential building" data-url="https://www.artstation.com/artwork/n0laB1">
+ <a href="https://www.artstation.com/artwork/n0laB1" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/model3ds/images/068/958/576/large/scanto3d-lukasz-przedpelski-b9008266b15b43f0b143be8564da51c0.jpg?1699009174')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Brick facade of a residential building">ArtStation - Brick facade of a residential building</div>
+  <a class="open" href="https://www.artstation.com/artwork/n0laB1" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/Oowr98" data-url="https://www.artstation.com/artwork/Oowr98">
+ <a href="https://www.artstation.com/artwork/Oowr98" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/030/744/358/large/aaron-bookout-facemask-headscan-rawdata.jpg?1601510271')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/Oowr98">https://www.artstation.com/artwork/Oowr98</div>
+  <a class="open" href="https://www.artstation.com/artwork/Oowr98" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Creating a Scene With Dozens of Props Using Photogrammetry & UE5" data-url="https://80.lv/articles/antique-shop-how-to-make-a-scene-with-dozens-of-props-using-photogrammetry-ue5">
+ <a href="https://80.lv/articles/antique-shop-how-to-make-a-scene-with-dozens-of-props-using-photogrammetry-ue5" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdn.80.lv/api/upload/meta/28631/images/64e488121ca3c/contain_1200x630.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Creating a Scene With Dozens of Props Using Photogrammetry & UE5">Creating a Scene With Dozens of Props Using Photogrammetry & UE5</div>
+  <a class="open" href="https://80.lv/articles/antique-shop-how-to-make-a-scene-with-dozens-of-props-using-photogrammetry-ue5" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/ArYPD5" data-url="https://www.artstation.com/artwork/ArYPD5">
+ <a href="https://www.artstation.com/artwork/ArYPD5" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/053/662/195/large/william-butterworth-luggage-02-2.jpg?1662726617')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/ArYPD5">https://www.artstation.com/artwork/ArYPD5</div>
+  <a class="open" href="https://www.artstation.com/artwork/ArYPD5" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Multimeter RAW Scan" data-url="https://www.artstation.com/artwork/ZGmq1m">
+ <a href="https://www.artstation.com/artwork/ZGmq1m" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/036/507/450/large/kanistra-studio-5.jpg?1617854983')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Multimeter RAW Scan">ArtStation - Multimeter RAW Scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/ZGmq1m" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Old Rusty F-1 Granade Photogrammetry scan" data-url="https://www.artstation.com/artwork/KeVgeR">
+ <a href="https://www.artstation.com/artwork/KeVgeR" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/model3ds/images/070/175/229/large/kanistra-studio-64a342d139ca42cbbb5cf1fbbeda9dfd.jpg?1701915183')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Old Rusty F-1 Granade Photogrammetry scan">ArtStation - Old Rusty F-1 Granade Photogrammetry scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/KeVgeR" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/kQx4LA" data-url="https://www.artstation.com/artwork/kQx4LA">
+ <a href="https://www.artstation.com/artwork/kQx4LA" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://media.sketchfab.com/models/50388457cd7743a281179c4fa7361f5a/thumbnails/16c2ca3e0f9f480f9046faf70b10324f/193fa062715a4264af5c3b3354113804.jpeg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/kQx4LA">https://www.artstation.com/artwork/kQx4LA</div>
+  <a class="open" href="https://www.artstation.com/artwork/kQx4LA" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/LRrGrl" data-url="https://www.artstation.com/artwork/LRrGrl">
+ <a href="https://www.artstation.com/artwork/LRrGrl" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/064/511/351/large/kanistra-studio-1.jpg?1688080262')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/LRrGrl">https://www.artstation.com/artwork/LRrGrl</div>
+  <a class="open" href="https://www.artstation.com/artwork/LRrGrl" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - WWII German Ammo Container Photogrammetry Scan" data-url="https://www.artstation.com/artwork/RyVKOA">
+ <a href="https://www.artstation.com/artwork/RyVKOA" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/069/028/800/large/kanistra-studio-kanistra-studio-ms4.jpg?1699198117')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - WWII German Ammo Container Photogrammetry Scan">ArtStation - WWII German Ammo Container Photogrammetry Scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/RyVKOA" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Baofeng Walkie-Talkie RAW Scan" data-url="https://www.artstation.com/artwork/VgRYen">
+ <a href="https://www.artstation.com/artwork/VgRYen" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/036/509/200/large/kanistra-studio-kanistra-studio-qux.jpg?1617862183')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Baofeng Walkie-Talkie RAW Scan">ArtStation - Baofeng Walkie-Talkie RAW Scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/VgRYen" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Rotary Hammer RAW Scan" data-url="https://www.artstation.com/artwork/lxdDEO">
+ <a href="https://www.artstation.com/artwork/lxdDEO" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/036/398/731/large/kanistra-studio-9.jpg?1617578211')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Rotary Hammer RAW Scan">ArtStation - Rotary Hammer RAW Scan</div>
+  <a class="open" href="https://www.artstation.com/artwork/lxdDEO" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/xYxwXY" data-url="https://www.artstation.com/artwork/xYxwXY">
+ <a href="https://www.artstation.com/artwork/xYxwXY" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/050/259/735/large/thomas-lancz-capture-d-ecran-41.jpg?1654447861')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/xYxwXY">https://www.artstation.com/artwork/xYxwXY</div>
+  <a class="open" href="https://www.artstation.com/artwork/xYxwXY" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - WIP Scan and retopo training" data-url="https://www.artstation.com/artwork/a0VnG8">
+ <a href="https://www.artstation.com/artwork/a0VnG8" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/090/111/975/large/chris-huf-bodytest.jpg?1752933466')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - WIP Scan and retopo training">ArtStation - WIP Scan and retopo training</div>
+  <a class="open" href="https://www.artstation.com/artwork/a0VnG8" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/DAvX6A" data-url="https://www.artstation.com/artwork/DAvX6A">
+ <a href="https://www.artstation.com/artwork/DAvX6A" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/044/502/858/large/esger-van-der-post-old-hammer-00-render-13b-4k.jpg?1640191409')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/DAvX6A">https://www.artstation.com/artwork/DAvX6A</div>
+  <a class="open" href="https://www.artstation.com/artwork/DAvX6A" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - High Quality 3D scan pack of trash items Vol.1" data-url="https://www.artstation.com/artwork/XJ6bZD">
+ <a href="https://www.artstation.com/artwork/XJ6bZD" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/092/387/897/large/alexey-gorinov-1.webp?1759494614')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - High Quality 3D scan pack of trash items Vol.1">ArtStation - High Quality 3D scan pack of trash items Vol.1</div>
+  <a class="open" href="https://www.artstation.com/artwork/XJ6bZD" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Golden Antique Angels Torch | Fab" data-url="https://www.fab.com/listings/7ebc4ea1-3740-4a48-ab05-e15c0ee7a731">
+ <a href="https://www.fab.com/listings/7ebc4ea1-3740-4a48-ab05-e15c0ee7a731" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://media.fab.com/image_previews/gallery_images/6d3b7fb4-b3fc-45d1-ab87-54d75ceb2817/87d34c3f-9748-4b25-8d28-54a39dca2e8c.jpeg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Golden Antique Angels Torch | Fab">Golden Antique Angels Torch | Fab</div>
+  <a class="open" href="https://www.fab.com/listings/7ebc4ea1-3740-4a48-ab05-e15c0ee7a731" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Graphite from World of Tanks Breakdown" data-url="https://80.lv/articles/graphite-from-world-of-tanks-breakdown">
+ <a href="https://80.lv/articles/graphite-from-world-of-tanks-breakdown" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdn.80.lv/api/upload/meta/12947/images/5ec3970f31d5d/contain_1200x630.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Graphite from World of Tanks Breakdown">Graphite from World of Tanks Breakdown</div>
+  <a class="open" href="https://80.lv/articles/graphite-from-world-of-tanks-breakdown" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Photogrammetry - Scandinavian Materials" data-url="https://www.artstation.com/artwork/lGWY3k">
+ <a href="https://www.artstation.com/artwork/lGWY3k" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/093/567/479/large/roberto-marcos-soderstrom-roberto-marcos-soderstrom-thumbnailscandinavian03.webp?1762895825')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Photogrammetry - Scandinavian Materials">ArtStation - Photogrammetry - Scandinavian Materials</div>
+  <a class="open" href="https://www.artstation.com/artwork/lGWY3k" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Set of old statues and ethnic deities" data-url="https://www.artstation.com/artwork/Pe5wo3">
+ <a href="https://www.artstation.com/artwork/Pe5wo3" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/049/994/289/large/ivan-leonov-screenshot027-copy.jpg?1653827946')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Set of old statues and ethnic deities">ArtStation - Set of old statues and ethnic deities</div>
+  <a class="open" href="https://www.artstation.com/artwork/Pe5wo3" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/lGLDg5" data-url="https://www.artstation.com/artwork/lGLDg5">
+ <a href="https://www.artstation.com/artwork/lGLDg5" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/085/443/685/large/yodaplusplus-dusty.jpg?1740788841')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/lGLDg5">https://www.artstation.com/artwork/lGLDg5</div>
+  <a class="open" href="https://www.artstation.com/artwork/lGLDg5" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Reality Scan - Table top Still life" data-url="https://www.artstation.com/artwork/QXEBK4">
+ <a href="https://www.artstation.com/artwork/QXEBK4" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/063/560/347/large/saulat-mehmood-newlevelsequence-00001.jpg?1685814938')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Reality Scan - Table top Still life">ArtStation - Reality Scan - Table top Still life</div>
+  <a class="open" href="https://www.artstation.com/artwork/QXEBK4" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Edificio Granollers" data-url="https://www.artstation.com/artwork/oJ6bEJ">
+ <a href="https://www.artstation.com/artwork/oJ6bEJ" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/083/492/092/large/mikel-cervera-nagore-alzado-mc.jpg?1736106191')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Edificio Granollers">ArtStation - Edificio Granollers</div>
+  <a class="open" href="https://www.artstation.com/artwork/oJ6bEJ" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Concept - 6x6 Experimental Camera" data-url="https://www.artstation.com/artwork/oJ5Jmm">
+ <a href="https://www.artstation.com/artwork/oJ5Jmm" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/093/831/904/large/clement-moreau-20251117-98.webp?1764068540')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Concept - 6x6 Experimental Camera">ArtStation - Concept - 6x6 Experimental Camera</div>
+  <a class="open" href="https://www.artstation.com/artwork/oJ5Jmm" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/3ENkND" data-url="https://www.artstation.com/artwork/3ENkND">
+ <a href="https://www.artstation.com/artwork/3ENkND" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/094/031/975/large/muhammx-abduhalilov-lighterfluid.webp?1764248742')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/3ENkND">https://www.artstation.com/artwork/3ENkND</div>
+  <a class="open" href="https://www.artstation.com/artwork/3ENkND" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Dakshinchitra X Antariksha - Collection #01" data-url="https://www.artstation.com/artwork/oJkdnw">
+ <a href="https://www.artstation.com/artwork/oJkdnw" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/094/483/857/large/ishan-verma-ishan-verma-thumbnail-0000-lorem-ipsum.jpg?1765519249')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Dakshinchitra X Antariksha - Collection #01">ArtStation - Dakshinchitra X Antariksha - Collection #01</div>
+  <a class="open" href="https://www.artstation.com/artwork/oJkdnw" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Coffee Grinder" data-url="https://www.artstation.com/artwork/AZrVON">
+ <a href="https://www.artstation.com/artwork/AZrVON" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/080/035/259/large/mathis-gaignon-mathis-gaignon-thumb.jpg?1726507799')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Coffee Grinder">ArtStation - Coffee Grinder</div>
+  <a class="open" href="https://www.artstation.com/artwork/AZrVON" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/A9ZAWN" data-url="https://www.artstation.com/artwork/A9ZAWN">
+ <a href="https://www.artstation.com/artwork/A9ZAWN" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/015/062/157/large/vlx-kuzmin-rc.jpg?1546912477')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/A9ZAWN">https://www.artstation.com/artwork/A9ZAWN</div>
+  <a class="open" href="https://www.artstation.com/artwork/A9ZAWN" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/dZxqA" data-url="https://www.artstation.com/artwork/dZxqA">
+ <a href="https://www.artstation.com/artwork/dZxqA" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/011/027/458/large/3dhdscan-daniel-sklar-sarance-render.jpg?1527508457')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/dZxqA">https://www.artstation.com/artwork/dZxqA</div>
+  <a class="open" href="https://www.artstation.com/artwork/dZxqA" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - First pass - real life sculpted assets for 3D ghost town game" data-url="https://www.artstation.com/artwork/QK412Z">
+ <a href="https://www.artstation.com/artwork/QK412Z" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/095/239/419/large/camille-backhausen-camille-backhausen-artstation-thumbnail-mfop.webp?1767996592')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - First pass - real life sculpted assets for 3D ghost town game">ArtStation - First pass - real life sculpted assets for 3D ghost town game</div>
+  <a class="open" href="https://www.artstation.com/artwork/QK412Z" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - End of Summer Breakdown" data-url="https://www.artstation.com/artwork/YG3GNw">
+ <a href="https://www.artstation.com/artwork/YG3GNw" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/095/370/535/large/dmitry-kremiansky-dmitry-kremiansky-thumbnailachurch.webp?1768389080')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - End of Summer Breakdown">ArtStation - End of Summer Breakdown</div>
+  <a class="open" href="https://www.artstation.com/artwork/YG3GNw" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Imagining European Architecture In Blender With 3D Scans" data-url="https://80.lv/articles/exploring-color-variations-in-3d-european-cityscape">
+ <a href="https://80.lv/articles/exploring-color-variations-in-3d-european-cityscape" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdn.80.lv/api/upload/meta/44361/images/68da3ccaa3338/contain_1200x630.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Imagining European Architecture In Blender With 3D Scans">Imagining European Architecture In Blender With 3D Scans</div>
+  <a class="open" href="https://80.lv/articles/exploring-color-variations-in-3d-european-cityscape" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/EzRAwN" data-url="https://www.artstation.com/artwork/EzRAwN">
+ <a href="https://www.artstation.com/artwork/EzRAwN" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/095/753/250/large/javier-duran-antecoroz.webp?1769439611')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/EzRAwN">https://www.artstation.com/artwork/EzRAwN</div>
+  <a class="open" href="https://www.artstation.com/artwork/EzRAwN" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Saigon Alley" data-url="https://www.artstation.com/artwork/kNWVVA">
+ <a href="https://www.artstation.com/artwork/kNWVVA" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/095/227/953/large/lenz-monath-lenz-monath-thumbnail-saigon-009.webp?1767971683')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Saigon Alley">ArtStation - Saigon Alley</div>
+  <a class="open" href="https://www.artstation.com/artwork/kNWVVA" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Cuvier Fountain" data-url="https://www.artstation.com/artwork/kQVemK">
+ <a href="https://www.artstation.com/artwork/kQVemK" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/model3ds/images/077/582/952/large/specimen-3d-1830cf87f4df467ca29b5859ff8f4793.jpg?1719836799')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Cuvier Fountain">ArtStation - Cuvier Fountain</div>
+  <a class="open" href="https://www.artstation.com/artwork/kQVemK" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Photogrammetry - YouTube" data-url="https://www.youtube.com/playlist?list=PLkzopwqcFevaaXBvEqet2BtPjaLt4yLqt">
+ <a href="https://www.youtube.com/playlist?list=PLkzopwqcFevaaXBvEqet2BtPjaLt4yLqt" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/stPX1Tdh4WA/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAtavM-x1VTHK1hxuyCbAamQk_zOA&days_since_epoch=20549')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Photogrammetry - YouTube">Photogrammetry - YouTube</div>
+  <a class="open" href="https://www.youtube.com/playlist?list=PLkzopwqcFevaaXBvEqet2BtPjaLt4yLqt" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/x3gAyO" data-url="https://www.artstation.com/artwork/x3gAyO">
+ <a href="https://www.artstation.com/artwork/x3gAyO" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/096/830/975/large/emma-debon-capturereality-scanwallstone-02.webp?1772446860')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/x3gAyO">https://www.artstation.com/artwork/x3gAyO</div>
+  <a class="open" href="https://www.artstation.com/artwork/x3gAyO" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Fix Holes in Photogrammetry With Blender: How To Repair Bad Photo-Scans - YouTube" data-url="https://www.youtube.com/watch?v=_pzTK-LBm3o">
+ <a href="https://www.youtube.com/watch?v=_pzTK-LBm3o" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/_pzTK-LBm3o/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Fix Holes in Photogrammetry With Blender: How To Repair Bad Photo-Scans - YouTube">Fix Holes in Photogrammetry With Blender: How To Repair Bad Photo-Scans - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=_pzTK-LBm3o" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="How to cleanup your 3D scans in Zbrush - YouTube" data-url="https://www.youtube.com/watch?v=mFIREFvtO2c">
+ <a href="https://www.youtube.com/watch?v=mFIREFvtO2c" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/mFIREFvtO2c/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="How to cleanup your 3D scans in Zbrush - YouTube">How to cleanup your 3D scans in Zbrush - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=mFIREFvtO2c" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="3D Scan Clean Up with Zbrush and Substance Painter - YouTube" data-url="https://www.youtube.com/watch?v=DMRkXOyNZ2A">
+ <a href="https://www.youtube.com/watch?v=DMRkXOyNZ2A" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/DMRkXOyNZ2A/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="3D Scan Clean Up with Zbrush and Substance Painter - YouTube">3D Scan Clean Up with Zbrush and Substance Painter - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=DMRkXOyNZ2A" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Cleaning a 3D scanned model for 3D printing is super easy. Follow to see more Blender tricks - YouTube" data-url="https://www.youtube.com/shorts/E2KuXKkPnU0">
+ <a href="https://www.youtube.com/shorts/E2KuXKkPnU0" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/E2KuXKkPnU0/oardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLDh_gsTWkLgEMg3dI3qgIktDEVKLg&usqp=CCk')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Cleaning a 3D scanned model for 3D printing is super easy. Follow to see more Blender tricks - YouTube">Cleaning a 3D scanned model for 3D printing is super easy. Follow to see more Blender tricks - YouTube</div>
+  <a class="open" href="https://www.youtube.com/shorts/E2KuXKkPnU0" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Clean Up 3D Scan model - YouTube" data-url="https://www.youtube.com/watch?v=iKGgFOXHLik">
+ <a href="https://www.youtube.com/watch?v=iKGgFOXHLik" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/iKGgFOXHLik/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Clean Up 3D Scan model - YouTube">Clean Up 3D Scan model - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=iKGgFOXHLik" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Zbrush photogrammetry scan cleanup - YouTube" data-url="https://www.youtube.com/watch?v=wMkqk_v7Cxo">
+ <a href="https://www.youtube.com/watch?v=wMkqk_v7Cxo" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/wMkqk_v7Cxo/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Zbrush photogrammetry scan cleanup - YouTube">Zbrush photogrammetry scan cleanup - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=wMkqk_v7Cxo" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="HOW TO RETOPO Your POLYCAM 3D Scans (Blender, Zbrush & Metashape) - YouTube" data-url="https://www.youtube.com/watch?v=AOjK7QDSIHE">
+ <a href="https://www.youtube.com/watch?v=AOjK7QDSIHE" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/AOjK7QDSIHE/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="HOW TO RETOPO Your POLYCAM 3D Scans (Blender, Zbrush & Metashape) - YouTube">HOW TO RETOPO Your POLYCAM 3D Scans (Blender, Zbrush & Metashape) - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=AOjK7QDSIHE" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="019 Photoscan ZRemesh - YouTube" data-url="https://www.youtube.com/watch?v=mXe0aotR99Y">
+ <a href="https://www.youtube.com/watch?v=mXe0aotR99Y" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/mXe0aotR99Y/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="019 Photoscan ZRemesh - YouTube">019 Photoscan ZRemesh - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=mXe0aotR99Y" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="020 Photoscan Reprojecting Textures - YouTube" data-url="https://www.youtube.com/watch?v=AIj0ByhICtM">
+ <a href="https://www.youtube.com/watch?v=AIj0ByhICtM" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/AIj0ByhICtM/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="020 Photoscan Reprojecting Textures - YouTube">020 Photoscan Reprojecting Textures - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=AIj0ByhICtM" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Convert a bad scan to a clean mesh - YouTube" data-url="https://www.youtube.com/watch?v=su-_PX26kGQ">
+ <a href="https://www.youtube.com/watch?v=su-_PX26kGQ" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/su-_PX26kGQ/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Convert a bad scan to a clean mesh - YouTube">Convert a bad scan to a clean mesh - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=su-_PX26kGQ" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851" data-url="https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851">
+ <a href="https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851">https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851</div>
+  <a class="open" href="https://cdna.artstation.com/p/assets/images/images/096/938/804/4k/ethan-james-chapman-ejc-colt-photogrammetry-process.jpg?1772714851" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Common Field Grasshopper" data-url="https://www.artstation.com/artwork/oJgrkz">
+ <a href="https://www.artstation.com/artwork/oJgrkz" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/097/329/323/large/dany-bittel-dany-bittel-reference-a.webp?1773848606')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Common Field Grasshopper">ArtStation - Common Field Grasshopper</div>
+  <a class="open" href="https://www.artstation.com/artwork/oJgrkz" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="UFO Hunter - Games Artist" data-url="https://gamesartist.co.uk/ufo-hunter/">
+ <a href="https://gamesartist.co.uk/ufo-hunter/" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://gamesartist.co.uk/wp-content/uploads/2026/03/kushtrim-brahimi-ufo-main.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="UFO Hunter - Games Artist">UFO Hunter - Games Artist</div>
+  <a class="open" href="https://gamesartist.co.uk/ufo-hunter/" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - wood carving" data-url="https://www.artstation.com/artwork/ZlyEN1">
+ <a href="https://www.artstation.com/artwork/ZlyEN1" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/097/646/697/large/-tbrender-002.webp?1774795938')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - wood carving">ArtStation - wood carving</div>
+  <a class="open" href="https://www.artstation.com/artwork/ZlyEN1" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+</section></main>
+<footer>Generated 2026-04-06</footer>
+<script>
+const q=document.getElementById('q');
+const cards=[...document.querySelectorAll('.card')];
+q.addEventListener('input',()=>{
+ const v=q.value.toLowerCase();
+ cards.forEach(c=>{
+  const t=(c.dataset.title||'').toLowerCase();
+  const u=(c.dataset.url||'').toLowerCase();
+  c.style.display=(t.includes(v)||u.includes(v))?'':'none';
+ });
+});
+</script>
+</body></html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Composition</title>
+<meta name="color-scheme" content="dark" />
+<style>
+:root {
+ color-scheme: dark;
+ --bg:#0b0d10; --panel:#121519; --card:#171b21;
+ --text:#e9eef5; --muted:#a8b0bb; --accent:#5ab0f6; --border:#242b34;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;}
+header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(18,21,25,.95),rgba(18,21,25,.85));backdrop-filter:blur(6px);border-bottom:1px solid var(--border);padding:14px 20px;}
+h1{margin:0 0 8px;font-size:18px;font-weight:600}
+.brand{color:var(--muted);font-size:12px;margin-bottom:8px}
+.search input{width:100%;max-width:720px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--panel);color:var(--text);}
+.grid{display:grid;gap:14px;padding:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;transition:border-color .15s ease;}
+.card:hover{border-color:var(--accent)}
+.card>a{display:block;text-decoration:none}
+.thumb{aspect-ratio:16/9;background:#0a0b0d center/cover no-repeat;border-bottom:1px solid var(--border)}
+.meta{padding:10px 12px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.title{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.open{font-size:12px;color:var(--accent);text-decoration:none;border:1px solid var(--border);padding:6px 8px;border-radius:6px;background:#0f1318}
+footer{padding:30px 20px;color:var(--muted);text-align:center}
+</style>
+</head><body>
+<header>
+<div class="brand">Madison College 3D Arts & Anim Bookmarks</div>
+<h1>Composition</h1>
+<div class="search"><input id="q" type="search" placeholder="Filter by title or URL…"></div>
+</header>
+<main><section class="grid">
+<article class="card" data-title="Genndy Tartakovsky's 60/30/10 Principle for Visual Hierarchy | Regis Farias posted on the topic | LinkedIn" data-url="https://www.linkedin.com/posts/regis-farias_creativedirection-uxdesign-visualhierarchy-activity-7434057013120139265-tIGC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg">
+ <a href="https://www.linkedin.com/posts/regis-farias_creativedirection-uxdesign-visualhierarchy-activity-7434057013120139265-tIGC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://dms.licdn.com/playlist/vid/v2/D4D05AQFT7JzAy35lRw/thumbnail-with-play-button-overlay-high/B4DZysTbj0KwDU-/0/1772417303946?e=2147483647&v=beta&t=mjnWh99NCwcWCf1vjNFBK7gIu8ILu3UWCg9UjPR0D-4')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Genndy Tartakovsky's 60/30/10 Principle for Visual Hierarchy | Regis Farias posted on the topic | LinkedIn">Genndy Tartakovsky's 60/30/10 Principle for Visual Hierarchy | Regis Farias posted on the topic | LinkedIn</div>
+  <a class="open" href="https://www.linkedin.com/posts/regis-farias_creativedirection-uxdesign-visualhierarchy-activity-7434057013120139265-tIGC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Ultimate Guide to Camera Angles: Every Camera Shot Explained [Shot List, Ep. 3] - YouTube" data-url="https://www.youtube.com/watch?v=wLfZL9PZI9k">
+ <a href="https://www.youtube.com/watch?v=wLfZL9PZI9k" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/wLfZL9PZI9k/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Ultimate Guide to Camera Angles: Every Camera Shot Explained [Shot List, Ep. 3] - YouTube">Ultimate Guide to Camera Angles: Every Camera Shot Explained [Shot List, Ep. 3] - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=wLfZL9PZI9k" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="What is a Dutch Angle — Creative Camera Shots Explained" data-url="https://www.studiobinder.com/blog/dutch-angle-shot-camera-movement/">
+ <a href="https://www.studiobinder.com/blog/dutch-angle-shot-camera-movement/" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://s.studiobinder.com/wp-content/uploads/2024/08/Dutch-Angles_-Creative-Examples-of-Camera-Movements-Angles-StudioBinder-1024x576.webp')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="What is a Dutch Angle — Creative Camera Shots Explained">What is a Dutch Angle — Creative Camera Shots Explained</div>
+  <a class="open" href="https://www.studiobinder.com/blog/dutch-angle-shot-camera-movement/" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="The Croft Antiques Shop - Games Artist" data-url="https://gamesartist.co.uk/croft-shop/">
+ <a href="https://gamesartist.co.uk/croft-shop/" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://gamesartist.lon1.digitaloceanspaces.com/uploads/2024/01/balazs-domjan-gameartist_001-scaled.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="The Croft Antiques Shop - Games Artist">The Croft Antiques Shop - Games Artist</div>
+  <a class="open" href="https://gamesartist.co.uk/croft-shop/" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Storytelling and Composition - The Croft Antique Shop" data-url="https://www.artstation.com/artwork/Bk2Xy9">
+ <a href="https://www.artstation.com/artwork/Bk2Xy9" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/083/971/023/large/balazs-domjan-balazs-domjan-games-artist-games-artist-artstation-thumbnail-new745.jpg?1737230446')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Storytelling and Composition - The Croft Antique Shop">ArtStation - Storytelling and Composition - The Croft Antique Shop</div>
+  <a class="open" href="https://www.artstation.com/artwork/Bk2Xy9" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="So You Wanna Make Games?? | Episode 1: Intro to Game Art - YouTube" data-url="https://www.youtube.com/watch?v=RqRoXLLwJ8g&list=PL42m9XiTqPHJdJuVXO6Vf5ta5D07peiVx">
+ <a href="https://www.youtube.com/watch?v=RqRoXLLwJ8g&list=PL42m9XiTqPHJdJuVXO6Vf5ta5D07peiVx" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/RqRoXLLwJ8g/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="So You Wanna Make Games?? | Episode 1: Intro to Game Art - YouTube">So You Wanna Make Games?? | Episode 1: Intro to Game Art - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=RqRoXLLwJ8g&list=PL42m9XiTqPHJdJuVXO6Vf5ta5D07peiVx" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg" data-url="https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg">
+ <a href="https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg">https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg</div>
+  <a class="open" href="https://ils350libguide.weebly.com/uploads/5/1/1/9/51199593/photo_infographic.jpg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Towerborne: Mission System" data-url="https://www.artstation.com/artwork/mAX2Qe">
+ <a href="https://www.artstation.com/artwork/mAX2Qe" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/096/854/430/large/lisa-fleck-lisa-fleck-thumbnail-mission.webp?1772493616')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Towerborne: Mission System">ArtStation - Towerborne: Mission System</div>
+  <a class="open" href="https://www.artstation.com/artwork/mAX2Qe" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="#leveldesign #gamedesign #visualflow #playerguidance #environmentaldesign #gamedev #designthinking #spatialdesign #invisibleart #gameart | Zamfir Stefan" data-url="https://www.linkedin.com/posts/zamfir-stefan-213251b_leveldesign-gamedesign-visualflow-activity-7350804660401688577-JsOh/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg">
+ <a href="https://www.linkedin.com/posts/zamfir-stefan-213251b_leveldesign-gamedesign-visualflow-activity-7350804660401688577-JsOh/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://media.licdn.com/dms/image/v2/D5622AQHXD_2AWn-3SQ/feedshare-shrink_800/B56ZgNN1O0G0Ak-/0/1752568394064?e=2147483647&v=beta&t=b7CWQXW93cECY4pL6Pd9nbdhFJdon8MMjnPGwT6IEJg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="#leveldesign #gamedesign #visualflow #playerguidance #environmentaldesign #gamedev #designthinking #spatialdesign #invisibleart #gameart | Zamfir Stefan">#leveldesign #gamedesign #visualflow #playerguidance #environmentaldesign #gamedev #designthinking #spatialdesign #invisibleart #gameart | Zamfir Stefan</div>
+  <a class="open" href="https://www.linkedin.com/posts/zamfir-stefan-213251b_leveldesign-gamedesign-visualflow-activity-7350804660401688577-JsOh/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Sign Up | LinkedIn" data-url="https://www.linkedin.com/posts/activity-7387091518961938433-BK07/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg">
+ <a href="https://www.linkedin.com/posts/activity-7387091518961938433-BK07/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Sign Up | LinkedIn">Sign Up | LinkedIn</div>
+  <a class="open" href="https://www.linkedin.com/posts/activity-7387091518961938433-BK07/?utm_source=share&utm_medium=member_ios&rcm=ACoAADdvD8YBF-v7949Wo23Lw6Jbxvp3vZxLNmg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="The (real) beauty of the Parthenon - YouTube" data-url="https://www.youtube.com/shorts/Y4tSre9bqQM">
+ <a href="https://www.youtube.com/shorts/Y4tSre9bqQM" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/Y4tSre9bqQM/oardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAZHMOBmmpd0G-upfETB9s4ifrR1g&usqp=CCk')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="The (real) beauty of the Parthenon - YouTube">The (real) beauty of the Parthenon - YouTube</div>
+  <a class="open" href="https://www.youtube.com/shorts/Y4tSre9bqQM" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="Every Director's Signature Shot Explained in 24 Minutes - YouTube" data-url="https://www.youtube.com/watch?v=58YSwWGS4sk">
+ <a href="https://www.youtube.com/watch?v=58YSwWGS4sk" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/58YSwWGS4sk/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="Every Director's Signature Shot Explained in 24 Minutes - YouTube">Every Director's Signature Shot Explained in 24 Minutes - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=58YSwWGS4sk" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="The Best Cinematography I've Ever Seen - YouTube" data-url="https://www.youtube.com/watch?v=PzZTIH0WKaU">
+ <a href="https://www.youtube.com/watch?v=PzZTIH0WKaU" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://i.ytimg.com/vi/PzZTIH0WKaU/maxresdefault.jpg')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="The Best Cinematography I've Ever Seen - YouTube">The Best Cinematography I've Ever Seen - YouTube</div>
+  <a class="open" href="https://www.youtube.com/watch?v=PzZTIH0WKaU" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="https://www.artstation.com/artwork/P6rJPB" data-url="https://www.artstation.com/artwork/P6rJPB">
+ <a href="https://www.artstation.com/artwork/P6rJPB" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/092/957/205/large/senior-environment-lighting-bell-de-deus-senior-environment-lighting-bell-de-deus-1730040939342-1.webp?1761149500')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="https://www.artstation.com/artwork/P6rJPB">https://www.artstation.com/artwork/P6rJPB</div>
+  <a class="open" href="https://www.artstation.com/artwork/P6rJPB" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - 🎬 [CINEMATIC BREAKDOWN] — Lighting & Composition in the Azog Scene" data-url="https://www.artstation.com/artwork/vbWYgE">
+ <a href="https://www.artstation.com/artwork/vbWYgE" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/videos/images/092/400/375/large/senior-environment-lighting-bell-de-deus-hqdefault.jpg?1759521784')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - 🎬 [CINEMATIC BREAKDOWN] — Lighting & Composition in the Azog Scene">ArtStation - 🎬 [CINEMATIC BREAKDOWN] — Lighting & Composition in the Azog Scene</div>
+  <a class="open" href="https://www.artstation.com/artwork/vbWYgE" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - The Batman Wins the Poll! Analyzing the Masterful Visual Composition of the 2022 Film" data-url="https://www.artstation.com/artwork/eRP3XY">
+ <a href="https://www.artstation.com/artwork/eRP3XY" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/images/images/081/667/715/large/senior-environment-lighting-bell-de-deus-1730493008303-1.jpg?1730893996')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - The Batman Wins the Poll! Analyzing the Masterful Visual Composition of the 2022 Film">ArtStation - The Batman Wins the Poll! Analyzing the Masterful Visual Composition of the 2022 Film</div>
+  <a class="open" href="https://www.artstation.com/artwork/eRP3XY" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Breakdown Environment/ lighting/ photograph and composition for films and games." data-url="https://www.artstation.com/artwork/3qQ4bg">
+ <a href="https://www.artstation.com/artwork/3qQ4bg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/images/images/049/979/496/large/global-senior-environment-lighting-bell-de-deus-by-rodrigo-de-deus.jpg?1653774403')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Breakdown Environment/ lighting/ photograph and composition for films and games.">ArtStation - Breakdown Environment/ lighting/ photograph and composition for films and games.</div>
+  <a class="open" href="https://www.artstation.com/artwork/3qQ4bg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - Old Northwood | Unreal Engine Environment" data-url="https://www.artstation.com/artwork/wrlmNg">
+ <a href="https://www.artstation.com/artwork/wrlmNg" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdna.artstation.com/p/assets/covers/images/097/476/364/large/carlo-fitz-horvath-carlo-fitz-horvath-1.webp?1774301744')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - Old Northwood | Unreal Engine Environment">ArtStation - Old Northwood | Unreal Engine Environment</div>
+  <a class="open" href="https://www.artstation.com/artwork/wrlmNg" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+
+<article class="card" data-title="ArtStation - The Sword in the Stone | Unreal Environment" data-url="https://www.artstation.com/artwork/a0Qo32">
+ <a href="https://www.artstation.com/artwork/a0Qo32" target="_blank" rel="noopener">
+  <div class="thumb" style="background-image:url('https://cdnb.artstation.com/p/assets/covers/images/097/419/489/large/veronika-sumina-veronika-sumina-thumbnail.webp?1774124532')"></div>
+ </a>
+ <div class="meta">
+  <div class="title" title="ArtStation - The Sword in the Stone | Unreal Environment">ArtStation - The Sword in the Stone | Unreal Environment</div>
+  <a class="open" href="https://www.artstation.com/artwork/a0Qo32" target="_blank" rel="noopener">Open</a>
+ </div>
+</article>
+</section></main>
+<footer>Generated 2026-04-06</footer>
+<script>
+const q=document.getElementById('q');
+const cards=[...document.querySelectorAll('.card')];
+q.addEventListener('input',()=>{const v=q.value.toLowerCase();cards.forEach(c=>{const t=(c.dataset.title||'').toLowerCase();const u=(c.dataset.url||'').toLowerCase();c.style.display=(t.includes(v)||u.includes(v))?'':'none';});});
+</script>
+</body></html>
