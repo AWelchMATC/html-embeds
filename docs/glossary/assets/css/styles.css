@@ -80,3 +80,43 @@ pre, code { background: #0b0e12; border: 1px solid var(--border); border-radius:
 @media (max-width: 720px) {
   .controls { grid-template-columns: 1fr; }
 }
+
+/* ===== IMAGE MOSAIC GALLERY ===== */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== LIGHTBOX (CSS only) ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  place-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox:target {
+  display: grid;
+}
