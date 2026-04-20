@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Base Color · 3D Arts & Animation Glossary</title>
+  <meta name="description" content="Base Color – PBR material term for Unreal Engine." />
+
+  <link rel="icon" href="https://awelchmatc.github.io/html-embeds/MADLogo.png" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+<div class="term-wrap" id="top">
+
+  <!-- ===== Header ===== -->
+  <div class="term-header">
+    <a href="https://awelchmatc.github.io/html-embeds/glossary/?term=BaseColor">
+      ← Back to glossary
+    </a>
+    <span class="category-pill">Materials / PBR</span>
+  </div>
+
+  <h1 class="term-title">Base Color</h1>
+  <div class="term-meta">Tags: PBR, Materials, Texturing, Unreal Engine</div>
+
+  <!-- ===== Banner ===== -->
+  <div class="term-content">
+    <img
+      src="https://helpx.adobe.com/content/dam/help/en/substance-3d-designer/how-to/the-pbr-guide-part-2/the-pbr-guide-part-2-step-1.png"
+      alt="PBR Base Color Breakdown"
+      style="max-width:100%;"
+    />
+  </div>
+
+  <!-- ===== Definition ===== -->
+  <div class="term-content">
+    <h2>Definition Overview</h2>
+
+    <p>
+      <strong>Base Color</strong> is the pure color information of a material in a
+      <strong>Physically Based Rendering (PBR)</strong> workflow.
+      It represents the inherent color of a surface
+      <em>without</em> lighting, shadows, highlights, or reflections.
+    </p>
+
+    <p>
+      In <strong>Unreal Engine</strong>, the Base Color texture is connected to the
+      <strong>Base Color</strong> input of a Material and is combined with
+      Roughness, Metallic, and Normal data at runtime to produce the final shaded result.
+    </p>
+
+    <h3>Critical Student Concept: Valid Base Color Values</h3>
+
+    <p>
+      One of the most common mistakes students make is creating Base Color textures
+      that are <strong>too dark</strong>. In the real world, almost no materials have
+      Base Color values close to pure black.
+    </p>
+
+    <div class="callout">
+      <strong>IMPORTANT:</strong><br>
+      Base Color values must be physically believable.
+      If a material only looks correct under extremely bright lighting,
+      the Base Color texture is likely incorrect.
+    </div>
+
+    <p>
+      Shading, shadows, and contrast are created by lighting and surface response —
+      not by darkening the Base Color map.
+    </p>
+  </div>
+
+  <!-- ===== YouTube ===== -->
+  <div class="term-content">
+    <h2>Video Overview</h2>
+
+    <div class="callout">
+      <strong>INSTRUCTIONS:</strong>
+      This video provides a clear explanation of PBR materials and how Base Color
+      fits into the overall workflow.
+    </div>
+
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe
+        src="https://www.youtube.com/embed/CUWMhZrzwB8"
+        title="PBR and Base Color Explained"
+        frameborder="0"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ===== Examples ===== -->
+  <div class="term-content">
+    <h2>Examples</h2>
+
+    <div class="image-grid">
+      <a href="#img1"><img src="https://marmoset.co/wp-content/uploads/2015/09/divingmetal01.jpg" alt="Metal base color example"></a>
+      <a href="#img2"><img src="https://helpx.adobe.com/content/dam/help/en/substance-3d-designer/how-to/the-pbr-guide-part-2/the-pbr-guide-part-2-step-8.png" alt="PBR texture breakdown"></a>
+      <a href="#img3"><img src="https://blenderartists.org/uploads/default/original/4X/7/7/1/771b4382d96aff2cb343f102955f3998d9d912aa.png" alt="Base color comparison"></a>
+      <a href="#img4"><img src="https://seblagarde.wordpress.com/wp-content/uploads/2012/04/dontnodgraphicchartforblinnmicrofacet_lowres2.png" alt="Physically based shading validation chart"></a>
+      <a href="#img5"><img src="https://images.steamusercontent.com/ugc/1760312207260811387/3C4FE1793964F722D9BF846EA17BF8298EEB815E/" alt="Game material PBR example"></a>
+      <a href="#img6"><img src="https://marmoset.co/wp-content/uploads/2014/01/albedocompare03.jpg" alt="Albedo vs lighting comparison"></a>
+      <a href="#img7"><img src="https://d3kjluh73b9h9o.cloudfront.net/original/4X/4/3/e/43e6fead1c3542008154230bd8d61f2f68aa2467.png" alt="Base color validation example"></a>
+      <a href="#img8"><img src="https://public-files.gumroad.com/42oq80nzioevenwbbv8cqt230hcc" alt="Stylized base color reference"></a>
+    </div>
+  </div>
+
+  <!-- ===== Lightboxes ===== -->
+  <div id="img1" class="lightbox"><a href="#"><img src="https://marmoset.co/wp-content/uploads/2015/09/divingmetal01.jpg"></a></div>
+  <div id="img2" class="lightbox"><a href="#"><img src="https://helpx.adobe.com/content/dam/help/en/substance-3d-designer/how-to/the-pbr-guide-part-2/the-pbr-guide-part-2-step-8.png"></a></div>
+  <div id="img3" class="lightbox"><a href="#"><img src="https://blenderartists.org/uploads/default/original/4X/7/7/1/771b4382d96aff2cb343f102955f3998d9d912aa.png"></a></div>
+  <div id="img4" class="lightbox"><a href="#"><img src="https://seblagarde.wordpress.com/wp-content/uploads/2012/04/dontnodgraphicchartforblinnmicrofacet_lowres2.png"></a></div>
+  <div id="img5" class="lightbox"><a href="#"><img src="https://images.steamusercontent.com/ugc/1760312207260811387/3C4FE1793964F722D9BF846EA17BF8298EEB815E/"></a></div>
+  <div id="img6" class="lightbox"><a href="#"><img src="https://marmoset.co/wp-content/uploads/2014/01/albedocompare03.jpg"></a></div>
+  <div id="img7" class="lightbox"><a href="#"><img src="https://d3kjluh73b9h9o.cloudfront.net/original/4X/4/3/e/43e6fead1c3542008154230bd8d61f2f68aa2467.png"></a></div>
+  <div id="img8" class="lightbox"><a href="#"><img src="https://public-files.gumroad.com/42oq80nzioevenwbbv8cqt230hcc"></a></div>
+
+  <!-- ===== More Information ===== -->
+  <div class="term-content">
+    <h2>More Information</h2>
+    <ul>
+      <li><a href="https://80.lv/articles/the-newbies-pbr-cheat-sheet" target="_blank">80.lv – PBR Cheat Sheet</a></li>
+      <li><a href="https://www.adobe.com/learn/substance-3d-designer/web/the-pbr-guide-part-1" target="_blank">Adobe – PBR Guide Part 1</a></li>
+      <li><a href="https://www.adobe.com/learn/substance-3d-designer/web/the-pbr-guide-part-2" target="_blank">Adobe – PBR Guide Part 2</a></li>
+      <li><a href="https://marmoset.co/posts/physically-based-rendering-and-you-can-too/" target="_blank">Marmoset – PBR Explained</a></li>
+      <li><a href="https://dev.epicgames.com/documentation/unreal-engine/physically-based-materials-in-unreal-engine" target="_blank">Epic Games – Physically Based Materials</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="term-content">
+    <a href="#top">← Back to Top</a>
+  </div>
+
+</div>
+</body>
+</html>
