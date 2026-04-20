@@ -5,7 +5,7 @@
       "slug": "albedo",
       "category": "Materials",
       "tags": ["PBR", "Texture", "3D Art Track"],
-      "summary": "Base color map without lighting, shadow, or highlights."
+      "summary": "Albedo is essentially another word for "Base color". Base Color/Albedo is a map without lighting, shadow, or highlights."
     },
       {
     "title": "Repoussoir",
