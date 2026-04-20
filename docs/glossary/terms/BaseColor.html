@@ -137,5 +137,22 @@
   </div>
 
 </div>
+  <script>
+  let scrollY = 0;
+
+  // Save scroll position when opening a lightbox
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("a[href^='#img']")) {
+      scrollY = window.scrollY;
+    }
+  });
+
+  // Restore scroll position when closing lightbox
+  window.addEventListener("hashchange", () => {
+    if (!location.hash.startsWith("#img")) {
+      window.scrollTo(0, scrollY);
+    }
+  });
+</script>
 </body>
 </html>
