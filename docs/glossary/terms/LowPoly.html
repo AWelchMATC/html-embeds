@@ -9,11 +9,17 @@
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
  <body>
-
-   <a href="https://awelchmatc.github.io/html-embeds/glossary/?term=LowPoly">← Back to glossary</a> 
-<div class="term-content"> 
-<h1 >Low Poly Mesh</h1>
-<h2 >Definition Overview:</h2>
+  <div class="term-wrap">
+    <div class="term-header">
+      <a href="https://awelchmatc.github.io/html-embeds/glossary/?term=LowPoly">← Back to glossary</a> 
+      <span class="category-pill">Modeling</span>
+    </div>
+    
+   <h1 class="term-title">Low Poly Mesh</h1>
+    <div class="term-meta">Tags: Modeling, Topology, Baking</div>
+    
+    <div class="term-content">
+      <p><h2 >Definition Overview:</h2>
 <p >The term "<strong>Low Poly"</strong> refers to the <strong>"Game Res Mesh"</strong>, (also sometimes called the <strong>"Render Mesh"</strong> or <strong>"Arbitrary Mesh"</strong>. A mesh that is "Low" in polygonal count/density (no unnecessary faces/verts/edges). This is the mesh you actually use "In-Game" and it's topology is decided not by edge flow or "SubD rules" but instead solely by the needs of the video game asset. The only edges/verts/polys kept are there to support silhouette, shading, UVs, other game data... every poly/vert is there to serve one of those purposes, and nothing "extra" is left as that would be wasteful can cost both memory and runtime performance.&nbsp;</p>
 <div></div> </div>
 <div>This mesh more than likely would consist of triangles to ensure it's efficient. 99% of the time when done well, this mesh is <strong>NOT </strong>the same thing as the mesh you subdivide to make your <strong>"SubD High Poly"</strong> ("Base Cage", Base Mesh", i.e. Lowest Subdivision in ZBrush or non-"smooth mesh preview" mesh in Maya).&nbsp;</div>
