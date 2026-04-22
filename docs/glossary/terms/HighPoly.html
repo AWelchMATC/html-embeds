@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Low Poly · 3D Arts & Animation Glossary</title>
+  <meta name="description" content="High Poly – 3D Arts & Animation glossary term." />
+
+  <link rel="icon" href="https://awelchmatc.github.io/html-embeds/MADLogo.png" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+<div class="term-wrap">
+
+  <!-- ===== Header ===== -->
+  <div class="term-header">
+    <a href="https://awelchmatc.github.io/html-embeds/glossary/?term=HighPoly">← Back to glossary</a>
+    <span class="category-pill">Modeling</span>
+  </div>
+
+  <h1 class="term-title">High Poly Mesh</h1>
+  <div class="term-meta">Tags: Modeling, Topology, Scultping, CAD, SubD</div>
+
+  <!-- ===== Definition ===== -->
+  <div class="term-content">
+   <h2>High Poly (High‑Polygon) Mesh — Definition</h2>
+<p>A <strong>High Poly mesh</strong> is a 3D model created with a very high polygon density in order to capture <strong>fine surface detail and visual quality</strong>. It represents the <em>most detailed version</em> of an asset and is primarily used as a <strong>source of detail</strong>, not as the mesh that is animated, simulated, or placed directly into a real‑time environment.</p>
+<p>In professional workflows, “high poly” refers more to <strong>purpose and fidelity</strong> than a specific polygon count.</p>
+<hr>
+<h2>How High Poly Meshes Are Created</h2>
+<p>High poly meshes can originate from several different modeling approaches:</p>
+<h3>1. Subdivision (SubD) Base Meshes</h3>
+<p>A high poly often starts as a <strong>clean, simple SubD base mesh</strong> with good edge flow. This base mesh is then:</p>
+<ul>
+<li>Subdivided multiple times (e.g., Catmull‑Clark subdivision)</li>
+<li>Refined with supporting edges, triple‑edging, or creasing</li>
+<li>Smoothed to produce tight corners and crisp forms</li>
+</ul>
+<p>In this case, the high poly may remain <em>purely a SubD model</em>, especially for hard‑surface assets like props or machinery.</p>
+<p><strong>Important:</strong><br>A SubD high poly does <em>not</em> need sculpted noise or surface damage to count as high poly. Even a smooth model with perfectly controlled edges can be a valid high poly if its role is to define final form and shading quality.</p>
+<hr>
+<h3>2. SubD + ZBrush (or Sculpting) Pass</h3>
+<p>Many high poly meshes go beyond what SubD topology alone can describe.</p>
+<p>A common workflow:</p>
+<ol>
+<li>Create a SubD base mesh</li>
+<li>Subdivide it heavily</li>
+<li>Send it to ZBrush (or similar sculpting tool)</li>
+<li>Add detail beyond the original topology:
+<ul>
+<li>Wear and tear</li>
+<li>Surface damage</li>
+<li>Organic breakup</li>
+<li>Hand‑sculpted imperfections</li>
+</ul>
+</li>
+</ol>
+<p>At this stage, <strong>topology becomes less important</strong>, because the mesh’s job is no longer deformation—it is <em>detail generation</em>.</p>
+<hr>
+<h3>3. DynaMesh / Sculpt‑First High Poly</h3>
+<p>Some high polys are created <strong>entirely through sculpting</strong>, without a traditional base mesh.</p>
+<p>Using tools like ZBrush:</p>
+<ul>
+<li>DynaMesh or Sculptris Pro is used</li>
+<li>Topology is dynamically rebuilt while sculpting</li>
+<li>Polygon counts can reach millions</li>
+<li>Forms and details are prioritized over edge flow</li>
+</ul>
+<p>This type of high poly is extremely common for:</p>
+<ul>
+<li>Characters</li>
+<li>Creatures</li>
+<li>Organic props</li>
+<li>Rock, terrain, and damage surfaces</li>
+</ul>
+<hr>
+<h3>4. CAD Models Exported at High Resolution</h3>
+<p>High poly meshes can also come from <strong>CAD or NURBS‑based software</strong>:</p>
+<ul>
+<li>Fusion</li>
+<li>SolidWorks</li>
+<li>Alias</li>
+<li>Rhino</li>
+</ul>
+<p>When exported to polygons:</p>
+<ul>
+<li>Tessellation density is set very high</li>
+<li>Surfaces are extremely smooth and precise</li>
+<li>Polygon count can be massive</li>
+<li>Topology is usually not animation‑friendly</li>
+</ul>
+<p>These meshes function perfectly as high polys because they define <strong>exact manufactured shapes</strong>.</p>
+<hr>
+<h2>What Makes a Mesh “High Poly”?</h2>
+<p>A high poly mesh typically has:</p>
+<ul>
+<li>Very high polygon density</li>
+<li>Smooth or highly detailed surfaces</li>
+<li>Little concern for animation deformation</li>
+<li>Little concern for real‑time performance</li>
+<li>Detail that exists <strong>in geometry</strong>, not textures</li>
+</ul>
+<p>A high poly can be:</p>
+<ul>
+<li>A clean SubD model</li>
+<li>A heavily sculpted mesh</li>
+<li>A CAD export</li>
+<li>Or a combination of all three</li>
+</ul>
+<hr>
+<h2>Purpose of a High Poly</h2>
+<p>The <strong>primary purpose of a high poly mesh is to create detail and visual fidelity</strong>.</p>
+<p>A high poly is:</p>
+<ul>
+<li>A <strong>reference model</strong></li>
+<li>A <strong>detail source</strong></li>
+<li>A <strong>baking source</strong></li>
+</ul>
+<p>It is <strong>most often NOT</strong>:</p>
+<ul>
+<li>The mesh that gets animated</li>
+<li>The mesh placed directly into a game level</li>
+<li>The mesh used for real‑time rendering (with some modern exceptions)</li>
+</ul>
+<hr>
+<h2>How High Poly Meshes Are Used in Production</h2>
+<h3>Film / VFX Workflows</h3>
+<p>In film and VFX:</p>
+<ul>
+<li>High poly meshes contain true geometric detail</li>
+<li>That detail is captured into <strong>displacement maps</strong></li>
+<li>Displacement maps are applied to a simpler base mesh</li>
+<li>The simpler mesh is what gets animated and rendered</li>
+<li>At render time, displacement restores the high poly detail</li>
+</ul>
+<p>This allows studios to:</p>
+<ul>
+<li>Animate efficiently</li>
+<li>Render extreme detail</li>
+<li>Keep rigs stable and predictable</li>
+</ul>
+<hr>
+<h3>Game Asset Workflows (Traditional)</h3>
+<p>In traditional game workflows:</p>
+<ul>
+<li>The high poly is used to <strong>bake surface information</strong></li>
+<li>Detail is transferred to a <strong>Low Poly mesh</strong> via:
+<ul>
+<li><strong>Normal maps</strong></li>
+<li>Ambient occlusion maps</li>
+<li>Curvature maps, etc.</li>
+</ul>
+</li>
+</ul>
+<p>The low poly:</p>
+<ul>
+<li>Has far fewer triangles</li>
+<li>Is lightweight and real‑time friendly</li>
+<li>Appears detailed because of the baked maps</li>
+</ul>
+<p>This is known as the <strong>High Poly → Low Poly baking workflow</strong>.</p>
+<hr>
+<h3>Modern Game Workflows (Nanite)</h3>
+<p>With Unreal Engine’s Nanite system:</p>
+<ul>
+<li>You <em>can</em> decimate a high poly mesh</li>
+<li>That decimated mesh may be used directly in‑engine</li>
+<li>The mesh still functions as “high poly” in concept</li>
+<li>Nanite streams geometry efficiently at runtime</li>
+</ul>
+<p>However:</p>
+<ul>
+<li>Artists usually still <strong>decimate</strong> or optimize the mesh</li>
+<li>Fully unoptimized sculpt exports (e.g., 5–10 million quad ZBrush meshes) are rarely used raw</li>
+<li>This reduces:
+<ul>
+<li>File size</li>
+<li>Import time</li>
+<li>Memory overhead</li>
+<li>Tool instability</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Decimation and Optimization of High Polys</h2>
+<p>Even when a high poly is not destined for animation, it is common to:</p>
+<ul>
+<li>Decimate the mesh slightly</li>
+<li>Reduce unnecessary polygon density</li>
+<li>Preserve surface detail while improving usability</li>
+</ul>
+<p>This applies to:</p>
+<ul>
+<li>Nanite workflows</li>
+<li>Baking workflows</li>
+<li>Large CAD exports</li>
+<li>Sculpted assets</li>
+</ul>
+<p>Decimation does <strong>not</strong> turn a high poly into a low poly—it simply makes the high poly more practical to work with.</p>
+<hr>
+<h2>Key Takeaways</h2>
+<p><strong>A High Poly mesh is not defined by “lots of polygons” alone.</strong></p>
+<p>It is defined by:</p>
+<ul>
+<li><strong>Intent</strong>: capturing detail and visual fidelity</li>
+<li><strong>Role</strong>: serving as the source of truth for surface information</li>
+<li><strong>Workflow position</strong>: upstream from animation, optimization, and real‑time use</li>
+</ul>
+<p>High polys feed the rest of the pipeline—they are almost never the final asset.</p>
+
+    <p>
+      More information:
+      <a href="https://pixune.com/blog/high-poly-to-low-poly-workflow-in-game-art/" target="_blank" rel="noopener">
+        https://pixune.com/blog/high-poly-to-low-poly-workflow-in-game-art/
+      </a>
+    </p>
+  </div>
+
+  <!-- ===== YouTube Playlist ===== -->
+  <div class="term-content">
+    <h2>YouTube Low Poly Overview Playlist:</h2>
+
+    <div class="callout">
+      <strong>INSTRUCTIONS:</strong>
+      Click the image below to open a playlist of videos covering Low Poly concepts.
+    </div>
+
+    <div class="callout">
+      <a href="https://youtube.com/playlist?list=PLJo0F9-9h6g_FZBwAqnQ7AcyaJDXhlrnv&si=ACqn324YwOPDN__y"
+         target="_blank" rel="noopener">
+        <img
+          src="https://awelchmatc.github.io/html-embeds/glossary/assets/images/LowPolyPlaylist.png"
+          alt="Low Poly YouTube Playlist"
+          width="791" height="405"
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== Examples Gallery ===== -->
+   <div class="callout">
+    <h2>Examples</h2>
+      <p><img src="https://pixune.com/wp-content/uploads/2025/08/High-Poly-to-Low-Poly-Workflow-in-Game-Art-2.webp" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img src="https://img.youtube.com/vi/S84Cmjfkdyg/maxresdefault.jpg" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Voxline nº20 - Realtime prop" src="https://cdnb.artstation.com/p/assets/images/images/095/610/963/large/rafael-murta-passes.webp?1769018074" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Voxline nº20 - Realtime prop" src="https://cdna.artstation.com/p/assets/images/images/095/646/868/large/rafael-murta-pipeline.webp?1769109381" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Well" src="https://cdnb.artstation.com/p/assets/images/images/092/233/611/large/ashay-dropyhop-thube-presentationcompile-11.webp?1759080890" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img src="https://awelchmatc.github.io/html-embeds/glossary/assets/Zhorzha-Oleksandr-Sawed-Off-Shotgun_PHASES.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img src="https://marmoset.co/wp-content/uploads/2025/04/High-Low.jpg" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Stylized Torch / PBR Game-Ready Model / Wayfinder Fanart" src="https://cdna.artstation.com/p/assets/images/images/094/579/030/large/erofeev-evgeny-frame2.webp?1765818543" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Ancient Pillars" src="https://cdnb.artstation.com/p/assets/images/images/095/086/813/large/alaap-chiplunkar-pillarsscale2-w.webp?1767601369" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="No alternative text description for this image" src="https://media.licdn.com/dms/image/v2/D5622AQHAZqCqqFCbvA/feedshare-shrink_800/B56ZfbdbHHH8Ag-/0/1751733614658?e=1778112000&amp;v=beta&amp;t=5iF1VWikNv7jskq1royiZHrU3ua7DYdp73exqbaVD60" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img src="https://awelchmatc.github.io/html-embeds/glossary/assets/aysu-aysuhoscan_HighLowUVs.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="text" src="https://media.licdn.com/dms/image/v2/D5622AQFH0ZuVKs6xOQ/feedshare-shrink_800/B56ZgrqNCfHUAs-/0/1753079144145?e=1778112000&amp;v=beta&amp;t=GZXMxnNyT1vDWqZJ7-Vm8lNhfyKGnzxy-aulqAscQ24" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Stylized carriage (from Palia)" src="https://cdna.artstation.com/p/assets/images/images/093/935/224/large/anton-manin-c-3a.webp?1763987167" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Old Canon" src="https://cdna.artstation.com/p/assets/images/images/096/175/260/large/minchan-kim-zbrush.webp?1770577930" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Old Canon" src="https://cdnb.artstation.com/p/assets/images/images/096/175/255/large/minchan-kim-wireframe.webp?1770577922" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="GenshinImpact-Petrichor (Fan art)" src="https://cdnb.artstation.com/p/assets/images/images/096/118/657/large/park-hyebin-final-zb-render.webp?1770392738" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="GenshinImpact-Petrichor (Fan art)" src="https://cdna.artstation.com/p/assets/images/images/096/141/822/large/park-hyebin-door-render-final.webp?1770468351" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Axe of the Green Knight" src="https://cdna.artstation.com/p/assets/images/images/087/845/134/large/lili-bruijn-sculpt.jpg?1746815181" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Axe of the Green Knight" src="https://cdnb.artstation.com/p/assets/images/images/087/843/303/large/lili-bruijn-wireframredner.jpg?1746810857" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Cat Teahouse Door" src="https://cdnb.artstation.com/p/assets/images/images/086/494/553/large/angela-dato-cat-door-high.jpg?1743348035" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Cat Teahouse Door" src="https://cdna.artstation.com/p/assets/images/images/086/494/558/large/angela-dato-cat-door-wireframe.jpg?1743348043" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Stylized Hammers" src="https://cdnb.artstation.com/p/assets/images/images/094/570/351/large/oleg-otto-05.webp?1765802478" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Stylized Hammers" src="https://cdnb.artstation.com/p/assets/images/images/094/570/263/large/oleg-otto-02.webp?1765802331" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+      <p><img alt="Stylized carriage (from Palia)" src="https://cdna.artstation.com/p/assets/images/images/094/000/350/large/anton-manin-c-5.webp?1764162385" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+   </div>    
+  <!-- ===== Footer ===== -->
+  <div class="term-content">
+    <a href="#">← Back to Top</a>
+  </div>
+
+</div>
+</body>
+</html>
