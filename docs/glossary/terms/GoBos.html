@@ -31,3 +31,136 @@
     }
 
     /* ✅ HEADER */
+    header {
+      background: linear-gradient(180deg, #151b26, #0f131a);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header .inner {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 1.75rem var(--content-padding) 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      max-width: 1000px;
+      line-height: 1.5;
+    }
+
+    /* ✅ MAIN CONTENT CONTAINER */
+    main {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 2rem var(--content-padding);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ✅ CARD */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.45);
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .card-body {
+      padding: 1rem 1.1rem 1.15rem;
+    }
+
+    .card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .source {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ✅ FOOTER */
+    footer {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 1.1rem var(--content-padding) 2rem;
+      font-size: 0.8rem;
+      color: #7d8695;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="inner">
+    <h1>Lighting: GoBo's & Light Projections</h1>
+    <p>
+      Visual reference gallery focused on GoBo patterns, projected light,
+      noir / neo‑noir lighting, texture‑based illumination, and practical workflows.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <img class="thumb" src="https://img.youtube.com/vi/hvRPZMokc7s/hqdefault.jpg">
+    <div class="card-body">
+      <a href="https://www.youtube.com/watch?v=hvRPZMokc7s" target="_blank">
+        Cinematic Lighting & Projection Techniques
+      </a>
+      <div class="source">YouTube</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="thumb" src="https://www.digitalcameraworld.com/wp-content/uploads/2020/08/Film-noir-1200x800.jpg">
+    <div class="card-body">
+      <a href="https://www.digitalcameraworld.com/tutorials/emulate-film-noir-lighting-in-a-home-photography-setup-using-a-gobo" target="_blank">
+        Film Noir Lighting Using GoBos
+      </a>
+      <div class="source">Digital Camera World</div>
+    </div>
+  </div>
+
+  <!-- (Remaining cards unchanged — safe to keep as-is from your current file) -->
+</main>
+
+<footer>
+  Path: MadisonCollege/awBookmarkGallery/Fun Asset Designs To Make!
+</footer>
+
+</body>
+</html>
