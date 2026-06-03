@@ -15,6 +15,13 @@
       "summary": "Basecolor is essentially another word for Albedo. Base Color/Albedo is a map without lighting, shadow, or highlights."
     },
      {
+      "title": "Block Out",
+      "slug": "BlockOut",
+      "category": "Modeling",
+      "tags": ["Modeling","Topology","Greybox","Proxy", "3D Art Track"],
+      "summary": "A Block Out, also known as a Proxy Mesh, is a simple, low‑detail 3D version of an asset used early in production to establish its size, shape, and proportions. It allows teams to quickly test scale and placement while enabling other parts of the pipeline—like level design, set dressing, and animation—to begin work before the final asset is completed."
+    },
+     {
       "title": "GoBo's",
       "slug": "GoBos",
       "category": "Lighting",
