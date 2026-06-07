@@ -557,6 +557,20 @@
       "category": "Optimization",
       "tags": ["Unreal Engine", "Shaders", "Performance"],
       "summary": "Instruction count refers to how many operations a shader performs to calculate the final pixel color. More instructions mean a more expensive material. Complex node setups, layered materials, and excessive math increase instruction count and reduce performance. In Unreal Engine’s Material Editor, instruction count is displayed to help artists optimize shaders and keep them within real-time performance budgets."
-    }    
+    },
+    {
+      "title": "Subdivision Modeling (SubD)",
+      "slug": "SubdivisionModeling",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "SubD", "Topology", "Sculpting", "Film", "Game Dev"],
+      "summary": "Subdivision Modeling (often called SubD) is a modeling technique where a low-resolution mesh (called a Base Cage) is subdivided to create a smoother, higher-resolution surface. This workflow is used in both film and video games. In feature film/VFX pipelines, SubD is often required because it allows for extremely high-resolution detail and 'infinite zoom' in close-up shots, as the model can be subdivided further whenever more detail is needed. In video games, SubD is commonly used for convenience—such as creating rounded shapes or preparing meshes for sculpting—but is not always required by the pipeline. SubD is also the foundation for sculpting workflows in programs like ZBrush, where artists work across multiple subdivision levels. A well-built Base Cage with clean topology and only the necessary edges is critical for achieving clean results when subdivided."
+    },
+    {
+      "title": "Pipeline",
+      "slug": "Pipeline",
+      "category": "Production",
+      "tags": ["Game Dev", "Film", "Animation", "Workflow"],
+      "summary": "A pipeline is the structured workflow that defines how assets are created, processed, and moved between departments in a production. In the entertainment industry, pipelines ensure that large teams can work efficiently and consistently. Pipelines differ depending on the industry: film/VFX pipelines prioritize high-quality offline rendering and often rely heavily on SubD and simulation workflows; animation pipelines focus on character rigging, animation, and storytelling; game development pipelines prioritize real-time performance, optimization, and engine integration (such as Unreal or Unity); and advertising pipelines often prioritize speed and flexibility to meet fast deadlines. Understanding the pipeline helps artists know what assets need to be created, how they should be built, and how they will be used later in production."
+    }
   ]
 }
