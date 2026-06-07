@@ -7,300 +7,221 @@
       "tags": ["PBR", "Texture", "3D Art Track"],
       "summary": "Albedo is essentially another word for Base color. Base Color/Albedo is a map without lighting, shadow, or highlights."
     },
-     {
+
+    {
       "title": "Base Color",
       "slug": "BaseColor",
       "category": "Materials",
       "tags": ["PBR", "Texture", "3D Art Track"],
       "summary": "Basecolor is essentially another word for Albedo. Base Color/Albedo is a map without lighting, shadow, or highlights."
     },
-     {
-      "title": "Block Out",
-      "slug": "BlockOut",
+
+    {
+      "title": "Beveling",
+      "slug": "Beveling",
       "category": "Modeling",
-      "tags": ["Modeling","Topology","Greybox","Proxy", "3D Art Track"],
-      "summary": "A Block Out, also known as a Proxy Mesh, is a simple, low‑detail 3D version of an asset used early in production to establish its size, shape, and proportions. It allows teams to quickly test scale and placement while enabling other parts of the pipeline—like level design, set dressing, and animation—to begin work before the final asset is completed."
+      "tags": ["3D Art Track", "Chamfer", "Hard Surface", "Topology"],
+      "summary": "Beveling (also called chamfering) is the process of rounding or flattening the edge of a 3D model. This helps surfaces catch highlights, improves realism, and is critical for producing clean high-poly models for baking."
     },
-     {
-      "title": "GoBo's",
-      "slug": "GoBos",
-      "category": "Lighting",
-      "tags": ["PBR", "Texture", "3D Art Track", "Common Core", "Animation Track"],
-      "summary": "In lighting and cinematography, a gobo short for Goes Before Optics or Go Between is a physical or digital stencil used to control the shape of emitted light.For game dev art students, think of a gobo as a shadow mask. Instead of modeling every single leaf on a tree or every slat in a window blind, you use a gobo to project those complex shadows directly into your scene."
-    },
-      {
-    "title": "Repoussoir",
-    "slug": "Repoussoir",
-    "category": "2D Fundamentals",
-    "tags": [
-      "Common Core",
-      "Design",
-      "Theory",
-      "Composition"
-    ],
-    "summary": "The French word “repoussoir” refers to an object placed in the foreground of a composition that enhances the illusion of distance with other objects. Example here would be the flowering plant in the lower left and the family group watching from the foreground. This is a compositional tool."  
-    },
+
     {
-    "title": "Principles of Design",
-    "slug": "PrinciplesOfDesign",
-    "category": "2D Fundamentals",
-    "tags": [
-      "Common Core",
-      "Design",
-      "Theory",
-      "Composition"
-    ],
-    "summary": "The principles of design in art are foundational concepts that guide the creation and evaluation of artworks, ensuring visual harmony, balance, and cohesion. These principles include balance, contrast, emphasis, movement, pattern, rhythm, and unity/variety. Each principle plays a pivotal role in organizing or arranging the visual elements in a design, ultimately shaping the viewer's experience. For a deeper understanding and exploration of how these principles relate to visual aesthetics in art and design, refer to the chapter on Visual Aesthetics from the Encyclopedia of Human-Computer Interaction. This comprehensive resource provides insights into the interconnectedness of design principles in various mediums."
-  },
-  {
-    "title": "Depth of field",
-    "slug": "DepthOfField",
-    "category": "Cinematography",
-    "tags": [
-      "Common Core",
-      "Design",
-      "Theory",
-      "Composition",
-      "Photography"
-    ],
-    "summary": "Depth of field is the range of distance within an image that appears acceptably sharp. A shallow depth of field isolates a subject with strong foreground and background blur, while a deep depth of field keeps everything from near to far in focus."
-  },
-      {
-    "title": "SubD",
-    "slug": "SubD",
-    "category": "Modeling",
-    "tags": [
-      "3D Art Track",
-      "Quad",
-      "Tri",
-      "Wireframe",
-      "Edge Flow",
-      "SubD",
-      "Subdivision",
-      "Topology",
-      "High Poly. Edge Loop"
-    ],
-    "summary": "SubD is short for \"Subdivision\", a modeling technique in 3D modeling that transforms a low-poly model into a high-poly model by dividing its surface into smaller, smoother polygons. \n\nThis modeling technique is for making high-resolution models, by manipulating a lower-resolution \"cage\" model and using software to subdivide for a smoother surface. While common in video game art for \"Hard Surface\" assets, SubD is paramount in Film/\"off-line\" rendering, as it provides \"infinite detail\", as no matter how close you zoom in to a curve for any particular film shot, you can always just divide the cage another time to make it smoother for that shot. While overkill for many game assets, it saves a ton of potential lost work in the event one needs to \"get closer\" to an asset than originally planned.\n\nSubdividing increases the number of vertices on the model, making curves more rounded. Usually each subdivision level increases the vertex count 4x the original count.\n\nFor game artists, \"high-poly hard-surface\" usually means creating mechanical/constructed models, which are used to bake into Normal Maps and other types of textures, which are in turn used on lower-resolution game-friendly models.\n\nSubdivision surfaces can also be used for organic shapes.\n\nNot to be confused with SmoothingGroups. Sometimes the term \"box modeling\" is used, though this applies only to the cage modeling process, not to the subdivision."
-  },
-      {
-    "title": "Tiling Texture",
-    "slug": "Tiling-Texture",
-    "category": "Texturing, Materials, Shading",
-    "tags": [
-      "3D Art Track"
-    ],
-    "summary": "Tiling textures use a small image that repeats across a surface, which is great for large areas like walls, floors, or rocks because it saves memory and still looks detailed—though you have to avoid obvious repeating patterns."
-  },
-      {
-    "title": "Trim Sheet",
-    "slug": "Trim-Sheet",
-    "category": "Texturing, Materials, Shading",
-    "tags": [
-      "3D Art Track"
-    ],
-    "summary": "Trim sheets are special texture maps filled with reusable “strips” of detail—like metal edges, panel lines, or decorative borders—that artists align their model’s UVs to, making it fast and efficient to texture many assets in a consistent style. Trim sheets are usually defined by their ability to tile, but only in one direction (U or V)"
-  },
-      {
-    "title": "Unique UV",
-    "slug": "Unique-UV",
-    "category": "Texturing, Materials, Shading",
-    "tags": [
-      "3D Art Track"
-    ],
-    "summary": "Unique UVs, on the other hand, give each asset its own custom, non‑repeating texture layout, which allows for very specific details, decals, dirt, or story elements—but it takes more time to make and uses more texture memory."
-  },
-      {
-    "title": "Cage",
-    "slug": "Cage",
-    "category": "Modeling, Texturing, Materials, Shading",
-    "tags": [
-      "3D Art Track",
-      "Baking",
-      "Topology",
-      "SubD"
-    ],
-    "summary": "The term \"Cage\" can refer to either \"Base Cage\" or \"Baking Cage\".\n\n-\"Base Cage\" (also called \"Base Mesh\" Subdivision Level Zero (or one)) is the simple mesh that you have as your \"lowest level\" of subdivision i.e. the mesh you start with before you actually subdivide.\n- \"Baking Cage\" refers to the mesh you can adjust in apps like Substance Painter & Marmoset Toolbag to control the traces used to bake data from one mesh to another."
-  },
-      {
-    "title": "UV",
-    "slug": "UV",
-    "category": "Modeling, Texturing, Materials, Shading",
-    "tags": [
-      "3D Art Track",
-      "Tiling Texture",
-      "Trim Sheet",
-      "Unique UV",
-      "UDIM"
-    ],
-    "summary": "UVs are coordinates that tell a game engine how to place a 2D image (a texture) onto a 3D model.\n\nU and V are directions on a flat texture (left–right and up–down).\nX, Y, Z are already used for 3D directions, so the letters U and V are used for 2D texture directions.\n\nWhat Are “UVs” in Game Development?\nThink of a 3D model like a candy bar wrapped in printed foil.\nThe wrapper is the texture (the image), and the candy bar is the 3D model.\nBut how do you wrap a flat image around a 3D shape?\nThat’s where UVs come in.\n\nTypes of UVs:\n- Tiling textures, trim sheets, and unique UVs are three different ways of adding detail to 3D game assets, each with its own purpose. Tiling textures use a small image that repeats across a surface, which is great for large areas like walls, floors, or rocks because it saves memory and still looks detailed—though you have to avoid obvious repeating patterns. \n- Trim sheets are special texture maps filled with reusable “strips” of detail—like metal edges, panel lines, or decorative borders—that artists align their model’s UVs to, making it fast and efficient to texture many assets in a consistent style. Trim sheets are usually defined by their ability to tile, but only in one direction (U or V)\n- Unique UVs, on the other hand, give each asset its own custom, non‑repeating texture layout, which allows for very specific details, decals, dirt, or story elements—but it takes more time to make and uses more texture memory. Together, these techniques let game artists balance quality, efficiency, and performance depending on the asset’s role."
-  },
-    {
-    "title": "Baking",
-    "slug": "Baking",
-    "category": "Texturing",
-    "tags": [
-      "3D Art Track",
-      "Animation Track",
-      "baking",
-      "uvs",
-      "normal maps",
-      "mesh maps",
-      "keys"],
-      "summary": "Baking is the act of transferring data from one asset/form to another. In 3D Art, it often refers to baking the surface normals of a high poly mesh into a texture (normal map) that a low poly can use, but you can also bake: BaseColor, Curvature, AO, Thickness, ID maps, etc.). For animation, it often refers to baking animation data for every key, so you can have a \"Rig\" controller key framed (or driven by noise) that then gets \"baked\" onto the joints/bones of the skeleton for use in bake or to transfer between apps."
+      "title": "ZBrush",
+      "slug": "ZBrush",
+      "category": "Software",
+      "tags": ["3D Art Track", "Sculpting", "High Poly"],
+      "summary": "ZBrush is a digital sculpting application used to create highly detailed models. Artists can work with millions of polygons, making it ideal for organic forms, characters, and high-resolution detail work in games and film."
     },
-     {
-      "title": "Wireframe",
-      "slug": "Wireframe",
+
+    {
+      "title": "Smooth Mesh Preview",
+      "slug": "SmoothMeshPreview",
       "category": "Modeling",
-      "tags": [
-        "3D Art Track",
-        "Quad",
-        "Tri",
-        "Wireframe",
-        "Edge Flow",
-        "SubD",
-        "Subdivision",
-        "Topology",
-        "High Poly. Edge Loop"],
-        "summary": "The wire-frame method of modelling consists of only lines and curves that connect the points or vertices and thereby define the edges of an object."
-      },
-      {
-    "title": "nGon",
-    "slug": "nGon",
-    "category": "Modeling",
-    "tags": [
-      "3D Art Track",
-      "Quad",
-      "Tri",
-      "Wireframe",
-      "Edge Flow",
-      "SubD",
-      "Subdivision",
-      "Topology",
-      "High Poly. Edge Loop"],
-    "summary": "An Ngon (or N-gon) is a polygon with 5 or more edges. Anything that is not a tri or quad is considered an Ngon."
+      "tags": ["3D Art Track", "SubD", "Maya"],
+      "summary": "Smooth Mesh Preview in Maya allows artists to preview a subdivided (smoothed) version of their model without permanently applying subdivision. It is used to visualize how a low-poly cage will look when smoothed."
     },
-      {
-    "title": "Pole",
-    "slug": "Pole",
-    "category": "Modeling",
-    "tags": [
-      "3D Art Track",
-      "Quad",
-      "Tri",
-      "Wireframe",
-      "Edge Flow",
-      "SubD",
-      "Subdivision",
-      "Topology",
-      "High Poly. Edge Loop",
-      "nGon"],
-    "summary": "A pole is a set of edges that merge into a single vertex. Avoiding poles with six or more edges on a curved surfaces is something that you should incorporate into your modeling workflow."
-  },
+
     {
-    "title": "High Poly",
-    "slug": "HighPoly",
-    "category": "Modeling",
-    "tags": [
-      "3D Art Track",
-      "SubD",
-      "Subdivision",
-      "CAD",
-      "Sculpting",
-      "Baking",
-      "Low Poly",
-      "Base Mesh",
-      "Base Cage"],
-      "summary": "A mesh that is high in polygonal density (Lots of faces/verts/edges), and contains all the surface detail you want visually. This can be either a \"Subdivided\" or \"Smooth Mesh Preview\" of the \"Base Mesh\" in Maya/Blender/etc from the \"SubD\" workflow, or a sculpted mesh from ZBrush/Blender, or a high quality output from CAD software (Plasticity/Fusion 360), or even just boolean mesh that has lots of topology to ensure it looks nice/smooth/round where expected."
-    },
-    {
-    "title": "Topology",
-    "slug": "Topology",
-    "category": "Modeling",
-    "tags": [
-      "3D Art Track",
-      "Quad",
-      "Tri",
-      "Wireframe",
-      "Edge Flow",
-      "SubD",
-      "Subdivision",
-      "Low Poly",
-      "High Poly. Edge Loop",
-      "Pole",
-      "nGon"],
-      "summary": "Topology in 3D modeling is the study and application of how surfaces are constructed from vertices, edges, and faces. It's the blueprint of your model, defining its structure and ensuring that it can be manipulated without causing unwanted distortion or deformation. \n- For Game Art \"Good Topology\" means a wireframe that supports silhouette, shading, UVs, Materials and nothing more, so edge loops should terminate intro triangles if they aren't required.\n- For SubD, \"Good Topology\" means evenly spaced edge loops for curved surfaces, and mitigating \"poles\" (vertices that connect with either more or less than 4 edges connecting). Idea Geometry would be as simple of a mesh as possible that subdivides to the correct shape, likely resulting in few if any tris & nGons. Creasing and/or triple edging is used to control edges/curvature.\n- For Digital Sculpting, \"Good Topology\" would be ALL quads (to ensure you can preserve your base mesh reconstruction) and *EVENLY SPACED* \"Edge Loops\", so that you have consistent sculpting resolution (the polygon sculpting equivalent to texture painting's \"Texel Scale\". Maybe dub this, \"Polygrid Sculpt Scale\"? ;)"
-    },
-    {
-      "title": "Normal Map",
-      "slug": "normal-map",
-      "category": "Materials",
-      "tags": ["Bump", "Tangent Space", "3D Art Track"],
-      "summary": "Texture that encodes surface directions to fake small-scale detail."
-    },
-    {
-      "title": "Low Poly",
-      "slug": "LowPoly",
+      "title": "Dynamesh",
+      "slug": "Dynamesh",
       "category": "Modeling",
-      "tags": [
-        "3D Art Track",
-        "Game Res",
-        "Optimization",
-        "Topology",
-        "Baking",
-        "Low Poly",
-        "Base Mesh",
-        "Base Cage"],
-        "summary": "aka \"Render Mesh\", \"Arbitrary Mesh\", \"Game Res Mesh\", \"Mid-Poly\" (a game res mesh that usually has more polys than a \"Low Poly\" because it uses trim sheets and tiling/world textures instead of the High Poly/Low Poly \"Bake\" workflow). \n\nA mesh that is \"Low\" in polygonal density (no unnecessary faces/verts/edges). This is the mesh you actually use \"In-Game\" and it's topology is decided not by edge flow or \"SubD rules\" but instead solely by the needs got eh video game asset (edges/verts/polys to support silhouette, shading, UVs, other game data). This mesh more than likely would consist of triangles to ensure it's efficient. 99% of the time when done well, this mesh is NOT the same thing as the mesh you subdivide to make your SubD High Poly (\"Base Cage\", Base Mesh\", i.e. Lowest Subdivision in ZBrush or non-\"smooth mesh preview\" mesh in Maya)."
+      "tags": ["3D Art Track", "ZBrush", "Sculpting"],
+      "summary": "Dynamesh is a ZBrush feature that redistributes topology evenly across a mesh while sculpting. It behaves like a voxel-based system, allowing shapes to merge and change freely without stretched polygons, but does not maintain clean, animation-ready topology."
     },
+
     {
-      "title": "UV Unwrapping",
-      "slug": "uv-unwrapping",
-      "category": "Texturing",
-      "tags": ["UVs", "Seams", "3D Art Track"],
-      "summary": "Flattening a 3D model's surface into a 2D layout for texturing."
+      "title": "Remeshing",
+      "slug": "Remeshing",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Topology", "ZBrush", "Maya"],
+      "summary": "Remeshing regenerates the topology of a mesh, but behaves very differently depending on the software. In ZBrush, Remesh tools (like ZRemesher) produce clean, all-quad topology with even edge flow ideal for sculpting. In Maya, the Remesh tool behaves more like a voxelizer, producing a triangulated mesh similar to Dynamesh, which is NOT ideal for sculpting or animation. Because of this, Maya users typically use the Retopologize tool instead when they need clean, quad-based topology."
     },
+
     {
-      "title": "Rigging",
-      "slug": "rigging",
+      "title": "Retopology",
+      "slug": "Retopology",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Topology", "Optimization"],
+      "summary": "Retopology is the process of rebuilding a mesh with clean, efficient topology. In Maya, the Retopologize tool is used to create evenly distributed, quad-based geometry suitable for animation and production. Unlike Maya’s Remesh (which creates triangulated, voxel-like output), Retopologize produces structured edge flow similar to ZBrush’s ZRemesher, making it the preferred tool for creating production-ready meshes."
+    },
+
+    {
+      "title": "12 Principles of Animation",
+      "slug": "12PrinciplesAnimation",
       "category": "Animation",
-      "tags": ["Skeleton", "Controls", "Animation Track"],
-      "summary": "Creating bones and controllers so a model can be posed and animated."
+      "tags": ["Animation Track", "Fundamentals"],
+      "summary": "The 12 Principles of Animation are foundational guidelines created by Disney animators. They include Squash and Stretch, Anticipation, Staging, Straight Ahead vs Pose-to-Pose, Follow Through and Overlapping Action, Slow In and Slow Out, Arcs, Secondary Action, Timing, Exaggeration, Solid Drawing, and Appeal. These principles help create believable movement and performance."
     },
+
     {
-      "title": "PBR Workflow",
-      "slug": "pbr-workflow",
-      "category": "Materials",
-      "tags": ["Metalness", "Roughness", "3D Art Track"],
-      "summary": "Physically Based Rendering approach using energy-conserving materials."
-    },
-    {
-      "title": "IK vs. FK",
-      "slug": "ik-vs-fk",
-      "category": "Animation",
-      "tags": ["Inverse Kinematics", "Forward Kinematics", "Animation Track"],
-      "summary": "Two approaches for controlling limbs in character animation."
-    },
-    {
-      "title": "HDRI",
-      "slug": "hdri",
+      "title": "Light Mapping",
+      "slug": "LightMapping",
       "category": "Lighting",
-      "tags": ["Image-Based Lighting", "Environment", "Common Core"],
-      "summary": "High dynamic range images used to light scenes with realistic reflections."
+      "tags": ["Unreal Engine", "Unity", "Baking"],
+      "summary": "Light mapping is the process of baking lighting and shadow information into textures that are applied to static objects. It allows realistic lighting while keeping real-time performance costs low."
     },
+
     {
-      "title": "Ambient Occlusion",
-      "slug": "ambient-occlusion",
+      "title": "LOD",
+      "slug": "LOD",
+      "category": "Optimization",
+      "tags": ["Game Dev", "Performance"],
+      "summary": "Level of Detail (LOD) refers to multiple versions of an asset with decreasing complexity at different distances. This can include reduced geometry, simpler materials, or disabling lights to improve performance."
+    },
+
+    {
+      "title": "Draw Calls",
+      "slug": "DrawCalls",
+      "category": "Optimization",
+      "tags": ["Game Dev", "Unreal Engine", "Performance"],
+      "summary": "Draw calls are instructions sent from the CPU to the GPU to render objects. Each mesh, material slot, or actor increases draw calls. High draw call counts negatively impact performance, especially in Unreal Engine and indie projects where optimization is critical."
+    },
+
+    {
+      "title": "Nanite",
+      "slug": "Nanite",
+      "category": "Rendering",
+      "tags": ["Unreal Engine 5"],
+      "summary": "Nanite is Unreal Engine 5’s virtualized geometry system that allows extremely high-polygon models to render in real time by dynamically streaming only visible detail."
+    },
+
+    {
+      "title": "Lumen",
+      "slug": "Lumen",
       "category": "Lighting",
-      "tags": ["Contact Shadows", "Cavity", "Common Core"],
-      "summary": "Shading that darkens creases and corners where light is occluded."
+      "tags": ["Unreal Engine 5", "Global Illumination"],
+      "summary": "Lumen is Unreal Engine 5’s real-time global illumination system that simulates light bouncing and reflections dynamically without requiring baked lighting."
     },
+
     {
-      "title": "Keyframe",
-      "slug": "keyframe",
-      "category": "Animation",
-      "tags": ["Interpolation", "Timeline", "Animation Track"],
-      "summary": "A defined value at a specific time that drives animation curves."
+      "title": "Global Illumination",
+      "slug": "GlobalIllumination",
+      "category": "Lighting",
+      "tags": ["GI", "Rendering"],
+      "summary": "Global Illumination simulates how light bounces between surfaces, affecting color and brightness. Real-time solutions include Unreal’s Lumen, while offline renderers like Arnold and Cycles produce higher-quality but slower results."
+    },
+
+    {
+      "title": "Bounce Light",
+      "slug": "BounceLight",
+      "category": "Lighting",
+      "tags": ["GI"],
+      "summary": "Bounce light is indirect light that reflects off surfaces and illuminates other parts of a scene, contributing to realistic shading and color bleeding."
+    },
+
+    {
+      "title": "3-Point Lighting",
+      "slug": "ThreePointLighting",
+      "category": "Lighting",
+      "tags": ["Cinematography"],
+      "summary": "Three-point lighting uses a key light, fill light, and back light to illuminate a subject clearly while maintaining depth and contrast."
+    },
+
+    {
+      "title": "Key Light",
+      "slug": "KeyLight",
+      "category": "Lighting",
+      "tags": ["Cinematography"],
+      "summary": "The key light is the main light source in a scene, defining the overall lighting direction and strongest shadows."
+    },
+
+    {
+      "title": "Fill Light",
+      "slug": "FillLight",
+      "category": "Lighting",
+      "tags": ["Cinematography"],
+      "summary": "The fill light softens and reduces shadows created by the key light, helping control contrast."
+    },
+
+    {
+      "title": "High Key vs Low Key",
+      "slug": "HighKeyLowKey",
+      "category": "Lighting",
+      "tags": ["Cinematography"],
+      "summary": "High-key lighting uses bright, even illumination with minimal shadows, while low-key lighting emphasizes contrast and deep shadows for dramatic effect."
+    },
+
+    {
+      "title": "Exposure",
+      "slug": "Exposure",
+      "category": "Lighting",
+      "tags": ["Unreal Engine", "Photography"],
+      "summary": "Exposure determines how bright or dark an image appears based on light intensity and camera settings. In Unreal Engine, exposure can be controlled dynamically through post-process volumes."
+    },
+
+    {
+      "title": "Post Process",
+      "slug": "PostProcess",
+      "category": "Rendering",
+      "tags": ["Unreal Engine 5"],
+      "summary": "Post-processing includes visual effects applied after rendering, such as color grading, bloom, depth of field, and exposure adjustments."
+    },
+
+    {
+      "title": "Gestalt",
+      "slug": "Gestalt",
+      "category": "2D Fundamentals",
+      "tags": ["Design", "Theory"],
+      "summary": "Gestalt principles describe how humans perceive visual elements as unified wholes rather than separate pieces, influencing composition and design."
+    },
+
+    {
+      "title": "Environment Artist",
+      "slug": "EnvironmentArtist",
+      "category": "Careers",
+      "tags": ["Game Dev"],
+      "summary": "An Environment Artist builds full game worlds, combining modeling, texturing, lighting, and composition. This role goes beyond just modeling assets."
+    },
+
+    {
+      "title": "Gameplay Animator",
+      "slug": "GameplayAnimator",
+      "category": "Careers",
+      "tags": ["Animation Track"],
+      "summary": "A Gameplay Animator creates animations that respond to player input and gameplay systems, unlike cinematic animators who focus on pre-scripted scenes."
+    },
+
+    {
+      "title": "JIRA",
+      "slug": "JIRA",
+      "category": "Production",
+      "tags": ["Pipeline"],
+      "summary": "JIRA is a project management tool used in game development to track tasks, bugs, and production progress."
+    },
+
+    {
+      "title": "Perforce",
+      "slug": "Perforce",
+      "category": "Production",
+      "tags": ["Version Control"],
+      "summary": "Perforce is a version control system widely used in game development for managing large files and team collaboration."
+    },
+
+    {
+      "title": "Version Control",
+      "slug": "VersionControl",
+      "category": "Production",
+      "tags": ["Pipeline"],
+      "summary": "Version control systems track changes to files over time, allowing teams to collaborate and revert to previous versions. Examples include Git, Perforce, and SVN."
     }
   ]
 }
