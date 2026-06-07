@@ -381,7 +381,7 @@
       "slug": "ColorWheel",
       "category": "Color Theory",
       "tags": ["Design", "Theory"],
-      "summary": "The color wheel organizes colors and shows relationships like complementary and analogous schemes. In additive color (light, like screens), colors combine toward white (RGB). In subtractive color (paint/pigment), colors combine toward black or muddy tones (RYB/CMY). One important thing for artists to understand is that complementary colors are NOT always the same depending on which color system you are using. Traditional painting (RYB) uses pairs like red/green or blue/orange, while digital and lighting workflows (RGB) shift those relationships. Because of this, what counts as a 'true complement' can change depending on whether you’re working in paint, Photoshop, or Unreal Engine, so always consider your medium."
+      "summary": "The color wheel organizes colors and shows relationships like complementary and analogous schemes. In additive color (light, like screens), colors combine toward white (RGB). In subtractive color (paint/pigment), colors combine toward black or muddy tones (RYB/CMY). One important thing for artists to understand is that complementary colors are NOT always the same depending on which color system you are using. Traditional painting (RYB) uses pairs like red/green or blue/orange, while digital and lighting workflows (RGB) shift those relationships (PURPLE/green or blue/YELLOW). Because of this, what counts as a 'true complement' can change depending on whether you’re working in paint, Photoshop, or Unreal Engine, so always consider your medium."
     },
     {
       "title": "Color Temperature",
