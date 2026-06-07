@@ -207,7 +207,6 @@
       "tags": ["Pipeline"],
       "summary": "JIRA is a project management tool used in game development to track tasks, bugs, and production progress."
     },
-
     {
       "title": "Perforce",
       "slug": "Perforce",
@@ -222,8 +221,7 @@
       "category": "Production",
       "tags": ["Pipeline"],
       "summary": "Version control systems track changes to files over time, allowing teams to collaborate and revert to previous versions. Examples include Git, Perforce, and SVN."
-    },
-    
+    },    
     {
       "title": "Motivated vs Unmotivated Lighting",
       "slug": "MotivatedLighting",
@@ -342,7 +340,7 @@
       "category": "Cinematography",
       "tags": ["Unreal Engine", "Camera"],
       "summary": "Depth of field determines how much of a scene is in focus. Shallow depth of field blurs the background to emphasize a subject. In Unreal Engine, this is controlled using aperture (low f-stop), focus distance, and cinematic camera or post-process settings."
-    }
+    },
     {
       "title": "Monochromatic",
       "slug": "Monochromatic",
@@ -447,7 +445,7 @@
       "category": "Modeling",
       "tags": ["3D Art Track", "Maya", "Topology"],
       "summary": "A major point of confusion is that 'smoothing' can mean different things. In most 3D apps, smoothing refers to vertex normals being averaged to create smooth shading. In Maya, however, 'Smooth' often means subdividing geometry (adding more polygons). These are not the same—one changes shading, the other changes geometry."
-    }
+    },
     {
       "title": "Texel Density",
       "slug": "TexelDensity",
@@ -545,7 +543,7 @@
       "category": "Optimization",
       "tags": ["Game Dev", "Performance"],
       "summary": "An optimization budget defines limits for things like triangle count, draw calls, and texture resolution. Artists must work within these limits to ensure the game runs smoothly while maintaining visual quality."
-    }
+    },
     {
       "title": "Overdraw",
       "slug": "Overdraw",
