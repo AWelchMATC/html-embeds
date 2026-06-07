@@ -343,5 +343,222 @@
       "tags": ["Unreal Engine", "Camera"],
       "summary": "Depth of field determines how much of a scene is in focus. Shallow depth of field blurs the background to emphasize a subject. In Unreal Engine, this is controlled using aperture (low f-stop), focus distance, and cinematic camera or post-process settings."
     }
+    {
+      "title": "Monochromatic",
+      "slug": "Monochromatic",
+      "category": "Color Theory",
+      "tags": ["Design", "Painting"],
+      "summary": "A monochromatic color scheme uses variations of a single color, including tints (lighter), shades (darker), and tones (muted). This creates a cohesive and controlled look, often emphasizing value and form over color complexity."
+    },
+    {
+      "title": "Complementary",
+      "slug": "ComplementaryColors",
+      "category": "Color Theory",
+      "tags": ["Design", "Painting"],
+      "summary": "Complementary colors are opposite each other on the color wheel (like blue and orange). When used together, they create strong contrast and visual energy, making subjects stand out."
+    },
+    {
+      "title": "Analogous",
+      "slug": "Analogous",
+      "category": "Color Theory",
+      "tags": ["Design", "Painting"],
+      "summary": "Analogous colors sit next to each other on the color wheel (like blue, blue-green, and green). These schemes feel harmonious and natural because the colors are closely related."
+    },
+    {
+      "title": "Analogous with Complementary Accent",
+      "slug": "AnalogousComplementAccent",
+      "category": "Color Theory",
+      "tags": ["Design", "Painting"],
+      "summary": "This scheme uses an analogous palette for harmony but adds a small amount of a complementary color for contrast. This allows an image to feel unified while still having a strong focal point."
+    },
+    {
+      "title": "Split Complementary",
+      "slug": "SplitComplementary",
+      "category": "Color Theory",
+      "tags": ["Design", "Painting"],
+      "summary": "A split complementary scheme uses one base color and the two colors adjacent to its complement. It maintains strong contrast like complementary colors but is less intense and easier to balance."
+    },
+    {
+      "title": "Color Wheel",
+      "slug": "ColorWheel",
+      "category": "Color Theory",
+      "tags": ["Design", "Theory"],
+      "summary": "The color wheel organizes colors and shows relationships like complementary and analogous schemes. In additive color (light, like screens), colors combine toward white (RGB). In subtractive color (paint/pigment), colors combine toward black or muddy tones (RYB/CMY). One important thing for artists to understand is that complementary colors are NOT always the same depending on which color system you are using. Traditional painting (RYB) uses pairs like red/green or blue/orange, while digital and lighting workflows (RGB) shift those relationships. Because of this, what counts as a 'true complement' can change depending on whether you’re working in paint, Photoshop, or Unreal Engine, so always consider your medium."
+    },
+    {
+      "title": "Color Temperature",
+      "slug": "ColorTemperature",
+      "category": "Color Theory",
+      "tags": ["Lighting", "Unreal Engine", "Painting"],
+      "summary": "Color temperature describes whether a color feels warm (reds, oranges) or cool (blues). In lighting, it is measured in Kelvin. Lower Kelvin values (like 2000K) produce warm light like fire, mid values (5000–6500K) resemble daylight, and higher values create cool, blue light. In Unreal and digital art, using Kelvin values can quickly achieve realistic lighting, such as warm campfires, glowing heated metal (which shifts from red to white as it heats), or neutral daylight."
+    },
+    {
+      "title": "Inverse Square Law",
+      "slug": "InverseSquareLaw",
+      "category": "Lighting",
+      "tags": ["Unreal Engine", "PBR", "Physics"],
+      "summary": "The inverse square law states that light intensity decreases rapidly as distance increases. If you double the distance from a light, it becomes one-fourth as bright. Unreal Engine’s physically based lighting follows this rule, making correct light placement and scale critical for realism."
+    },
+    {
+      "title": "Collision",
+      "slug": "Collision",
+      "category": "Game Dev",
+      "tags": ["Unreal Engine", "Environment Art", "Performance"],
+      "summary": "Collision defines how objects physically interact in a game world. It determines where players can walk, what blocks movement, and how objects behave. Environment artists must create clean, optimized collision to ensure gameplay works correctly without hurting performance."
+    },
+    {
+      "title": "Normals",
+      "slug": "Normals",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Shading", "Topology"],
+      "summary": "Normals are vectors that tell a surface which direction it is facing, which is critical for how light interacts with that surface. Even simple geometry can appear smooth or faceted depending on how its normals are configured."
+    },
+    {
+      "title": "Vertex Normals",
+      "slug": "VertexNormals",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Shading", "Topology"],
+      "summary": "Vertex normals define shading at each vertex and are averaged between faces to create smooth shading. When vertex normals are shared between faces, the surface appears smooth. When they are split, the surface appears hard or faceted. This is often referred to as soft vs hard edges."
+    },
+    {
+      "title": "Face Normals",
+      "slug": "FaceNormals",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Shading"],
+      "summary": "Face normals represent the direction of an individual polygon. When shading uses face normals instead of shared vertex normals, the object appears faceted, with visible polygon edges."
+    },
+    {
+      "title": "Hard vs Soft Edges",
+      "slug": "HardSoftEdges",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Shading"],
+      "summary": "Hard edges split vertex normals between faces, creating sharp transitions (faceted shading). Soft edges share vertex normals, smoothing the shading between faces. These do not change geometry—only how lighting is calculated."
+    },
+    {
+      "title": "Face Weighted Normals",
+      "slug": "FaceWeightedNormals",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Shading", "Hard Surface"],
+      "summary": "Face weighted normals adjust vertex normals so larger faces have more influence over shading. This helps hard surface models appear smoother and cleaner without adding extra geometry, making it especially useful in game art workflows."
+    },
+    {
+      "title": "Smooth Shading vs Subdivision",
+      "slug": "SmoothVsSubdivision",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Maya", "Topology"],
+      "summary": "A major point of confusion is that 'smoothing' can mean different things. In most 3D apps, smoothing refers to vertex normals being averaged to create smooth shading. In Maya, however, 'Smooth' often means subdividing geometry (adding more polygons). These are not the same—one changes shading, the other changes geometry."
+    }
+    {
+      "title": "Texel Density",
+      "slug": "TexelDensity",
+      "category": "Texturing",
+      "tags": ["3D Art Track", "UVs", "Optimization"],
+      "summary": "Texel density refers to how much texture resolution is applied across a surface. Consistent texel density ensures that all parts of an asset have similar visual sharpness, preventing some areas from looking blurry while others are overly detailed."
+    },
+    {
+      "title": "World Aligned Texture",
+      "slug": "WorldAlignedTexture",
+      "category": "Materials",
+      "tags": ["Unreal Engine", "Shaders"],
+      "summary": "A world aligned texture applies a material based on world coordinates instead of UVs. This makes textures automatically align across multiple objects and is useful for environment work like terrain, cliffs, and large surfaces."
+    },
+    {
+      "title": "Decals",
+      "slug": "Decals",
+      "category": "Materials",
+      "tags": ["Unreal Engine", "Environment Art"],
+      "summary": "Decals are projected textures used to add localized detail like dirt, damage, signs, or graffiti without modifying the base material. In Unreal, deferred decals allow detail layering while keeping assets modular and efficient."
+    },
+    {
+      "title": "Shader Complexity",
+      "slug": "ShaderComplexity",
+      "category": "Optimization",
+      "tags": ["Unreal Engine", "Performance"],
+      "summary": "Shader complexity refers to how expensive a material is to render. More complex shaders require more GPU processing. Unreal Engine provides visualization modes to help artists identify and optimize costly materials."
+    },
+    {
+      "title": "Lightmass vs Lumen",
+      "slug": "LightmassVsLumen",
+      "category": "Lighting",
+      "tags": ["Unreal Engine 5", "GI"],
+      "summary": "Lightmass is Unreal’s baked lighting system, where light is precomputed into lightmaps for performance. Lumen is Unreal Engine 5’s real-time global illumination system, dynamically calculating light bounces. Lightmass is more performance-friendly, while Lumen is more flexible and realistic in dynamic scenes."
+    },
+    {
+      "title": "Root Motion",
+      "slug": "RootMotion",
+      "category": "Animation",
+      "tags": ["Animation Track", "Game Dev"],
+      "summary": "Root motion refers to animation where the character’s movement is driven by the animation itself (like walking forward). Instead of the game moving the character, the animation controls translation, which can increase realism but requires careful setup."
+    },
+    {
+      "title": "In-Place Animation",
+      "slug": "InPlaceAnimation",
+      "category": "Animation",
+      "tags": ["Animation Track", "Game Dev"],
+      "summary": "In-place animation keeps the character moving in place (like running on a treadmill), while the game engine handles movement. This is common in games because it allows better control over speed and navigation."
+    },
+    {
+      "title": "Animation Blueprint",
+      "slug": "AnimationBlueprint",
+      "category": "Animation",
+      "tags": ["Unreal Engine", "Animation Track"],
+      "summary": "An Animation Blueprint in Unreal Engine controls how animations play and blend based on gameplay logic. It allows developers to connect animations to player input, states, and transitions."
+    },
+    {
+      "title": "State Machine",
+      "slug": "StateMachine",
+      "category": "Animation",
+      "tags": ["Unreal Engine", "Animation"],
+      "summary": "A state machine controls transitions between animations (such as idle, walk, run, jump). It defines rules for switching between states based on conditions like speed or player input."
+    },
+    {
+      "title": "Blend Space",
+      "slug": "BlendSpace",
+      "category": "Animation",
+      "tags": ["Unreal Engine", "Animation"],
+      "summary": "A blend space allows multiple animations to smoothly blend together based on input values like speed or direction. For example, blending between idle, walk, and run animations based on movement speed."
+    },
+    {
+      "title": "Pivot / Origin",
+      "slug": "Pivot",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Transform"],
+      "summary": "The pivot (or origin point) is the center point from which an object moves, rotates, and scales. Proper pivot placement is essential for animation, snapping objects together, and correct behavior in game engines."
+    },
+    {
+      "title": "Scale",
+      "slug": "Scale",
+      "category": "Modeling",
+      "tags": ["3D Art Track", "Unreal Engine"],
+      "summary": "Scale refers to the size of objects in relation to real-world measurements. Maintaining correct scale is critical in Unreal Engine for physics, lighting, and player interaction to feel believable."
+    },
+    {
+      "title": "Naming Conventions",
+      "slug": "NamingConventions",
+      "category": "Production",
+      "tags": ["Pipeline", "Game Dev"],
+      "summary": "Naming conventions are standardized ways of naming files, assets, and objects. Consistent naming helps teams stay organized, improves communication, and prevents errors in large projects."
+    },
+    {
+      "title": "Optimization Budget",
+      "slug": "OptimizationBudget",
+      "category": "Optimization",
+      "tags": ["Game Dev", "Performance"],
+      "summary": "An optimization budget defines limits for things like triangle count, draw calls, and texture resolution. Artists must work within these limits to ensure the game runs smoothly while maintaining visual quality."
+    }
+    {
+      "title": "Overdraw",
+      "slug": "Overdraw",
+      "category": "Optimization",
+      "tags": ["Unreal Engine", "Performance", "Rendering"],
+      "summary": "Overdraw occurs when multiple transparent or layered pixels are rendered on top of each other, causing the GPU to repeatedly draw the same screen space. This commonly happens with foliage, particles, decals, and translucent materials. High overdraw is expensive because the GPU must process each layer even if it's hidden behind another. In Unreal Engine, overdraw is often visualized in debug views, and reducing it (by simplifying materials, limiting transparency, or adjusting mesh density) is critical for performance."
+    },
+    {
+      "title": "Instruction Count",
+      "slug": "InstructionCount",
+      "category": "Optimization",
+      "tags": ["Unreal Engine", "Shaders", "Performance"],
+      "summary": "Instruction count refers to how many operations a shader performs to calculate the final pixel color. More instructions mean a more expensive material. Complex node setups, layered materials, and excessive math increase instruction count and reduce performance. In Unreal Engine’s Material Editor, instruction count is displayed to help artists optimize shaders and keep them within real-time performance budgets."
+    }    
   ]
 }
