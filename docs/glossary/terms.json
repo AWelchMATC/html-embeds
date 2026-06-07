@@ -222,6 +222,126 @@
       "category": "Production",
       "tags": ["Pipeline"],
       "summary": "Version control systems track changes to files over time, allowing teams to collaborate and revert to previous versions. Examples include Git, Perforce, and SVN."
+    },
+    
+    {
+      "title": "Motivated vs Unmotivated Lighting",
+      "slug": "MotivatedLighting",
+      "category": "Lighting",
+      "tags": ["Cinematography", "Storytelling", "Unreal Engine"],
+      "summary": "Motivated lighting comes from a believable source within the scene, like a lamp, window, or fire, helping the viewer understand where the light originates. Unmotivated lighting has no visible or logical source and is used stylistically to highlight subjects or improve readability. Strong lighting design often blends both approaches."
+    },
+    {
+      "title": "Area / Rect Lights",
+      "slug": "AreaRectLights",
+      "category": "Lighting",
+      "tags": ["Unreal Engine 5", "Performance", "Rendering"],
+      "summary": "Area (Rect) lights simulate large light sources and produce softer, more realistic shadows and reflections. In Unreal Engine 5, they are more expensive than point or directional lights because they calculate surface area, soft shadow falloff, and reflections, so overuse can negatively impact performance."
+    },
+    {
+      "title": "PlayerStart Actor",
+      "slug": "PlayerStartActor",
+      "category": "Unreal Engine",
+      "tags": ["Game Dev", "Level Design"],
+      "summary": "The PlayerStart Actor defines where the player spawns when the level begins. It determines the player's starting position and orientation in the game world."
+    },
+    {
+      "title": "Actor",
+      "slug": "ActorUnreal",
+      "category": "Unreal Engine",
+      "tags": ["Game Dev", "Level Design"],
+      "summary": "An Actor is any object that exists in a level in Unreal Engine, including meshes, lights, cameras, and gameplay elements. Actors can contain components and logic that define their behavior."
+    },
+    {
+      "title": "Control Rig",
+      "slug": "ControlRig",
+      "category": "Animation",
+      "tags": ["Unreal Engine 5", "Animation Track"],
+      "summary": "Control Rig allows animators to create rigs and animate characters directly inside Unreal Engine 5. It provides controls for posing, procedural animation, and editing without leaving the engine."
+    },
+    {
+      "title": "Level Sequence",
+      "slug": "LevelSequence",
+      "category": "Unreal Engine",
+      "tags": ["Cinematics", "Animation"],
+      "summary": "A Level Sequence is Unreal Engine’s cinematic timeline system used to animate cameras, actors, lights, and events over time. It works similarly to animation timelines in film or video editing software."
+    },
+    {
+      "title": "Aperture",
+      "slug": "Aperture",
+      "category": "Cinematography",
+      "tags": ["Photography", "Unreal Engine"],
+      "summary": "Aperture is the opening of a camera lens that controls how much light enters. A wider aperture (low f-stop) lets in more light and creates shallow depth of field, while a smaller aperture (high f-stop) results in a darker image with more of the scene in focus. Unreal’s cinematic cameras simulate this behavior."
+    },
+    {
+      "title": "F-Stops",
+      "slug": "FStops",
+      "category": "Cinematography",
+      "tags": ["Photography", "Exposure", "Unreal Engine"],
+      "summary": "F-stops measure the size of a lens opening. Lower values (like f/1.8) mean more light and blurrier backgrounds, while higher values (like f/16) mean less light and sharper images. In Unreal Engine, f-stops affect both exposure and depth of field behavior."
+    },
+    {
+      "title": "FOV vs Focal Length",
+      "slug": "FOVvsFocalLength",
+      "category": "Cinematography",
+      "tags": ["Camera", "Unreal Engine", "Maya"],
+      "summary": "Field of View (FOV) controls how wide the camera sees and is commonly used in gameplay cameras. Focal length controls lens behavior and is used in cinematic cameras. Wide FOV exaggerates perspective, while long focal lengths compress depth and feel more realistic."
+    },
+    {
+      "title": "Focal Length",
+      "slug": "FocalLength",
+      "category": "Cinematography",
+      "tags": ["Camera", "Unreal Engine", "Maya"],
+      "summary": "Focal length defines how a camera lens represents perspective. Short focal lengths (wide lenses) exaggerate space, while long focal lengths (telephoto lenses) compress depth. In Unreal and Maya, cinematic cameras rely on focal length instead of FOV for physically accurate results."
+    },
+    {
+      "title": "Golden Ratio",
+      "slug": "GoldenRatio",
+      "category": "2D Fundamentals",
+      "tags": ["Composition", "Design"],
+      "summary": "The Golden Ratio (approximately 1.618) is a mathematical proportion used to create visually pleasing compositions. It is often visualized as a spiral guiding the viewer’s eye through an image."
+    },
+    {
+      "title": "Phi Grid",
+      "slug": "PhiGrid",
+      "category": "2D Fundamentals",
+      "tags": ["Composition", "Design"],
+      "summary": "The Phi Grid is based on the Golden Ratio and divides an image into sections that create more natural balance than the Rule of Thirds. It is used to place focal points more precisely."
+    },
+    {
+      "title": "Rule of Thirds",
+      "slug": "RuleOfThirds",
+      "category": "2D Fundamentals",
+      "tags": ["Composition", "Photography"],
+      "summary": "The Rule of Thirds divides an image into a 3x3 grid. Placing important elements along the lines or intersections creates more engaging and balanced compositions."
+    },
+    {
+      "title": "Principles of Design",
+      "slug": "PrinciplesOfDesignExtended",
+      "category": "2D Fundamentals",
+      "tags": ["Design", "Theory"],
+      "summary": "The principles of design include balance, contrast, emphasis, movement, rhythm, unity, and variety. These concepts help organize visual elements to create clear, effective compositions."
+    },
+    {
+      "title": "Line Quality",
+      "slug": "LineQuality",
+      "category": "2D Fundamentals",
+      "tags": ["Drawing", "Design"],
+      "summary": "Line quality refers to the variation in thickness, darkness, and flow of lines. Strong line work uses variation to show depth, emphasize form, and guide the viewer’s eye."
+    },
+    {
+      "title": "Edge Quality & Control",
+      "slug": "EdgeQualityControl",
+      "category": "2D Fundamentals",
+      "tags": ["Painting", "Sculpting"],
+      "summary": "Edge quality describes how sharp or soft transitions are between forms. Artists use hard, soft, and lost edges to control focus. In sculpting, edge control defines form clarity and surface quality."
+    },
+    {
+      "title": "Depth of Field",
+      "slug": "DepthOfFieldAdvanced",
+      "category": "Cinematography",
+      "tags": ["Unreal Engine", "Camera"],
+      "summary": "Depth of field determines how much of a scene is in focus. Shallow depth of field blurs the background to emphasize a subject. In Unreal Engine, this is controlled using aperture (low f-stop), focus distance, and cinematic camera or post-process settings."
     }
   ]
 }
