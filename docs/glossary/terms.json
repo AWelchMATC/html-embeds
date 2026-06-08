@@ -620,6 +620,111 @@
       "category": "Animation",
       "tags": ["Animation Track", "Common Core", "Rigging"],
       "summary": "A skeleton in animation is a hierarchical system of bones and joints used to deform and animate a character or object. The skeleton defines how different parts of a model are connected and how they move relative to each other.\n\nBones are the structural segments (like arms, legs, spine), while joints are the connection points where movement occurs (like elbows or knees). Together, they form the underlying structure that drives deformation when a character moves.\n\nA helpful way to think about this is like a puppet:\n- The skeleton (bones and joints) is like the internal structure or hinges that define how the puppet can bend and move.\n- The Control Rig is like the external controls (strings or control bars) that the animator uses to actually manipulate the puppet.\n\nControl rigs do NOT deform the mesh directly—instead, they control the skeleton, which then drives the deformation of the model. This makes animation easier and more intuitive, allowing animators to use handles and controls rather than rotating individual bones manually.\n\nIn production, the skeleton is built for structure and deformation, while the control rig is designed for usability and animation performance. Understanding the difference helps artists work more effectively in both rigging and animation workflows."
+    },
+    {
+      "title": "Rigging",
+      "slug": "Rigging",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core", "Rigging"],
+      "summary": "Rigging is the process of building a system that allows a 3D model to be animated. This includes creating a skeleton (bones and joints), setting up controls (Control Rig), and preparing the model so it moves in a believable and usable way. A good rig provides intuitive controls for animators while maintaining proper deformation and performance."
+    },
+    {
+      "title": "Skinning",
+      "slug": "Skinning",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core", "Rigging"],
+      "summary": "Skinning is the process of attaching (binding) a 3D mesh to a skeleton so that it moves when the bones are animated. Each vertex of the mesh is influenced by one or more bones, allowing the model to deform as the skeleton moves."
+    },
+    {
+      "title": "Weight Painting",
+      "slug": "WeightPainting",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core", "Rigging"],
+      "summary": "Weight painting controls how much influence each bone has over parts of a mesh. Artists paint values onto the model to define how it deforms when animated. Clean weight painting ensures smooth bending at joints like elbows and knees without unnatural stretching or collapsing."
+    },
+    {
+      "title": "Cycles (Animation)",
+      "slug": "AnimationCycles",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core"],
+      "summary": "An animation cycle is a repeating sequence of motion, such as a walk cycle, run cycle, or idle loop. Cycles are commonly used in games to create continuous motion efficiently without needing unique animation for every step."
+    },
+    {
+      "title": "Move Set",
+      "slug": "MoveSet",
+      "category": "Animation",
+      "tags": ["Animation Track", "Game Dev"],
+      "summary": "A move set is the collection of animations a character can perform in a game, such as walking, running, jumping, attacking, or idling. Designing a complete move set ensures a character can respond to all gameplay situations."
+    },
+    {
+      "title": "Layered Animation Technique",
+      "slug": "LayeredAnimation",
+      "category": "Animation",
+      "tags": ["Animation Track"],
+      "summary": "Layered animation builds motion in multiple passes instead of all at once. Animators block major movement first, then refine details like secondary motion and overlap. This approach helps manage complexity and improve results."
+    },
+    {
+      "title": "Straight Ahead Animation",
+      "slug": "StraightAhead",
+      "category": "Animation",
+      "tags": ["Animation Track", "Principles"],
+      "summary": "Straight Ahead animation is created frame-by-frame in sequence, without planning key poses first. It encourages fluid, organic motion but can be harder to control and revise."
+    },
+    {
+      "title": "Pose to Pose Animation",
+      "slug": "PoseToPose",
+      "category": "Animation",
+      "tags": ["Animation Track", "Principles"],
+      "summary": "Pose to Pose animation begins by defining key poses first, then filling in the motion between them. This approach provides better planning, structure, and control over timing and storytelling."
+    },
+    {
+      "title": "Stepped Key Animation",
+      "slug": "SteppedKeys",
+      "category": "Animation",
+      "tags": ["Animation Track"],
+      "summary": "Stepped key animation uses stepped interpolation so there is no in-between motion between keyframes. This is often used during blocking to quickly evaluate poses and timing without smoothing."
+    },
+    {
+      "title": "Curve Editor",
+      "slug": "CurveEditor",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core", "Maya", "Unreal Engine"],
+      "summary": "The Curve Editor is a tool used to visualize and edit animation curves over time. In Maya (Graph Editor) and Unreal Engine (Sequencer), it allows animators to control interpolation, timing, and easing between keyframes. Adjusting curves is critical for refining motion, controlling speed changes, and achieving natural movement."
+    },
+    {
+      "title": "Spline",
+      "slug": "Spline",
+      "category": "Common Core",
+      "tags": ["Animation Track", "3D Art Track", "Unreal Engine", "Modeling"],
+      "summary": "A spline is a smooth curve defined by points that can be used in multiple ways across disciplines. In animation, splines define motion through curves and trajectories. In modeling and level design, splines can be used to create paths, roads, fences, or cables. In Unreal Engine, spline-based Blueprints are often used to generate modular assets like fences or roads procedurally along a path."
+    },
+    {
+      "title": "SDF (Signed Distance Fields)",
+      "slug": "SDF",
+      "category": "Rendering",
+      "tags": ["Unreal Engine", "Common Core", "Lighting"],
+      "summary": "Signed Distance Fields (SDFs) represent the distance between a point in space and the nearest surface. In Unreal Engine, they are used for features like distance field shadows, ambient occlusion, and effects like soft intersections. They enable efficient lighting and effects calculations in real time."
+    },
+    {
+      "title": "Motion Matching",
+      "slug": "MotionMatching",
+      "category": "Animation",
+      "tags": ["Animation Track", "Game Dev"],
+      "summary": "Motion Matching is an advanced animation system that selects the best animation frame from a large database based on player input and movement context. Instead of blending between predefined states, it dynamically chooses the most appropriate motion, creating highly responsive and realistic movement."
+    },
+    {
+      "title": "Starts and Stops",
+      "slug": "StartsAndStops",
+      "category": "Animation",
+      "tags": ["Animation Track", "Principles", "Game Dev", "Unreal Engine"],
+      "summary": "Starts and Stops describe how motion begins and ends, emphasizing acceleration (ease-in) and deceleration (ease-out). Strong animation avoids sudden motion changes and instead gradually builds and reduces energy, making movement feel grounded and believable.\n\nIn game development, this concept goes beyond a single animation clip. Animators often break motion into separate pieces—such as start, loop, and stop animations (for example: walk_start, walk_loop, walk_stop). These pieces are exported individually and then combined in Unreal Engine using an Animation Blueprint (AnimBP).\n\nIn a traditional State Machine workflow, these animations are connected through transitions (idle → start → loop → stop → idle), allowing the game to switch between them based on player input and conditions.\n\nIn a Motion Matching workflow, instead of manually defining transitions, the system dynamically selects the most appropriate frame from a large animation dataset based on movement input, automatically handling starts and stops more fluidly.\n\nUnderstanding how to break motion into modular parts and how those parts are used in-engine is critical for creating responsive, believable gameplay animation."
+    },
+    {
+      "title": "Pre & Post Infinity (Cycle Controls)",
+      "slug": "PrePostInfinity",
+      "category": "Animation",
+      "tags": ["Animation Track", "Common Core", "Maya", "Unreal Engine"],
+      "summary": "Pre and Post Infinity (often called Out-of-Range behavior in Unreal or Curve Infinity settings in Maya’s Graph Editor) control how animation behaves before the first keyframe and after the last keyframe.\n\nCommon behaviors include:\n- Cycle (Repeat): The animation loops continuously.\n- Ping Pong (Oscillate): The animation plays forward, then backward repeatedly.\n- Offset / Relative Cycle: The animation repeats while continuing to add movement or offset each cycle (useful for things like looping motion that travels forward).\n- Constant: Holds the value of the first or last keyframe.\n\nIn Maya, these are referred to as Pre Infinity and Post Infinity settings in the Graph Editor. In Unreal Engine, similar behavior can be achieved through Sequencer or animation looping settings.\n\nThese tools are essential for extending animations without adding extra keyframes, especially for loops like walk cycles, environmental motion, or repeated mechanical actions."
     }
   ]
 }
