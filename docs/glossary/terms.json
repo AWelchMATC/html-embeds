@@ -725,6 +725,97 @@
       "category": "Animation",
       "tags": ["Animation Track", "Common Core", "Maya", "Unreal Engine"],
       "summary": "Pre and Post Infinity (often called Out-of-Range behavior in Unreal or Curve Infinity settings in Maya’s Graph Editor) control how animation behaves before the first keyframe and after the last keyframe.\n\nCommon behaviors include:\n- Cycle (Repeat): The animation loops continuously.\n- Ping Pong (Oscillate): The animation plays forward, then backward repeatedly.\n- Offset / Relative Cycle: The animation repeats while continuing to add movement or offset each cycle (useful for things like looping motion that travels forward).\n- Constant: Holds the value of the first or last keyframe.\n\nIn Maya, these are referred to as Pre Infinity and Post Infinity settings in the Graph Editor. In Unreal Engine, similar behavior can be achieved through Sequencer or animation looping settings.\n\nThese tools are essential for extending animations without adding extra keyframes, especially for loops like walk cycles, environmental motion, or repeated mechanical actions."
-    }
+    },
+    {
+      "title": "180 Degree Rule",
+      "slug": "180Rule",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Composition", "Camera"],
+      "summary": "The 180 Degree Rule is a guideline that keeps the camera on one side of an imaginary line between subjects. This maintains consistent screen direction and spatial relationships. Breaking this rule can confuse the viewer because characters or objects can appear to flip positions on screen."
+    },
+    {
+      "title": "Dolly",
+      "slug": "Dolly",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A dolly shot moves the entire camera physically forward or backward through space. This creates a sense of depth and immersion, as objects shift in perspective relative to the camera."
+    },
+    {
+      "title": "Pan",
+      "slug": "Pan",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A pan rotates the camera left or right on its vertical axis without moving its position. It is often used to follow subjects or reveal parts of a scene."
+    },
+    {
+      "title": "Pedestal (Tilt Up/Down)",
+      "slug": "Pedestal",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A pedestal shot moves the camera vertically up or down without tilting it. This differs from a tilt, which rotates the camera while staying in place. Pedestal movement physically raises or lowers the camera’s position."
+    },
+    {
+      "title": "Truck",
+      "slug": "Truck",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A truck shot moves the camera side-to-side (left or right) through space. It is useful for following characters or creating parallax to enhance depth."
+    },
+    {
+      "title": "Zoom",
+      "slug": "Zoom",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A zoom changes the focal length of the lens, making the subject appear closer or farther away without moving the camera. Unlike a dolly, a zoom does not change perspective or parallax."
+    },
+    {
+      "title": "Dolly Zoom (Zolly)",
+      "slug": "Zolly",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A dolly zoom (or zolly) combines moving the camera forward or backward while simultaneously adjusting the zoom. This creates a dramatic effect where the subject stays the same size while the background appears to stretch or compress."
+    },
+    {
+      "title": "Crane Shot",
+      "slug": "CraneShot",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Camera Movement"],
+      "summary": "A crane shot moves the camera through space vertically and often horizontally using a boom or crane-like motion. It is used to create sweeping, cinematic movements and reveal large environments."
+    },
+    {
+      "title": "Full Shot",
+      "slug": "FullShot",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Composition"],
+      "summary": "A full shot frames a subject’s entire body from head to toe. It is often used to show character movement, silhouette, and interaction with the environment."
+    },
+    {
+      "title": "Two Shot",
+      "slug": "TwoShot",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Composition"],
+      "summary": "A two shot frames two characters within the same composition. It is commonly used to show interaction, relationships, or dialogue between subjects."
+    },
+    {
+      "title": "Dutch Angle",
+      "slug": "DutchAngle",
+      "category": "Cinematography",
+      "tags": ["Common Core", "Composition"],
+      "summary": "A Dutch angle tilts the camera so the horizon line is no longer level. This creates a sense of tension, unease, or disorientation in the viewer."
+    },
+    {
+      "title": "Match Cut",
+      "slug": "MatchCut",
+      "category": "Editing",
+      "tags": ["Common Core", "Cinematography"],
+      "summary": "A match cut transitions between two shots by matching composition, shape, or motion. This creates a smooth visual connection between scenes and can emphasize thematic or narrative continuity."
+    },
+    {
+      "title": "Jump Cut",
+      "slug": "JumpCut",
+      "category": "Editing",
+      "tags": ["Common Core", "Cinematography"],
+      "summary": "A jump cut is an abrupt transition between two similar shots that creates a noticeable 'jump' in time or position. While sometimes used stylistically, it is often considered a mistake in portfolios because it can feel unpolished or unintentional and disrupt visual continuity."
+    }    
   ]
 }
