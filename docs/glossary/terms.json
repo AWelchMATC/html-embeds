@@ -571,6 +571,41 @@
       "category": "Production",
       "tags": ["Game Dev", "Film", "Animation", "Workflow","3D Art Track","Common Core"],
       "summary": "A pipeline is the structured workflow that defines how assets are created, processed, and moved between departments in a production. In the entertainment industry, pipelines ensure that large teams can work efficiently and consistently. Pipelines differ depending on the industry: film/VFX pipelines prioritize high-quality offline rendering and often rely heavily on SubD and simulation workflows; animation pipelines focus on character rigging, animation, and storytelling; game development pipelines prioritize real-time performance, optimization, and engine integration (such as Unreal or Unity); and advertising pipelines often prioritize speed and flexibility to meet fast deadlines. Understanding the pipeline helps artists know what assets need to be created, how they should be built, and how they will be used later in production."
+    },
+    {
+      "title": "Blueprint (BP)",
+      "slug": "Blueprint",
+      "category": "Unreal Engine",
+      "tags": ["3D Art Track", "Common Core", "Game Dev", "Scripting"],
+      "summary": "Blueprints (often abbreviated as BP) are Unreal Engine’s visual scripting system, allowing users to create logic, interactions, and behaviors without writing traditional code. Instead of typing code, users connect nodes in a graph to define how objects behave. \n\nIn production, Blueprints are often named using the prefix \"BP_\" (for example: BP_Door, BP_LightSwitch), making it easy for teams to organize and identify interactive or logic-based assets within a project.\n\nBlueprints are conceptually similar to prefabs in other engines like Unity. They act as reusable, self-contained assets that can include meshes, materials, collision, animations, and logic all in one place. Once created, a Blueprint can be reused multiple times throughout a level, and changes to it will update everywhere it is used.\n\nFor Environment Artists, Blueprints are an extremely powerful tool. While they are not required to be programmers, understanding Blueprints allows artists to add interactivity and polish to their work. Common use cases include setting up interactive doors, animated props, flickering lights, moving platforms, modular set pieces, or grouping multiple assets into a reusable kit. Blueprints can also control material parameters, lighting behaviors, and simple animations, helping environment artists create more dynamic and immersive scenes.\n\nLearning Blueprints helps bridge the gap between art and gameplay, making artists more versatile and valuable within a game development pipeline."
+    },
+    {
+      "title": "Static Mesh (SM)",
+      "slug": "StaticMesh",
+      "category": "Unreal Engine",
+      "tags": ["3D Art Track", "Game Dev", "Environment Art"],
+      "summary": "A Static Mesh (often abbreviated as SM) is a 3D object in Unreal Engine that does not deform or animate (unlike skeletal meshes). These are the core building blocks of environments, including props, architecture, and set dressing elements. In production, Static Meshes are commonly named using the prefix \"SM_\" (for example: SM_Chair, SM_Wall_01), which helps organize projects and distinguish them from other asset types. Environment artists use Static Meshes extensively to populate levels, build modular kits, and construct worlds efficiently."
+    },
+    {
+      "title": "Prefixes (Naming Conventions)",
+      "slug": "Prefixes",
+      "category": "Production",
+      "tags": ["Common Core", "Pipeline", "Unreal Engine"],
+      "summary": "Prefixes are standardized naming conventions used in Unreal Engine to quickly identify the type of asset. They help teams stay organized and prevent confusion in large projects. Common examples include: SM_ (Static Mesh), BP_ (Blueprint), MI_ (Material Instance), M_ (Material), T_ (Texture), SK_ (Skeletal Mesh), and NI_ or NS_ (Niagara Systems). Using consistent prefixes improves workflow, asset management, and collaboration across teams."
+    },
+    {
+      "title": "Scripting",
+      "slug": "Scripting",
+      "category": "Unreal Engine",
+      "tags": ["3D Art Track", "Common Core", "Game Dev"],
+      "summary": "Scripting refers to creating logic and behavior in a game using systems like Unreal Engine’s Blueprints (visual scripting) or code-based systems. Blueprints allow users to connect nodes to define interactions, events, and gameplay behaviors without writing traditional code.\n\nThere are two primary Blueprint contexts: regular Blueprint Actors (reusable assets placed in the world) and Level Blueprints. Level Blueprints are tied to a specific level and are often used for one-off scripted events such as opening a door when the player enters an area, triggering a cinematic, or coordinating lighting and effects.\n\nEnvironment artists can use scripting to add interactivity and storytelling to their scenes—for example, triggering lights to flicker, animating environmental props, or creating a scripted moment where something happens when the player reaches a certain point. Understanding basic scripting helps artists bring their environments to life and collaborate more effectively with designers and programmers."
+    },
+    {
+      "title": "Technical Artist",
+      "slug": "TechnicalArtist",
+      "category": "Careers",
+      "tags": ["Game Dev", "Pipeline", "Common Core"],
+      "summary": "A Technical Artist is a hybrid role that bridges the gap between art and programming in game development. The exact responsibilities can vary significantly between studios, but generally fall into a few key areas.\n\nSome Technical Artists focus on advanced look development, creating complex shaders, materials, and rendering solutions that push visual quality. Others focus on building tools and pipelines, using systems like Unreal Editor Utility Widgets, Blueprints, or Python to streamline workflows and improve efficiency for artists. Another major area is optimization, where Technical Artists analyze performance (such as draw calls, shader cost, and memory usage) and help ensure the game runs efficiently.\n\nBecause the role varies so much, Technical Artists must be adaptable problem solvers who understand both artistic goals and technical constraints. They often act as a bridge between departments, helping artists achieve high-quality visuals while staying within performance and engine limitations."
     }
   ]
 }
