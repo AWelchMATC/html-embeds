@@ -22,7 +22,7 @@
       "category": "Materials",
       "tags": ["Texturing", "Lighting", "Shading"],
       "summary": "A roughness map controls how light scatters across a material's surface, determining whether reflections appear sharp and glossy or soft and diffuse. In a PBR workflow, roughness is often the most important map for creating realism because it defines a material's surface quality and wear. Variations in roughness can represent scratches, fingerprints, dirt, polished areas, worn edges, and other subtle details that make materials feel believable. Even when two objects share the same Base Color, different roughness values can make them appear completely different under lighting.\n\nKey takeaway: A realistic Roughness map usually contains meaningful variation rather than a single uniform value. Surface response often contributes more to realism than additional color detail."
-    }
+    },
 
     {
       "title": "Beveling",
