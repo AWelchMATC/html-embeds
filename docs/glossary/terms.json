@@ -702,8 +702,8 @@
 
     {
       "title": "PBR Workflow",
-      "slug": "PBRWorkflow",
-      "category": "Optimization",
+      "slug": "pbr-workflow",
+      "category": "Materials",
       "tags": ["Metalness", "Roughness ", "Base Color", "Rendering", "Texturing", "Materials", "Unreal Engine", "Normal Map", "Shading", "Lighting"],
       "summary": "Physically Based Rendering (PBR) is a material workflow used in modern game engines such as Unreal Engine and Unity. PBR materials follow real-world lighting principles so assets react consistently under different lighting conditions. The most common workflow uses Base Color, Roughness, Metallic, and Normal maps."
     },
