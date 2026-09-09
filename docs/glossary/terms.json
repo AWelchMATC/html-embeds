@@ -690,6 +690,14 @@
       "category": "Animation",
       "tags": ["Animation Track", "Common Core", "Maya", "Unreal Engine"],
       "summary": "The Curve Editor is a tool used to visualize and edit animation curves over time. In Maya (Graph Editor) and Unreal Engine (Sequencer), it allows animators to control interpolation, timing, and easing between keyframes. Adjusting curves is critical for refining motion, controlling speed changes, and achieving natural movement."
+    }, 
+
+    {
+      "title": "PBR Workflow",
+      "slug": "PBR-Workflow",
+      "category": "Optimization",
+      "tags": ["Metalness", "Roughness ", "Base Color", "Rendering", "Texturing", "Materials", "Unreal Engine", "Normal Map", "Shading", "Lighting"],
+      "summary": "Physically Based Rendering (PBR) is a material workflow used in modern game engines such as Unreal Engine and Unity. PBR materials follow real-world lighting principles so assets react consistently under different lighting conditions. The most common workflow uses Base Color, Roughness, Metallic, and Normal maps."
     },
     {
       "title": "Spline",
