@@ -15,6 +15,51 @@
       "tags": ["PBR", "Texture", "3D Art Track"],
       "summary": "Basecolor is essentially another word for Albedo. Base Color/Albedo is a map without lighting, shadow, or highlights."
     },
+    {
+  "title": "Alpha (brush)",
+  "slug": "alphabrush",
+  "category": "Texturing",
+  "tags": [
+    "3D Art Track",
+    "Texturing",
+    "Sculpting",
+    "Shading",
+    "Materials",
+    "Displacement",
+    "Stencil"
+  ],
+  "summary": "An Alpha is a grayscale image used by digital sculpting and painting tools such as ZBrush, Substance 3D Painter, Photoshop, and Clip Studio Paint to control where a brush affects a surface. Alpha images act like stencils, allowing artists to apply specific shapes, patterns, or details with a brush stroke.\n\nIn ZBrush, an alpha determines where displacement is applied or blocked. White areas receive the full effect of the brush, black areas receive no effect, and gray values produce partial influence. This allows artists to stamp skin pores, scales, cracks, fabric patterns, and other surface details onto a model.\n\nAlthough the term \"alpha\" is also used when discussing transparency, a brush alpha is not a transparency mask. Instead, it controls where a brush operation occurs.\n\nExample\n\nImagine using an alpha of a leaf vein pattern in ZBrush:\n\nWhite areas push the surface outward.\nBlack areas leave the surface unchanged.\nGray areas receive partial displacement.\n\nIn this sense, an alpha acts as a mask that controls where sculpting occurs.\n\nKey Takeaway\n\nA Brush Alpha controls where a brush effect is applied. It is essentially a grayscale mask that guides sculpting or painting operations."
+},
+    {
+  "title": "Alpha Mask / Opacity Map",
+  "slug": "alphamaskopacitymap",
+  "category": "Texturing",
+  "tags": [
+    "3D Art Track",
+    "Texturing",
+    "Sculpting",
+    "Shading",
+    "Materials",
+    "Displacement",
+    "Stencil"
+  ],
+  "summary": "An Alpha Mask or Opacity Map controls the visibility of a surface. Unlike a Brush Alpha, which controls where a sculpting or painting effect occurs, an Opacity Map controls which parts of an object can be seen.\n\nOpacity maps are commonly used in:\n\nPhotoshop layer masks\nSubstance Painter transparency channels\nUnreal Engine opacity materials\nFoliage cards\nChain-link fences\nHair cards\nDecals\n\nWhite areas are visible, black areas are invisible, and gray values create varying levels of transparency when supported by the rendering system.\n\n1-Bit vs 8-Bit Alpha\n\nThere are two common approaches:\n\n1-Bit Alpha (Masked)\n\nA pixel is either:\n\nFully visible\nFully invisible\n\nThere are no in-between values.\n\nCommon uses include:\n\nLeaves\nFences\nWire mesh\nStylized cutouts\n\nAdvantages:\n\nFast performance\nCrisp edges\nEasy to render\n\nDisadvantages:\n\nJagged edges may be visible\n8-Bit Alpha (Translucent)\n\nPixels can contain 256 levels of transparency.\n\nExamples:\n\nSmoke\nGlass decals\nSoft particles\nHair strands\nDust effects\n\nAdvantages:\n\nSmooth transparency transitions\nMore realistic effects\n\nDisadvantages:\n\nMore expensive to render\nExample\n\nA leaf card in a game typically uses:\n\nA color texture containing the leaf image\nAn opacity mask hiding everything around the leaf\n\nThe underlying polygon remains rectangular, but the opacity mask makes it appear leaf-shaped.\n\nKey Takeaway\n\nAn Opacity Map controls what portions of an object are visible. Even though it uses grayscale values like a Brush Alpha, its purpose is transparency rather than sculpting or painting."
+},
+    {
+  "title": "Displacement Map / Height Map",
+  "slug": "displacementmapheightmap",
+  "category": "Texturing",
+  "tags": [
+    "3D Art Track",
+    "Texturing",
+    "Sculpting",
+    "Shading",
+    "Materials",
+    "Displacement",
+    "Stencil"
+  ],
+  "summary": "A Displacement Map or Height Map is a grayscale texture that physically moves a surface based on brightness values.\n\nWhite areas move outward, black areas move inward or remain unchanged, and gray values produce intermediate height changes.\n\nDisplacement maps are used to create:\n\nRock surfaces\nBrick walls\nTerrain\nEngravings\nFabric patterns\nSurface damage\n\nUnlike a Normal Map, which only affects lighting, a Displacement Map changes the actual shape of a surface.\n\nHow It Relates to Brush Alphas\n\nStudents often find it helpful to think of a Height Map as a specialized alpha.\n\nBoth are grayscale images where:\n\nWhite = more effect\nBlack = less effect\nGray = partial effect\n\nWhen using a ZBrush alpha to sculpt details, the alpha is determining where displacement occurs.\n\nA Height Map performs a similar job mathematically:\n\nWhite areas inflate the surface more.\nBlack areas inflate the surface less.\nGray values produce partial displacement.\n\nThe difference is that a Brush Alpha controls a sculpting tool, while a Height Map directly stores displacement information in a texture.\n\nExample\n\nA brick wall height map might have:\n\nWhite bricks that protrude outward\nDark mortar that sits lower\n\nThe renderer uses those grayscale values to alter surface height."
+},
 
     {
       "title": "Roughness",
