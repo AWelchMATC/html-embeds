@@ -478,13 +478,15 @@
       "tags": ["3D Art Track", "Shading"],
       "summary": "Face normals represent the direction of an individual polygon. When shading uses face normals instead of shared vertex normals, the object appears faceted, with visible polygon edges."
     },
+
     {
-      "title": "Hard vs Soft Edges",
-      "slug": "HardSoftEdges",
-      "category": "Modeling",
-      "tags": ["3D Art Track", "Shading", "Common Core"],
-      "summary": "Hard edges split vertex normals between faces, creating sharp transitions (faceted shading). Soft edges share vertex normals, smoothing the shading between faces. These do not change geometry—only how lighting is calculated."
+    "title": "Hard vs Soft Edges",
+    "slug": "HardSoftEdges",
+    "category": "Common Core",
+    "tags": ["3D Art Track", "2D Fundamentals", "Modeling", "Sculpting", "Painting", "Lighting", "Shading", "Common Core"],
+    "summary": "An edge is the transition between one thing and another, whether that is a shape, form, value, color, material, light, or shadow. Hard edges change abruptly and tend to attract attention, while soft edges transition gradually and often feel more natural or atmospheric. In 3D modeling, edge hardness affects shading but not geometry. In sculpting, hard edges create crisp planes while soft edges create smooth forms. In painting, hard edges improve readability and focus, while soft edges help blend forms and create depth. In lighting, edge quality can be seen in cast shadows, penumbras, and shadow terminators. Materials with subsurface scattering, such as skin, wax, leaves, and marble, often soften light transitions and reduce the appearance of otherwise hard shadow edges. Understanding edge control is fundamental to creating believable form and guiding the viewer's eye across an image or 3D asset."
     },
+    
     {
       "title": "Face Weighted Normals",
       "slug": "FaceWeightedNormals",
